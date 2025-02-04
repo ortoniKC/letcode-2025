@@ -1,0 +1,38 @@
+<app-pageheader [header]="title"></app-pageheader>
+<div class="column has-text-centered is-hidden-mobile">
+    <!-- <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adSlot]="3770321793"
+        [display]="'display:inline-block;width:360px;height:50px'">
+    </ng-adsense> -->
+</div>
+<section class="container pb-6">
+    <div class="columns is-multiline">
+        <div *ngIf="safeurlSel != null" class="column">
+            <app-syb [url]="safeurlSel" [title]="'Selenium'" [alt]="'Selenium-Letcode'"
+                [imageUrl]="'/assets/icons/selenium.png'"></app-syb>
+        </div>
+        <div *ngIf="safeurlPro != null" class="column">
+            <app-syb [url]="safeurlPro" [title]="'Protractor'" [alt]="'Protractor-Letcode'"
+                [imageUrl]="'/assets/icons/protractor.png'">
+            </app-syb>
+        </div>
+        <div *ngIf="safeurlPl != null" class="column">
+            <app-syb [url]="safeurlPl" [title]="'Playwright'" [alt]="'Playwright-Letcode'"
+                [imageUrl]="'/assets/icons/playwright.png'">
+            </app-syb>
+        </div>
+    </div>
+</section>
+<section class="hero is-small has-background-white-ter">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <!-- <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adSlot]="3770321793" [display]="'display:inline-block;width:360px;height:50px'">
+            </ng-adsense> -->
+            <!-- <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'fluid'"
+                [layoutKey]="'-9p-71-p5+cf+3gi'" [adSlot]="4712014165" [display]="'block'">
+            </ng-adsense> -->
+        </div>
+    </div>
+</section>
+<!-- <section class="container">
+    <app-coursesupport></app-coursesupport>
+</section> -->

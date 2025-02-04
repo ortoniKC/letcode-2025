@@ -1,0 +1,114 @@
+<app-pageheader [header]="'Radio & Checkbox'"></app-pageheader>
+<section class="section has-background-white-ter">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-7-desktop is-8-tablet">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="field">
+                            <label for="name" class="label">Select any one</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="answer" id="yes">
+                                    Yes
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="answer" id="no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Cofirm you can select only one radio button</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="one" id="one">
+                                    Yes
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="one" id="two">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Find the bug</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="nobug" id="nobug">
+                                    Yes
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="bug" id="bug">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Find which one is selected</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="foobar" id="foo">
+                                    Foo
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="foobar" id="notfoo" checked>
+                                    Bar
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Confirm last field is disabled</label>
+                            <div class="control">
+                                <label class="radio">
+                                    <input type="radio" name="plan" id="going">
+                                    Going
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="plan" id="notG">
+                                    Not going
+                                </label>
+                                <label class="radio" disabled>
+                                    <input type="radio" name="plan" id="maybe" disabled>
+                                    Maybe
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Find if the checkbox is selected?</label>
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                Remember me
+                            </label>
+                        </div>
+                        <div class="field">
+                            <label for="name" class="label">Accept the T&C</label>
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                I agree to the <a>FAKE terms and conditions</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3-desktop is-4-tablet">
+                <app-learning-point [link]="link" [list]="lp"></app-learning-point>
+            </div>
+            <!-- <div class="column">
+                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
+                </ng-adsense>
+            </div> -->
+        </div>
+    </div>
+</section>
+<!-- ad -->
+<!-- <section class="hero is-small has-background-white-ter">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section> -->

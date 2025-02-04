@@ -1,0 +1,23 @@
+<div class="card">
+    <header class="card-header">
+        <p class="card-header-title">
+            Insight
+        </p>
+        <div class="card-header-icon">
+            <span class="icon">
+                <i class="fas fa-graduation-cap"></i>
+            </span>
+        </div>
+    </header>
+    <div class="card-content">
+        <div class="content">
+            <span>On completion of this exercise, you can learn the following concepts.</span>
+            <ol type="1">
+                <li *ngFor="let ls of list">{{ls}}</li>
+            </ol>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <a [routerLink]="link" class="card-footer-item">Watch tutorial</a>
+    </footer>
+</div>

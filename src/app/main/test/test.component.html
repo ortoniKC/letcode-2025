@@ -1,0 +1,40 @@
+<!-- Header -->
+<section class="hero is-small mt-6">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column">
+                    <h1
+                        class="title is-size-1-desktop is-size-3-mobile is-size-2-tablet has-text-weight-bold has-text-primary mt-6">
+                        Practice and become a pro in test automation
+                    </h1>
+                    <p class="subtitle is-4 mt-4 is-family-primary pb-4">
+                        You can practice automation for API/frameworks like Selenium, Protractor, Playwright, WebDriver
+                        IO, Cypress & more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Features Section -->
+<section class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-3-desktop is-6-tablet" *ngFor="let item of menuItems">
+                    <app-menu [alt]="item.alt" [icon]="item.icon" [title]="item.title" [header]="item.header"
+                        [desc]="item.desc" [link]="item.link" class="menu-card">
+                    </app-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ad -->
+<div class="section has-text-centered is-vcentered">
+    <!-- <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'fluid'"
+        [layoutKey]="'-9p-71-p5+cf+3gi'" [adSlot]="4712014165" [display]="'block'">
+    </ng-adsense> -->
+</div>

@@ -1,0 +1,72 @@
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" [routerLink]="['/']">
+                <img src="../../assets/logo.png" alt="letcode">
+            </a>
+            <a role="button" class="navbar-burger burger has-text-black" aria-label="menu" aria-expanded="false"
+                data-target="navbar-menu" (click)="openBurger()">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbar-menu" class="navbar-menu is-desktop is-tablet">
+            <div class="navbar-start">
+                <a (click)="openBurger()" class="navbar-item" routerLinkActive="is-tab" routerLink="/test"
+                    id="testing">Work-Space</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Courses</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" (click)="openBurger()" routerLinkActive="is-tab"
+                            routerLink="/playwright">
+                            Playwright
+                        </a>
+                        <a class="navbar-item" (click)="openBurger()" routerLinkActive="is-tab" routerLink="/selenium">
+                            Selenium-Java
+                        </a>
+                        <a class="navbar-item" (click)="openBurger()" routerLinkActive="is-tab" routerLink="/cucumber">
+                            Cucumber - Selenium Java
+                        </a>
+                        <a (click)="openBurger()" class="navbar-link" routerLink="/courses" routerLinkActive="is-tab"
+                            class="navbar-item">
+                            All Courses
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Grooming</a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" (click)="openBurger()" routerLinkActive="is-tab"
+                            routerLink="/test-practice">
+                            Test Practice
+                        </a>
+                        <a class="navbar-item" (click)="openBurger()" routerLinkActive="is-tab" routerLink="/interview">
+                            Interview Q & A
+                        </a>
+                    </div>
+                </div>
+                <a (click)="openBurger()" routerLink="/letxpath" class="navbar-item"
+                    routerLinkActive="is-tab">Product</a>
+                <a (click)="openBurger()" routerLink="/" class="navbar-item is-primary" routerLinkActive="is-tab">
+                    <span class="icon has-text-primary">
+                        <i class="fas fa-home"></i>
+                    </span>
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <button class="button is-primary" (click)="toggleTheme()">
+                            Toggle Theme
+                        </button>
+                        <!-- <a *ngIf="!email" class="button is-primary is-rounded is-small" [routerLink]=" ['/signup'] "
+                            (click)="openBurger()">Sign up</a>
+                        <a *ngIf="!email" class="button is-primary is-rounded is-small" [routerLink]=" ['/signin'] "
+                            (click)="openBurger()">Log in</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

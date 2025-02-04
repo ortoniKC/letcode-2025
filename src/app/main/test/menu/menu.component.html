@@ -1,0 +1,20 @@
+<div class="card">
+    <header class="card-header">
+        <p class="card-header-title is-size-3">
+            {{header}}
+        </p>
+        <div class="card-header-icon">
+            <figure class="image container is-48x48">
+                <img [src]="icon" [alt]="alt">
+            </figure>
+        </div>
+    </header>
+    <div class="card-content">
+        <div class="content has-text-centered">
+            <span class="text">{{desc}}</span>
+        </div>
+    </div>
+    <footer class="card-footer">
+        <a [routerLink]="link" class="card-footer-item">{{title}}</a>
+    </footer>
+</div>
