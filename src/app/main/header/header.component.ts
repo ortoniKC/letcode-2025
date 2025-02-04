@@ -1,53 +1,22 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-// import { AuthService } from '../service/auth.service';
-import { Router, RouterModule } from '@angular/router';
-// import { ToastrService } from 'ngx-toastr';
+import { CommonModule, DOCUMENT } from '@angular/common';
+import { Component, Inject, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   imports: [CommonModule, RouterModule],
 })
-export class HeaderComponent implements OnInit {
-  email = null;
-  src = '';
-  // constructor(
-  //   private auth: AuthService,
-  //   private router: Router,
-  //   private toast: ToastrService
-  // ) {
-  //   auth.getUser().subscribe((user) => {
-  //     this.email = user?.email;
-  //     this.src = 'https://robohash.org/' + user?.displayName;
-  //   });
-  // }
-
-  ngOnInit() {
-    const savedTheme = '';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }
+export class HeaderComponent {
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   toggleTheme() {
-    const htmlElement = document.documentElement;
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    htmlElement.setAttribute('data-theme', newTheme);
+    const currentTheme =
+      this.document.documentElement.getAttribute('data-theme') === 'light'
+        ? 'dark'
+        : 'light';
+    this.document.documentElement.setAttribute('data-theme', currentTheme);
   }
-
-  // async signOut() {
-  //   try {
-  //     this.auth.logout().then((res) => {
-  //       this.router.navigateByUrl('/');
-  //       this.toast.info('Bye! See you soon :)');
-  //       this.email = null;
-  //       this.openBurger();
-  //     });
-  //   } catch (error) {
-  //     this.openBurger();
-  //     this.toast.error(error);
-  //   }
-  // }
 
   openBurger() {
     let burger: any = document.querySelector('.burger');

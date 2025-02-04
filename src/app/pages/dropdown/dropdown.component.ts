@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dropdown',
-  imports: [PageheaderComponent, LearningPointComponent],
+  imports: [PageheaderComponent, LearningPointComponent, CommonModule],
   templateUrl: './dropdown.component.html',
 })
 export class DropdownComponent implements OnInit {

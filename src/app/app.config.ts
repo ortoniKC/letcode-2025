@@ -13,6 +13,7 @@ import {
 import { provideHttpClient } from '@angular/common/http';
 
 import { JokeService } from './service/jokes.service';
+import { AdsenseModule, AdsenseComponent } from 'ng2-adsense';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +22,12 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     JokeService,
     provideHttpClient(),
-    importProvidersFrom(RouterModule),
+    importProvidersFrom(
+      RouterModule,
+      AdsenseModule.forRoot({
+        adClient: 'ca-pub-6251538267574677',
+        adSlot: '6753414644',
+      })
+    ),
   ],
 };
