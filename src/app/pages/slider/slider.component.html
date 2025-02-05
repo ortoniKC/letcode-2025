@@ -1,1 +1,57 @@
-<p>slider works!</p>
+<app-pageheader [header]="'Slider'"></app-pageheader>
+<section class="section has-background-white-ter">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-7-desktop is-8-tablet">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="has-text-centered">
+                            <h1 class="subtitle has-text-info">
+                                Word limit : {{limit}}
+                            </h1>
+                            <input [(ngModel)]="limit" type="range" name="generate" id="generate" min="1" max="50"
+                                class="slider is-fullwidth is-info is-large">
+                            <div class="block">
+                                <button (click)="generate()" class="button is-primary">Get Countries</button>
+                            </div>
+
+                            <div *ngIf="words" class="card-content">
+                                <div class="notification is-primary">
+                                    <p class="has-text-primary-light">{{words}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <div class="content">
+                                <div class="subtitle has-text-info">TODO</div>
+                                <ol type="1">
+                                    <li>Move the slider between 1 to 50</li>
+                                    <li>Click on the get countries button</li>
+                                    <li>Validate that countries are generated based on slider values</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3-desktop is-4-tablet">
+                <app-learning-point [link]="link" [list]="lp"></app-learning-point>
+            </div>
+            <div class="column is-2">
+                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
+                </ng-adsense>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ad -->
+<section class="hero is-small has-background-white-ter">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section>

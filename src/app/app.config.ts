@@ -1,5 +1,6 @@
 import {
   ApplicationConfig,
+  CUSTOM_ELEMENTS_SCHEMA,
   EnvironmentInjector,
   importProvidersFrom,
   provideEnvironmentInitializer,
@@ -13,10 +14,11 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { JokeService } from './service/jokes.service';
 import { AdsenseModule, AdsenseComponent } from 'ng2-adsense';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,7 +27,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     JokeService,
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     importProvidersFrom(
       RouterModule,
       AdsenseModule.forRoot({
@@ -33,6 +35,7 @@ export const appConfig: ApplicationConfig = {
         adSlot: '6753414644',
       })
     ),
+    provideAnimationsAsync(),
   ],
 };
 

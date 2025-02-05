@@ -1,1 +1,54 @@
-<p>sortable works!</p>
+<app-pageheader [header]="'Sort'"></app-pageheader>
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="field">
+                            <div cdkDropListGroup>
+                                <div class="example-container">
+                                    <h2 class="subtitle has-text-info">To do</h2>
+                                    <div cdkDropList [cdkDropListData]="todo" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div id="sample-box1" class="example-boxes" *ngFor="let item of todo" cdkDrag>
+                                            {{item}}</div>
+                                    </div>
+                                </div>
+                                <div class="example-container">
+                                    <h2 class="subtitle has-text-info">Done</h2>
+                                    <div cdkDropList [cdkDropListData]="done" class="example-list"
+                                        (cdkDropListDropped)="drop($event)">
+                                        <div id="sample-box1" class="example-boxes" *ngFor="let item of done" cdkDrag>
+                                            {{item}}</div>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <div class="subtitle has-text-info">TODO</div>
+                                    <ol type="1">
+                                        <li>Move the content from to do to done</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3-desktop is-4-tablet">
+                <app-learning-point [link]="link" [list]="lp"></app-learning-point>
+                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
+                </ng-adsense>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small ">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section>

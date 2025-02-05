@@ -133,14 +133,14 @@ export class TestComponent implements OnInit {
       alt: 'table2',
       link: '/advancedtable',
     },
-    {
-      header: 'Calendar',
-      title: 'Date & Time',
-      desc: 'My time is precious & your?',
-      icon: this.imagepath + 'calendar.svg',
-      alt: 'calendar',
-      link: '/calendar',
-    },
+    // {
+    //   header: 'Calendar',
+    //   title: 'Date & Time',
+    //   desc: 'My time is precious & your?',
+    //   icon: this.imagepath + 'calendar.svg',
+    //   alt: 'calendar',
+    //   link: '/calendar',
+    // },
     {
       header: 'Slider',
       title: 'AUI - 5',
