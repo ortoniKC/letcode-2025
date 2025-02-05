@@ -24,6 +24,9 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { FileComponent } from './pages/file/file.component';
 import { TestPracticeComponent } from './grooming/test-practice/test-practice.component';
 import { InterviewComponent } from './grooming/interview/interview.component';
+import { HomeComponent } from './github/home/home.component';
+import { FrameContentComponent } from './pages/frame/frame-content/frame-content.component';
+import { InnerframeComponent } from './pages/frame/innerframe/innerframe.component';
 
 export const routes: Routes = [
   {
@@ -77,11 +80,11 @@ export const routes: Routes = [
   },
   {
     path: 'elements',
-    component: ElementsComponent,
+    component: HomeComponent,
   },
   {
     path: 'frameUI',
-    component: FrameComponent,
+    component: FrameContentComponent,
   },
   {
     path: 'frame',
@@ -124,10 +127,10 @@ export const routes: Routes = [
     path: 'interview',
     component: InterviewComponent,
   },
-  // {
-  //   path: 'innerFrame',
-  //   component: InnerframeComponent,
-  // },
+  {
+    path: 'innerFrame',
+    component: InnerframeComponent,
+  },
   // {
   //   path: 'playwright',
   //   component: PlaywrightComponent,

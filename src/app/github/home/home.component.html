@@ -1,0 +1,59 @@
+<app-pageheader [header]="'Elements'"></app-pageheader>
+<section class="section has-background-white-ter">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-7-desktop is-8-tablet">
+                <div class="card">
+                    <div class="card-content">
+                        <form (ngSubmit)=" findUser() ">
+                            <div class="field has-addons has-addons-centered">
+                                <p class="control is-expanded">
+                                    <input class="input" [(ngModel)]=" username " type="text" name="username"
+                                        placeholder="Enter your git user name eg., ortonikc" required>
+                                </p>
+                                <p class="control">
+                                    <button class="button is-primary" type="submit" id="search">
+                                        Search
+                                    </button>
+                                </p>
+                            </div>
+                        </form>
+                        <div class="block" *ngIf="user">
+                            <app-usercard [user]="user"></app-usercard>
+                            <app-repos [repoUrl]="user.repos_url"></app-repos>
+                        </div>
+                        <div class="block" *ngIf="!user">
+                            <div class="content">
+                                <ol type="1">
+                                    <li>Type and Enter your Git username</li>
+                                    <li>Assert that user has image</li>
+                                    <li>Print the user name & other informations</li>
+                                    <li>Assert that no.of public repositories are listed correctly</li>
+                                    eg. if Public Repos has 10 then in the list 10 links should be available
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3-desktop is-4-tablet">
+                <app-learning-point [link]="link" [list]="lp"></app-learning-point>
+            </div>
+            <div class="column">
+                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
+                </ng-adsense>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ad -->
+<section class="hero is-small has-background-white-ter">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section>

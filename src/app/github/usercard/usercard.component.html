@@ -1,0 +1,40 @@
+<div class="block mt-4">
+    <div class="content">
+        <div class="media">
+            <div class="media-left">
+                <figure class="image is-128x128">
+                    <img [src]="user.avatar_url" class="is-rounded" alt="Placeholder image">
+                </figure>
+            </div>
+            <div class="media-content">
+                <p class="title is-4">{{ user.name | titlecase }}</p>
+                <p class="subtitle is-6">{{ user.location | titlecase }}</p>
+                <span>{{user?.bio}}</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="field is-grouped is-grouped-multiline">
+                <div class="control">
+                    <div class="tags has-addons">
+                        <span class="tag is-primary is-light">Public Repos</span>
+                        <span class=" tag is-info">{{user.public_repos}}</span>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="tags has-addons">
+                        <span class="tag is-primary is-light">Public Gist</span>
+                        <span class=" tag is-info">
+                            {{user.public_gists}}
+                        </span>
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="tags has-addons">
+                        <span class="tag is-primary is-light">Followers</span>
+                        <span class="tag is-info">{{user.followers}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

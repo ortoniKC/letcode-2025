@@ -1,0 +1,9 @@
+<div class="block">
+    <div class="content">
+        <ol type="1">
+            <li *ngFor="let repo of repos">
+                <a [href]="repo.html_url" target="_blank">{{repo.html_url}}</a>
+            </li>
+        </ol>
+    </div>
+</div>
