@@ -155,10 +155,10 @@ export const routes: Routes = [
   //   path: 'protractor',
   //   component: ProtractorcourseComponent,
   // },
-  // {
-  //   path: 'shadow',
-  //   component: ShadowComponent,
-  // },
+  {
+    path: 'shadow',
+    component: ShadowComponent,
+  },
   // {
   //   path: 'courses',
   //   component: CoursesComponent,

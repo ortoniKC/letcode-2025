@@ -1,1 +1,69 @@
-<p>file works!</p>
+<app-pageheader [header]="'Upload and Download'"></app-pageheader>
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-7-desktop is-8-tablet">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="field">
+                            <h2 class="title">Upload
+                            </h2>
+                            <div class="file">
+                                <label class="file-label">
+                                    <input class="file-input" type="file" name="resume"
+                                        (change)="onFileSelected($event)">
+                                    <span class="file-cta">
+                                        <span class="file-icon">
+                                            <i class="fa-solid fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                            Choose a file…
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <p class="label" *ngIf="fileName">Selected File: {{ fileName }}</p>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h2 class="title">Download</h2>
+                        <div class="file is-boxed">
+                            <label class="file-label">
+                                <button class="button">
+                                    <a id="xls" href="assets/files/sample.xlsx" download="sample.xlsx">Download
+                                        Excel</a>
+                                    <br />
+                                </button>
+                                <br />
+                                <button class="button"> <a id="pdf" href="assets/files/sample.pdf"
+                                        download="sample.pdf">Download
+                                        Pdf</a><br /></button><br />
+                                <button class="button"><a id="txt" href="assets/files/sample.txt"
+                                        download="sample.txt">Download
+                                        Text</a><br /></button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3-desktop is-4-tablet">
+                <app-learning-point [link]="link" [list]="lp"></app-learning-point>
+            </div>
+            <div class="column">
+                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
+                </ng-adsense>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ad -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section>

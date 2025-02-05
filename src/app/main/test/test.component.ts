@@ -173,14 +173,14 @@ export class TestComponent implements OnInit {
       alt: 'shadow',
       link: '/shadow',
     },
-    {
-      header: 'Snake Game',
-      title: 'Play it!',
-      desc: 'Play it just for fun',
-      icon: this.imagepath + 'mario.svg',
-      alt: 'game',
-      link: '/game',
-    },
+    // {
+    //   header: 'Snake Game',
+    //   title: 'Play it!',
+    //   desc: 'Play it just for fun',
+    //   icon: this.imagepath + 'mario.svg',
+    //   alt: 'game',
+    //   link: '/game',
+    // },
   ];
 
   constructor(private title: Title, private meta: Meta) {}
