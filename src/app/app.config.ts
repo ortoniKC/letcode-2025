@@ -1,9 +1,12 @@
 import {
   ApplicationConfig,
+  EnvironmentInjector,
   importProvidersFrom,
+  provideEnvironmentInitializer,
   provideZoneChangeDetection,
 } from '@angular/core';
 import { provideRouter, RouterModule } from '@angular/router';
+import { EnvironmentProviders, makeEnvironmentProviders } from '@angular/core';
 
 import { routes } from './app.routes';
 import {
@@ -17,6 +20,7 @@ import { AdsenseModule, AdsenseComponent } from 'ng2-adsense';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideEnvironment(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
@@ -31,3 +35,24 @@ export const appConfig: ApplicationConfig = {
     ),
   ],
 };
+
+function provideEnvironment(): EnvironmentProviders {
+  return makeEnvironmentProviders([
+    {
+      provide: 'ENV',
+      useValue: {
+        production: true,
+        firebaseConfig: {
+          apiKey: 'AIzaSyA6GNjn5DzwmkfYISu2cD84HBfkstrlb7s',
+          authDomain: 'play-letcode.firebaseapp.com',
+          databaseURL: 'https://play-letcode.firebaseio.com',
+          projectId: 'play-letcode',
+          storageBucket: 'play-letcode.appspot.com',
+          messagingSenderId: '329152186575',
+          appId: '1:329152186575:web:ced65caa5001e68d808fba',
+          measurementId: 'G-STHL8RV4RK',
+        },
+      },
+    },
+  ]);
+}
