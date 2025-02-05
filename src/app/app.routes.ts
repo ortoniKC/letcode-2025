@@ -22,6 +22,8 @@ import { AdvtableComponent } from './pages/advtable/advtable.component';
 import { SliderComponent } from './pages/slider/slider.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { FileComponent } from './pages/file/file.component';
+import { TestPracticeComponent } from './grooming/test-practice/test-practice.component';
+import { InterviewComponent } from './grooming/interview/interview.component';
 
 export const routes: Routes = [
   {
@@ -118,10 +120,10 @@ export const routes: Routes = [
     path: 'video/:name',
     component: EmbedVideoComponent,
   },
-  // {
-  //   path: 'interview',
-  //   component: InterviewComponent,
-  // },
+  {
+    path: 'interview',
+    component: InterviewComponent,
+  },
   // {
   //   path: 'innerFrame',
   //   component: InnerframeComponent,
@@ -130,10 +132,10 @@ export const routes: Routes = [
   //   path: 'playwright',
   //   component: PlaywrightComponent,
   // },
-  // {
-  //   path: 'test-practice',
-  //   component: PracticeComponent,
-  // },
+  {
+    path: 'test-practice',
+    component: TestPracticeComponent,
+  },
   // {
   //   path: 'about',
   //   component: AboutComponent,

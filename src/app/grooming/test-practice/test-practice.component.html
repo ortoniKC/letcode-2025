@@ -1,0 +1,312 @@
+<p>grooming works!</p>
+<app-pageheader [header]="'Selenium | Protractor | Playwright | WebDriver IO | Cypress'"></app-pageheader>
+<section class="hero is-small ">
+    <div class="hero-body">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="notification is-info">
+                                <div class="title">Pre-Condition</div>
+                                <div class="subtitle">Create a Service Now Instance and start Practice</div>
+                            </div>
+                            <div class="content">
+                                <p>The tutorial isn't enough! Selenium Practice Site | Test Automation</p>
+                                <p>
+                                    I strongly believe a tutorial isn't enough to learn anything, you need to practice
+                                    to become a pro in it. I am providing you an application to do the practice and to
+                                    enhance your confidence in coding.
+                                </p>
+                                <div class="buttons">
+                                    <a href="https://signon.service-now.com/ssoregister.do" target="_blank"
+                                        class="button is-link">Sign Up
+                                    </a>
+                                    <a href="https://developer.servicenow.com/dev.do#!/home" target="_blank"
+                                        class="button is-link">Login
+                                    </a>
+                                </div>
+                                <div class="notification is-warning">
+                                    <strong>If you find this helpful, A subs to the channel will be a great!</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="block mt-1">
+                                <div class='embed-container'><iframe [src]="pre" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- ad -->
+                    <section class="hero is-small ">
+                        <div class="hero-body">
+                            <div class="column has-text-centered">
+                                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'"
+                                    [adFormat]="'auto'" [adSlot]="6753414644" [display]="'block'"
+                                    [fullWidthResponsive]="true">
+                                </ng-adsense>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="notification is-info">
+                        <div class="title">TC001</div>
+                        <div class="subtitle">Login Positive & Negative</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <h1>Login Positive:</h1>
+                                <ol>
+                                    <li>Navigate to your service now instance</li>
+                                    <li>Verify title is ServiceNow</li>
+                                    <li>Verify username text field has label of User name</li>
+                                    <li>Enter username (admin)</li>
+                                    <li>Verify passowrd text field has label of Password</li>
+                                    <li>Enter password (instance password)</li>
+                                    <li>Verify language dropdown has label of Language</li>
+                                    <li>Verify language is selected as English by default</li>
+                                    <li>Verify forgot password is visible to the user</li>
+                                    <li>Verify user can see the login button</li>
+                                    <li>As user clicks on the login button</li>
+                                    <li>Verify the title as ServiceNow</li>
+                                </ol>
+                                <h1>Login Negative:</h1>
+                                <ol>
+                                    <li>Navigate to your service now instance</li>
+                                    <li>Verify title is ServiceNow</li>
+                                    <li>User clicks on the login button</li>
+                                    <li>Verify the error message as Invalid input in user name!</li>
+                                    <li>Enter the username as admin</li>
+                                    <li>User clicks on the login button</li>
+                                    <li>Verify the error message contains User name or password invalid</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="block mt-1">
+                                <div class='embed-container'><iframe [src]="v1" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="notification is-info">
+                        <div class="title">TC002</div>
+                        <div class="subtitle">Forgot Password</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <ol>
+                                    <li>Navigate to the dervice now instance</li>
+                                    <li>User should see the forgot password</li>
+                                    <li>Click the forgot password</li>
+                                    <li>User should see three tabs as Identify, Verify & Reset</li>
+                                    <li>User should see the username label and text filed</li>
+                                    <li>User should see the next button</li>
+                                    <li>Enter the username as admin</li>
+                                    <li>Click on the next button</li>
+                                    <li>User should see the Request in progress popup</li>
+                                    <li> User should see the Email field and email text box</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="block mt-1">
+                                <div class='embed-container'><iframe [src]="v2" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="notification is-info">
+                        <div class="title">TC003</div>
+                        <div class="subtitle">Create Incident</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <ol>
+                                    <li>Navigate to the service now instance</li>
+                                    <li>Login to the application</li>
+                                    <li>User should see the filter navigator text box</li>
+                                    <li>Type incident in the navigator text box</li>
+                                    <li>User should see the Create New</li>
+                                    <li>Click on the Create New</li>
+                                    <li>Verify the Number text box has already an incident number</li>
+                                    <li>Incident number should starts with INC</li>
+                                    <li>Save the incident number to use later</li>
+                                    <li> Fill only the mandatory field</li>
+                                    <ul>
+                                        <li>Click on the search icon</li>
+                                        <li>User should see the new window</li>
+                                        <li>User should see the search field</li>
+                                        <li>Type Abel Tuter in the search field</li>
+                                        <li>Click on the Abel Tuter from the search results</li>
+                                        <li>Popup should be closed</li>
+                                    </ul>
+                                    <li> Enter the short description (some random text)</li>
+                                    <li> Click on the submit button</li>
+                                    <li> User should create a Incident</li>
+                                    <li> Confirm an incident is created</li>
+                                    <li> User should see the search field</li>
+                                    <li> Search with the incident number (data from step 9)</li>
+                                    <li> Short description should be visible with the data passed in step 11</li>
+                                    <li> Verfiy the title contains Incidents</li>
+                                    <li> Logout the application</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="block mt-1">
+                                <div class='embed-container'><iframe [src]="v3" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- ad -->
+                    <section class="hero is-small ">
+                        <div class="hero-body">
+                            <div class="column has-text-centered">
+                                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'"
+                                    [adFormat]="'auto'" [adSlot]="6753414644" [display]="'block'"
+                                    [fullWidthResponsive]="true">
+                                </ng-adsense>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="notification is-info">
+                        <div class="title">TC004</div>
+                        <div class="subtitle">Computer Database</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <ol>
+                                    <p>Navigate to
+                                        <a href=" https://computer-database.gatling.io/computers"
+                                            target="_blank">Computer
+                                            Database</a>
+                                    </p>
+                                    <li>Verify the title as Computers database</li>
+                                    <li>Verify the page header is the same as the page title</li>
+                                    <li>User must see the filter by computer name text box</li>
+                                    <li>User able to see add a new computer button</li>
+                                    <li>User able to see the filter by name button</li>
+                                    <li>User able to see the table and the headers as follows</li>
+                                    <ul>
+                                        <li>Computer name</li>
+                                        <li>Introduced</li>
+                                        <li>Discontinued</li>
+                                        <li>Company</li>
+                                    </ul>
+                                    <li>The user should see the pagination</li>
+                                </ol>
+                                <ol>
+                                    <p class="subtitle">Add a new computer</p>
+                                    <li>Click on create this computer</li>
+                                    <li>User should see the red background on the computer name field </li>
+                                    <li>Enter the computer name</li>
+                                    <li>Select the company as Nokia</li>
+                                    <li>Submit the form</li>
+                                    <li>Successful message should be displayed</li>
+                                </ol>
+                                <ol>
+                                    <p class="subtitle">Search the created data</p>
+                                    <li>result should be visible (defect)</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="block mt-1">
+                                <div class='embed-container'><iframe [src]="v4" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notification is-info">
+                        <div class="title">TC005</div>
+                        <div class="subtitle">Sauce Demo</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <ol>
+                                    <p>Navigate to
+                                        <a href=" https://www.saucedemo.com/" target="_blank">Saucedemo</a>
+                                    </p>
+                                    <li>Verify the title as Swag Labs</li>
+                                    <li>Verify the login button text is capitalized</li>
+                                    <li>Login with standard_user & secret_sauce</li>
+                                    <li>Verify default filter dropdown is A-Z</li>
+                                    <li>Add the first product to the cart</li>
+                                    <li>Verify the cart badge has 1 product</li>
+                                    <li>Add the last product to the cart</li>
+                                    <li>Verify the cart badge value is increased</li>
+                                    <li>Remove the first product from the cart</li>
+                                    <li>Verify the cart badge has 1 product</li>
+                                    <li>Click on the cart 🛒 </li>
+                                    <li>Verify the added product is available</li>
+                                    <li>Click on the continue shopping</li>
+                                    <li>Change the price filter from low to high</li>
+                                    <li>Verify the price sorted properly</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="block mt-1">
+                                <div class='embed-container'><iframe [src]="v5" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notification is-info">
+                        <div class="title">TC006</div>
+                        <div class="subtitle">React Shopping Cart</div>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="content">
+                                <p>Navigate to
+                                    <a href="https://react-shopping-cart-67954.firebaseapp.com/" target="_blank ">React
+                                        Shopping
+                                        Cart</a>
+                                </p>
+                                <ol>
+                                    <li *ngFor="let step of tc06">{{step}}</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="column ">
+                            <div class="block mt-1 ">
+                                <div class='embed-container'><iframe [src]="v6" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ad -->
+<section class="hero is-small ">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section>

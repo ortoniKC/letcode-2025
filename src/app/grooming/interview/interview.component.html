@@ -1,0 +1,35 @@
+<app-pageheader [header]="'Selenium / Java Interview - Questions & Answers'"></app-pageheader>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <ol *ngFor="let questions of allquestions">
+                        <div class="columns">
+                            <div class="column is-6-desktop is-6-tablet">
+                                <h1 class=" field title is-primary ">{{questions.title}}</h1>
+                                <div class=" content has-text-left ml-6 ">
+                                    <li>{{ questions.Question1 }}</li>
+                                    <li>{{ questions.Question2 }}</li>
+                                    <li>{{ questions.Question3 }}</li>
+                                </div>
+                            </div>
+                            <div class="column is-4-desktop is-4-tablet">
+                                <div class='embed-container'><iframe [src]="questions.vid" frameborder='0'
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'"
+                                    [adFormat]="'auto'" [adSlot]="8487607644" [display]="'block'"
+                                    [fullWidthResponsive]="true">
+                                </ng-adsense>
+                            </div>
+                        </div>
+                        <hr>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

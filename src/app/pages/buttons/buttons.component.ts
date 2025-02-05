@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-buttons',
-  imports: [PageheaderComponent, LearningPointComponent],
+  imports: [PageheaderComponent, LearningPointComponent, RouterLink],
   templateUrl: './buttons.component.html',
 })
 export class ButtonsComponent implements OnInit {
