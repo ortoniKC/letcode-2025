@@ -91,7 +91,7 @@ export class TestComponent implements OnInit {
       desc: 'Feel free to bounce me',
       icon: this.imagepath + 'falling.svg',
       alt: 'alert',
-      link: '/dropable',
+      link: '/droppable',
     },
     {
       header: 'Sort',

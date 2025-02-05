@@ -46,7 +46,7 @@ export const routes: Routes = [
     component: SortableComponent,
   },
   {
-    path: 'dropable',
+    path: 'droppable',
     component: DropableComponent,
   },
   {

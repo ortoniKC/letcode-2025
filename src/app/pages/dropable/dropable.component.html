@@ -1,1 +1,59 @@
-<p>dropable works!</p>
+<app-pageheader [header]="'Drop'"></app-pageheader>
+<section class="section has-background-white-ter">
+    <div class="container">
+        <div class="columns is-multiline">
+            <div class="column is-7-desktop is-8-tablet">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="columns">
+                            <div cdkDropListGroup>
+                                <div class="column example-container">
+                                    <h2 class="subtitle has-text-info">Source</h2>
+                                    <div cdkDropList [cdkDropListData]="sourceList" (cdkDropListDropped)="drop($event)">
+                                        <div id="draggable" *ngFor="let item of sourceList" cdkDrag class="drag-box">
+                                            <p>{{ item }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column example-container">
+                                    <h2 class="subtitle has-text-info">Target</h2>
+                                    <div cdkDropList [cdkDropListData]="targetList" (cdkDropListDropped)="drop($event)"
+                                        id="droppable" class="drop-box">
+                                        <p *ngIf="targetList.length === 0">Drop here</p>
+                                        <div *ngFor="let item of targetList" cdkDrag class="drag-box">
+                                            <p>{{ item }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="subtitle has-text-info">TODO</div>
+                            <ol type="1">
+                                <li>Drag the source box with in the target box</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-3-desktop is-4-tablet">
+                <app-learning-point [link]="link" [list]="lp"></app-learning-point>
+            </div>
+            <div class="column is-2">
+                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
+                </ng-adsense>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ad -->
+<section class="hero is-small has-background-white-ter">
+    <div class="hero-body">
+        <div class="column has-text-centered">
+            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
+                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
+            </ng-adsense>
+        </div>
+    </div>
+</section>
