@@ -18,11 +18,11 @@
                                 </p>
                             </div>
                         </form>
-                        <div class="block" *ngIf="user">
+                        <div class="content" *ngIf=" user">
                             <app-usercard [user]="user"></app-usercard>
                             <app-repos [repoUrl]="user.repos_url"></app-repos>
                         </div>
-                        <div class="block" *ngIf="!user">
+                        <div class="content p-4" *ngIf=" !user">
                             <div class="content">
                                 <ol type="1">
                                     <li>Type and Enter your Git username</li>

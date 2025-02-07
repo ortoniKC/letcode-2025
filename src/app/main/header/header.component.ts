@@ -1,5 +1,5 @@
 import { CommonModule, DOCUMENT } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,14 +8,16 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
 })
 export class HeaderComponent {
-  constructor(@Inject(DOCUMENT) private document: Document) {}
+  themeStatus: string = 'light';
+  constructor(@Inject(DOCUMENT) private document: Document) {
+    const storedTheme =
+      document.documentElement.getAttribute('data-theme') || 'light';
+    this.themeStatus = storedTheme;
+  }
 
   toggleTheme() {
-    const currentTheme =
-      this.document.documentElement.getAttribute('data-theme') === 'light'
-        ? 'dark'
-        : 'light';
-    this.document.documentElement.setAttribute('data-theme', currentTheme);
+    this.themeStatus = this.themeStatus === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', this.themeStatus);
   }
 
   openBurger() {

@@ -1,17 +1,19 @@
-<div class="card">
-    <header class="card-header has-background-primary">
-        <p class="card-header-title has-text-white is-size-4">
-            {{title}}
-        </p>
-        <div class="card-header-icon">
-            <figure class="image container is-48x48">
-                <img [src]="imageUrl" [alt]="alt" class="is-rounded">
-            </figure>
-        </div>
-    </header>
-    <div class="card-content">
-        <div class="has-text-centered">
-            <div class='embed-container'><iframe [src]="url" frameborder='0' allowfullscreen></iframe></div>
+<div class="section">
+    <div class="card">
+        <header class="card-header has-background-primary">
+            <p class="card-header-title has-text-white is-size-4">
+                {{title}}
+            </p>
+            <div class="card-header-icon">
+                <figure class="image container is-48x48">
+                    <img [src]="imageUrl" [alt]="alt" class="is-rounded">
+                </figure>
+            </div>
+        </header>
+        <div class="card-content">
+            <div class="has-text-centered">
+                <div class='embed-container'><iframe [src]="url" frameborder='0' allowfullscreen></iframe></div>
+            </div>
         </div>
     </div>
 </div>

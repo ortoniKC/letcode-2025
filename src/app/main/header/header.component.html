@@ -57,9 +57,13 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <button class="button is-primary" (click)="toggleTheme()">
-                            Toggle Theme
+                        <button id="toggle-theme" class="" [attr.data-theme-status]="themeStatus"
+                            (click)="toggleTheme()">
+                            <span class="icon">
+                                <i [class]="'fa fa-' + (themeStatus === 'dark' ? 'moon' : 'sun')" id="theme-icon"></i>
+                            </span>
                         </button>
+
                         <!-- <a *ngIf="!email" class="button is-primary is-rounded is-small" [routerLink]=" ['/signup'] "
                             (click)="openBurger()">Sign up</a>
                         <a *ngIf="!email" class="button is-primary is-rounded is-small" [routerLink]=" ['/signin'] "
