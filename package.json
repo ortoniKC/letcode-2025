@@ -2,14 +2,14 @@
   "name": "letcode",
   "version": "0.0.0",
   "scripts": {
-    "build-bulma": "sass --load-path=node_modules my-bulma-project.scss style.css",
+    "build-bulma": "sass --load-path=node_modules my-bulma-project.scss src/style.css --no-source-map --style=compressed",
     "start-css": "npm run build-bulma -- --watch",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:letcode": "node dist/letcode/server/server.mjs"
+    "ssr": "node dist/letcode/server/server.mjs"
   },
   "private": true,
   "dependencies": {
