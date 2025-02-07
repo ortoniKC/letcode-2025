@@ -131,60 +131,17 @@ export const routes: Routes = [
     path: 'innerFrame',
     component: InnerframeComponent,
   },
-  // {
-  //   path: 'playwright',
-  //   component: PlaywrightComponent,
-  // },
   {
     path: 'test-practice',
     component: TestPracticeComponent,
   },
-  // {
-  //   path: 'about',
-  //   component: AboutComponent,
-  // },
-  // {
-  //   path: 'selenium',
-  //   component: SeleniumfcComponent,
-  // },
-  // {
-  //   path: 'selenium-tamil',
-  //   component: SeleniumtamilComponent,
-  // },
-  // {
-  //   path: 'protractor',
-  //   component: ProtractorcourseComponent,
-  // },
   {
     path: 'shadow',
     component: ShadowComponent,
   },
-  // {
-  //   path: 'courses',
-  //   component: CoursesComponent,
-  // },
   {
     path: '',
     component: MainComponent,
   },
-  // {
-  //   path: 'chromeextension',
-  //   component: ChromeextComponent,
-  // },
-  // {
-  //   path: 'flutter',
-  //   component: FlutterComponent,
-  // },
-  // {
-  //   path: 'cucumber',
-  //   component: CucumberComponent,
-  // },
-  // {
-  //   path: 'cucumbervideos',
-  //   component: CucumbervideosComponent,
-  // },
-  // {
-  //   path: '**',
-  //   component: PagenotfoundComponent,
-  // },
+  
 ];
