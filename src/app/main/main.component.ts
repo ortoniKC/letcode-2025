@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { JokeService } from '../service/jokes.service';
 import { UpdateTag } from '../metaTags';
@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-main',
   templateUrl: './main.component.html',
   imports: [CommonModule, RouterModule],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MainComponent implements OnInit {
   constructor(
