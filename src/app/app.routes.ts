@@ -27,11 +27,31 @@ import { InterviewComponent } from './grooming/interview/interview.component';
 import { HomeComponent } from './github/home/home.component';
 import { FrameContentComponent } from './pages/frame/frame-content/frame-content.component';
 import { InnerframeComponent } from './pages/frame/innerframe/innerframe.component';
+import { ContactComponent } from './main/contact/contact.component';
+import { OrtoniComponent } from './products/ortoni/ortoni.component';
+import { LetxpathComponent } from './products/letxpath/letxpath.component';
+import { PwrunnerComponent } from './products/pwrunner/pwrunner.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+  },
+  {
+    path: 'product/ortoni-report',
+    component: OrtoniComponent,
+  },
+  {
+    path: 'product/letxpath',
+    component: LetxpathComponent,
+  },
+  {
+    path: 'product/playwright-runner',
+    component: PwrunnerComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
   {
     path: 'test',
@@ -139,9 +159,4 @@ export const routes: Routes = [
     path: 'shadow',
     component: ShadowComponent,
   },
-  {
-    path: '',
-    component: MainComponent,
-  },
-  
 ];

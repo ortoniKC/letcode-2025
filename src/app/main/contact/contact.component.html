@@ -1,0 +1,46 @@
+<section class="section">
+    <div class="container mt-6">
+        <div class="card">
+            <div class="card-content">
+                <p class="title">{{ person.name }}</p>
+                <div class="content">
+                    <div class="icons">
+                        <a [href]="'mailto:' + person.email" target="_blank" class="icon is-large">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                        <a [href]="person.linkedin" target="_blank" class="icon is-large">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a [href]="person.github" target="_blank" class="icon is-large">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a [href]="person.youtube" target="_blank" class="icon is-large">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a [href]="person.kurimurai" target="_blank" class="icon is-large">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a [href]="person.coffee" target="_blank" class="icon is-large">
+                            <i class="fa fa-coffee"></i>
+                        </a>
+                    </div>
+                    <h3 class="title is-5">Work Experience</h3>
+                    <ul>
+                        <li *ngFor="let experience of person.workExperience">
+                            <p class="title is-6">{{ experience.title }}</p>
+                            <p class="has-text-grey">{{ experience.period }}</p>
+                        </li>
+                    </ul>
+                    <h3 class="title is-5">Our Products</h3>
+                    <div class="buttons">
+                        <div *ngFor="let product of person.products" class="box">
+                            <p class="title is-6">{{ product.name }}</p>
+                            <p>{{ product.description }}</p>
+                            <a [href]="product.link" target="_blank" class="button is-info">View Product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

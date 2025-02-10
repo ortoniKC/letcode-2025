@@ -1,0 +1,113 @@
+<section class="section">
+    <div class="container mt-6">
+        <h1 class="title has-text-centered">Playwright Runner by Koushik</h1>
+        <p class="subtitle has-text-centered">A VS Code extension for running Playwright & Cucumber tests effortlessly.
+        </p>
+
+        <hr>
+
+        <h2 class="title is-4">Usage</h2>
+        <div class="content">
+            <h3 class="title is-5">Installation</h3>
+            <p>Install the extension from the Visual Studio Code Marketplace by searching for <strong>"Playwright Runner
+                    by Koushik"</strong> and clicking "Install".</p>
+
+            <h3 class="title is-5">Setting Up Environments</h3>
+            <ul>
+                <li>Open your user settings (File > Preferences > Settings).</li>
+                <li>Navigate to the extension settings under "Playwright Runner by Koushik".</li>
+                <li>Define your test environments and configurations (development, staging, production).</li>
+                <li>Define your Cucumber test commands with different environment names.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 class="title is-4">Running Playwright Tests</h2>
+        <div class="content">
+            <ul>
+                <li>Navigate to your TypeScript or JavaScript test file.</li>
+                <li>The extension automatically detects test functions and suites.</li>
+                <li>Click on the "Run Playwright Test" code lens next to a test to execute it.</li>
+            </ul>
+        </div>
+
+        <h2 class="title is-4">Running Cucumber Scenarios</h2>
+        <div class="content">
+            <ul>
+                <li>Navigate to your feature file.</li>
+                <li>The extension detects Scenario & Scenario Outline.</li>
+                <li>Click on the code lens next to execute the scenario.</li>
+                <li>The scenario name is added to the existing user-defined command.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 class="title is-4">Managing Environments</h2>
+        <div class="content">
+            <ul>
+                <li>Access the environment selector from the "Playwright Runner by Koushik" view in the Activity Bar.
+                </li>
+                <li>View and select different environments from the tree view.</li>
+                <li>Set the default environment for running tests.</li>
+                <li>Add additional command with <code>${{"{command}"}}</code>:</li>
+            </ul>
+            <pre><code class="json">{{code}}</code></pre>
+        </div>
+
+        <hr>
+
+        <h2 class="title is-4">Customization</h2>
+        <div class="content">
+            <ul>
+                <li>Customize environment configurations and default settings as per project requirements.</li>
+                <li>Use provided commands and settings to tailor the extension to your workflow.</li>
+            </ul>
+        </div>
+
+        <h2 class="title is-4">Accessing Settings</h2>
+        <div class="content">
+            <ul>
+                <li>Open the extension settings from the editor sidebar using the "Open Settings" command.</li>
+                <li>Modify environment configurations, default settings, and preferences directly in VS Code.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 class="title is-4">Get Started</h2>
+        <p><a href="https://marketplace.visualstudio.com/items?itemName=ortoni.ortoni" class="button is-link">Download
+                the Extension</a></p>
+        <p>Install the extension, configure your environments, and start running Playwright tests with ease!</p>
+
+        <hr>
+
+        <h2 class="title is-4">Instructions</h2>
+        <figure class="image">
+            <img src="https://raw.githubusercontent.com/ortoniKC/playwright-runner-vscode-extension/master/Set%20the%20environment.png"
+                alt="Settings.json">
+        </figure>
+
+        <hr>
+
+        <h2 class="title is-4">Requirements</h2>
+        <div class="content">
+            <ul>
+                <li>Use GitBash as your default VS Code terminal.</li>
+                <li>A Playwright config file is required to execute tests.</li>
+                <li>Enable <code>testMatch</code> in the config file with the test script path.</li>
+                <li>Cucumber setup is required as it only passes the scenario name to the terminal.</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 class="title is-4">Release Notes</h2>
+        <p>Refer to the change log section for updates.</p>
+
+        <hr>
+
+        <h2 class="title is-4 has-text-centered">Enjoy!</h2>
+    </div>
+</section>
