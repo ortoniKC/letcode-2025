@@ -31,6 +31,8 @@ import { ContactComponent } from './main/contact/contact.component';
 import { OrtoniComponent } from './products/ortoni/ortoni.component';
 import { LetxpathComponent } from './products/letxpath/letxpath.component';
 import { PwrunnerComponent } from './products/pwrunner/pwrunner.component';
+import { CourseComponent } from './courses/course/course.component';
+import { CourseMain } from './courses/main/coursemain.component';
 
 export const routes: Routes = [
   {
@@ -49,6 +51,8 @@ export const routes: Routes = [
     path: 'product/playwright-runner',
     component: PwrunnerComponent,
   },
+  { path: 'courses', component: CourseMain },
+  { path: 'course/:id', component: CourseComponent },
   {
     path: 'contact',
     component: ContactComponent,

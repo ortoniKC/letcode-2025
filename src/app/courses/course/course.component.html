@@ -1,0 +1,31 @@
+<section class="section">
+    <div class="container mt-6">
+        <h1 class="title has-text-centered">{{ course.title }}</h1>
+        <p class="subtitle has-text-centered">{{ course.shortDescription }}</p>
+
+        <div class="columns">
+            <div class="column is-half" *ngIf="course.tamilPlaylist">
+                <h2 class="title is-5">Tamil Playlist</h2>
+                <figure class="image is-16by9">
+                    <iframe class="has-ratio" width="560" height="315"
+                        [src]="'https://www.youtube.com/embed/videoseries?list=' + course.tamilPlaylist | safeUrl"
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                </figure>
+            </div>
+            <div class="column is-half" *ngIf="course.englishPlaylist">
+                <h2 class="title is-5">English Playlist</h2>
+                <figure class="image is-16by9">
+                    <iframe class="has-ratio" width="560" height="315"
+                        [src]="'https://www.youtube.com/embed/videoseries?list=' + course.englishPlaylist | safeUrl"
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                </figure>
+            </div>
+        </div>
+
+        <div class="has-text-centered mt-4">
+            <a class="button is-link" [href]="course.githubLink" target="_blank">View on GitHub</a>
+        </div>
+    </div>
+</section>
