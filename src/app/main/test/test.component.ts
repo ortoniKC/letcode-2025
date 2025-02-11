@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
-import { UpdateTag } from '../../metaTags';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +7,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './test.component.html',
   imports: [MenuComponent, CommonModule],
 })
-export class TestComponent implements OnInit {
+export class TestComponent {
   imagepath = `/assets/mainicons/`;
 
   menuItems = [
@@ -182,15 +180,4 @@ export class TestComponent implements OnInit {
     //   link: '/game',
     // },
   ];
-
-  constructor(private title: Title, private meta: Meta) {}
-
-  ngOnInit(): void {
-    const tags = new UpdateTag(this.title, this.meta);
-    tags.updateTags(
-      'LetCode - Testing Hub',
-      'letcode,letcode koushik,selenium,protractor,testing,practice site,automation practice site, selenium practice site, testing practice site',
-      'Practice like a pro - Testing practice site'
-    );
-  }
 }
