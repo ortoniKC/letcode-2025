@@ -14,12 +14,12 @@
                     </div>
                 </div>
                 <div class="column is-half" *ngIf="test.vid">
-                    <div class="video-container">
+                    <figure class="image is-16by9">
                         <iframe class="has-ratio" width="560" height="315"
                             [src]="'https://www.youtube.com/embed/' + test.vid | safeUrl" frameborder="0"
                             allowfullscreen>
                         </iframe>
-                    </div>
+                    </figure>
                     <hr>
                 </div>
             </div>
