@@ -19,10 +19,6 @@ export class CalendarComponent {
   ];
   link = 'calender';
   birthday: string = '';
-
-  onSubmit() {
-    console.log('Selected Birthday:', this.birthday);
-  }
   private route = inject(ActivatedRoute);
   private seoService = inject(UpdateMetaTag);
   ngOnInit() {

@@ -19,7 +19,6 @@ export class MainComponent implements OnInit {
         this.joke = joke;
       },
       (err) => {
-        console.log('KOUSHIK: ' + err);
         this.joke = undefined;
       }
     );

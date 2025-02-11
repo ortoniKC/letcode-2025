@@ -45,7 +45,6 @@ export class AlertComponent implements OnInit {
   myName: string = '';
   myPrompt(name: any) {
     this.myName = prompt('Enter your name') || '';
-    console.log(this.myName);
   }
   onclick() {
     let modal = document.getElementsByClassName('modal')[0];

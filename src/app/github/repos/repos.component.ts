@@ -31,9 +31,7 @@ export class ReposComponent implements OnInit, OnChanges {
           this.repos = repo;
           this.changeRef.detectChanges();
         },
-        (err) => {
-          console.log(err);
-        }
+        (err) => {}
       );
     }
   }

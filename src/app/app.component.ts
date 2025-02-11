@@ -24,7 +24,6 @@ export class AppComponent {
 
   ngOnInit() {
     this.route.data.subscribe((data: Data) => {
-      console.log('Route Data:', data);
       const title = data['title'] || 'LetCode with Koushik';
       const description = data['description'] || 'Test automation hub';
       const keywords =

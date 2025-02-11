@@ -19,7 +19,6 @@ export class VideoDetailComponent {
       this.link = params.get('link');
       if (this.link && this.videos[this.link]) {
         this.selectedVideo = this.videos[this.link];
-        console.log(this.selectedVideo);
       }
     });
   }

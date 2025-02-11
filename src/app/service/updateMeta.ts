@@ -10,8 +10,6 @@ export class UpdateMetaTag {
   private metaService = inject(Meta);
 
   updateMetaTags(data: Data) {
-    console.log('SEO Data:', data);
-
     const title = data['title'] || 'Default Title';
     const description = data['description'] || 'Default description';
     const keywords = data['keywords'] || 'angular, seo';

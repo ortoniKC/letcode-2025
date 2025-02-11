@@ -7,9 +7,8 @@
                     <div class="card-content">
                         <div class="field">
                             <label for="birthday">Select your Birthday:</label>
-                            <form (ngSubmit)="onSubmit()">
+                            <form>
                                 <input type="date" class="button" id="birthday" name="birthday" [(ngModel)]="birthday">
-                                <button class="button" type="submit">Submit</button>
                             </form>
                             <p class="label pt-3">{{birthday}}</p>
                         </div>
