@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
-
+interface Course {
+  id: string;
+  title: string;
+  shortDescription: string;
+  englishPlaylist: string;
+  tamilPlaylist?: string;
+}
 @Injectable({
   providedIn: 'root',
 })
 export class CourseService {
-  private courses = [
+  private courses: Course[] = [
     {
       id: 'npm-package',
       title: 'NPM Package - Ortoni Report',
@@ -16,6 +22,7 @@ export class CourseService {
       title: 'Java Basic',
       shortDescription: 'Recommended to follow the playlist as listed',
       tamilPlaylist: 'PL699Xf-_ilW6vI9FHmePi1TvKyzYATgXi',
+      englishPlaylist: 'PL699Xf-_ilW569-6sPgZLreeUjbHi41xc',
     },
     {
       id: 'appetize',
@@ -28,7 +35,7 @@ export class CourseService {
       title: 'API Testing Course',
       shortDescription: 'Learn API testing with various tools and frameworks.',
       englishPlaylist: 'PL699Xf-_ilW49SXbSmnSuL2tq-3ab_6qL',
-      tamilPlaylist: 'PL699Xf-_ilW49SXbSmnSuL2tq-3ab_6qL',
+      tamilPlaylist: 'PLQP9SC4Infiyqrluvp-q7ZW1ERn3RlcyL',
     },
     {
       id: 'playwright-cucumber',
@@ -42,24 +49,28 @@ export class CourseService {
       title: 'Playwright Java',
       shortDescription: 'Using Playwright with Java for end-to-end testing.',
       englishPlaylist: 'PL699Xf-_ilW7qlOrCGqwsWkgNkHQTqaBb',
+      tamilPlaylist: 'PLQP9SC4InfiyBhXnft7eqzE95QdVyTQGg',
+    },
+    {
+      id: 'playwright-tyepescript',
+      title: 'Playwright with Typescript',
+      shortDescription:
+        'Using Playwright with Typescript for end-to-end testing.',
+      englishPlaylist: 'PL699Xf-_ilW7EyC6lMuU4jelKemmS6KgD',
     },
     {
       id: 'cucumber-selenium',
       title: 'Cucumber + Selenium Java',
       shortDescription: 'Behavior-driven testing using Selenium and Cucumber.',
       englishPlaylist: 'PL699Xf-_ilW6oK3_otMtu7BPqiy0VlkE-',
+      tamilPlaylist: 'PLQP9SC4InfixONdn-TY-1Fp7t0kxHaGh1',
     },
     {
-      id: 'selenium-english',
-      title: 'Selenium English V3 - Full Course',
-      shortDescription: 'Comprehensive Selenium course in English.',
-      englishPlaylist: 'PL699Xf-_ilW47NUWNLs_5kNP2pFdsE_XV',
-    },
-    {
-      id: 'selenium-tamil',
+      id: 'selenium',
       title: 'Selenium Java - Tamil',
       shortDescription: 'Learn Selenium in Tamil language.',
       tamilPlaylist: 'PL699Xf-_ilW6vI9FHmePi1TvKyzYATgXi',
+      englishPlaylist: 'PL699Xf-_ilW47NUWNLs_5kNP2pFdsE_XV',
     },
     {
       id: 'automation-interview',
@@ -72,6 +83,7 @@ export class CourseService {
       title: 'XPath Tutorial',
       shortDescription: 'Learn XPath techniques for test automation.',
       englishPlaylist: 'PL699Xf-_ilW4sqC76skEN5vHT0M1YNXoU',
+      tamilPlaylist: 'PLQP9SC4InfiyHD8s6_NUV6Gg6m2kmISMY',
     },
     {
       id: 'rpa',
@@ -90,6 +102,7 @@ export class CourseService {
       title: 'JavaScript for Test Automation',
       shortDescription: 'Using JavaScript in test automation frameworks.',
       englishPlaylist: 'PL699Xf-_ilW6kwrOg4Wm87ZJ-idHubBrG',
+      tamilPlaylist: 'PLQP9SC4Infiy2ztb9-TJx8gSym2JbQYCx',
     },
     {
       id: 'letxpath-plugin',
@@ -104,7 +117,7 @@ export class CourseService {
       englishPlaylist: 'PL699Xf-_ilW7aQ6lBWXjaIheZsduOpcR5',
     },
     {
-      id: 'protractor-tutorial',
+      id: 'protractor',
       title: 'Protractor Tutorial - LetCode',
       shortDescription: 'Learn how to use Protractor for Angular testing.',
       englishPlaylist: 'PL699Xf-_ilW63aUN3w4HS9IgmPYOGI2hK',
@@ -124,6 +137,6 @@ export class CourseService {
   ];
 
   getCourseById(id: string) {
-    return this.courses.find((course) => course.id === id);
+    return this.courses.find((course: { id: string }) => course.id === id);
   }
 }

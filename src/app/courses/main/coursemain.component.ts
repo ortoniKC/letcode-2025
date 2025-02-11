@@ -19,31 +19,31 @@ export class CourseMain {
       title: 'JavaScript',
       description:
         'Learn the basics of JavaScript, curated for test automation',
-      id: '',
+      id: 'javascript-test-automation',
     },
     {
       title: 'TypeScript',
       description:
         'Learn the basics of TypeScript, curated for test automation',
-      id: '',
+      id: 'typescript-test-automation',
     },
     {
       title: 'Selenium',
       description:
         'Learn the in-depth concetps of Selenium Webdrivwer with Java - Basic to advance concepts',
-      id: '',
+      id: 'selenium',
     },
     {
       title: 'Protractor',
       description:
         'The most adavanced course available in online for free (Protractor is deprecated)',
-      id: '',
+      id: 'protractor',
     },
     {
       title: 'Playwright - TypeScript',
       description:
         'Come and fall in love with Playwright - Typescript with depth knowledge',
-      id: '',
+      id: 'playwright-tyepescript',
     },
     {
       title: 'Playwright - Java',
@@ -54,7 +54,7 @@ export class CourseMain {
     {
       title: 'Chrome extension development',
       description: 'Learn how to build chrome extension with hands-on project',
-      id: '',
+      id: 'chrome-extension',
     },
     {
       title: 'Develop NPM package',
@@ -76,6 +76,27 @@ export class CourseMain {
       description:
         'Utilize the BDD tool Cucumber, the easiest way of integration',
       id: 'playwright-cucumber',
+    },
+
+    {
+      title: 'Automation Interview Preparation',
+      description: 'Prepare for automation testing job interviews.',
+      id: 'automation-interview',
+    },
+    {
+      title: 'XPath Tutorial',
+      description: 'Learn XPath techniques for test automation.',
+      id: 'xpath-tutorial',
+    },
+    {
+      title: 'Robotic Process Automation (RPA)',
+      description: 'Learn the fundamentals of RPA.',
+      id: 'rpa',
+    },
+    {
+      title: 'Selenium Cucumber',
+      description: 'Behavior-driven testing using Selenium and Cucumber',
+      id: 'cucumber-selenium',
     },
   ];
 }
