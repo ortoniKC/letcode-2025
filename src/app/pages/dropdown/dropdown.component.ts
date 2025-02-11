@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-dropdown',
@@ -18,10 +20,17 @@ export class DropdownComponent implements OnInit {
     'selectByValue()',
     'getFirstSelectedOption()',
   ];
-  link = '/video/dropdowns';
+  link = 'dropdowns';
   constructor() {}
 
-  ngOnInit(): void {}
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
+
   changed: string = '';
   onChanged(changed: any) {
     this.changed = changed.target.selectedOptions[0].textContent;

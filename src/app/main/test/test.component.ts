@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-test-site',
@@ -180,4 +182,11 @@ export class TestComponent {
     //   link: '/game',
     // },
   ];
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
 }

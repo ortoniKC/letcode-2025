@@ -29,10 +29,8 @@ export const appConfig: ApplicationConfig = {
     JokeService,
     provideHttpClient(withFetch()),
     importProvidersFrom(
-      RouterModule,
       AdsenseModule.forRoot({
         adClient: 'ca-pub-6251538267574677',
-        adSlot: '6753414644',
       })
     ),
     provideAnimationsAsync(),

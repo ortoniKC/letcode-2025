@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { DataTablesModule } from 'angular-datatables';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-advtable',
@@ -21,7 +23,7 @@ import { DataTablesModule } from 'angular-datatables';
 })
 export class AdvtableComponent {
   lp = ['WebTable concept', 'Pagination', 'Sorting'];
-  link = '/video/AdvancedTable';
+  link = 'advancetable';
   public universities = [
     {
       name: 'University of Aberdeen',
@@ -402,7 +404,8 @@ export class AdvtableComponent {
     },
   ];
   constructor() {}
-
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
   dtOptions: any = {};
   ngOnInit() {
     this.dtOptions = {
@@ -411,5 +414,8 @@ export class AdvtableComponent {
       lengthMenu: [5, 10, 25],
       processing: true,
     };
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
 }

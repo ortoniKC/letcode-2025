@@ -3,11 +3,14 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
+  inject,
   ViewChild,
 } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { SelectionModel } from '@angular/cdk/collections';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-selectable',
@@ -34,7 +37,7 @@ export class SelectableComponent {
   selectable: any;
 
   learningPoint = ['Actions', 'Mouse Actions()', 'Keyboard Actions'];
-  link = '/video/selectable';
+  link = 'selectable';
   selection = new SelectionModel<string>(true); // Allows multiple selections
 
   toggleSelection(item: string) {
@@ -43,5 +46,12 @@ export class SelectableComponent {
 
   isSelected(item: string): boolean {
     return this.selection.isSelected(item);
+  }
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
 }

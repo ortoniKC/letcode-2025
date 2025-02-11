@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CourseService } from '../courseservice.service';
-import { SafeUrlPipe } from '../safe-url.pipe';
+import { CourseService } from '../../service/courseservice.service';
+import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-course',
@@ -12,15 +13,17 @@ import { SafeUrlPipe } from '../safe-url.pipe';
 export class CourseComponent implements OnInit {
   course: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private courseService: CourseService
-  ) {}
+  constructor(private courseService: CourseService) {}
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
 
   ngOnInit(): void {
     const courseId = this.route.snapshot.paramMap.get('id');
     if (courseId) {
       this.course = this.courseService.getCourseById(courseId);
     }
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
 }

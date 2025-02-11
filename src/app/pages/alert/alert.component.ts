@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-alert',
@@ -19,9 +21,15 @@ export class AlertComponent implements OnInit {
     'sendKeys()',
     'Sweet Alert',
   ];
-  link = '/video/alert';
+  link = 'alert';
 
-  ngOnInit(): void {}
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
   simple() {
     alert('Hey! Welcome to LetCode');
   }

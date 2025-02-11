@@ -1,6 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-waits',
@@ -10,13 +12,19 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 })
 export class WaitsComponent {
   lp = ['ExpectedConditions', 'Waits for an alert'];
-  link = '/video/Waits';
+  link = 'waits';
 
-  constructor() {}
-  ngOnInit(): void {}
   simple() {
     setTimeout(() => {
       alert("Finally I'm here, just to say Hi :)");
     }, 4500);
+  }
+
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
 }

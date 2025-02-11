@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../../service/updateMeta';
 
 @Component({
   selector: 'app-frame-content',
@@ -22,5 +24,12 @@ export class FrameContentComponent {
       'none';
     a.querySelectorAll('body > app-root > app-footer')[0].style.display =
       'none';
+  }
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
 }

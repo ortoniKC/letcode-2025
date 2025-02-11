@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 export interface Dessert {
   calories: number;
   carbs: number;
@@ -31,7 +33,7 @@ export class TableComponent {
     'Chaining of locators',
     'Comparable (Java)',
   ];
-  link = '/video/webTable';
+  link = 'webTable';
 
   desserts: Dessert[] = [
     {
@@ -106,6 +108,13 @@ export class TableComponent {
         default:
           return 0;
       }
+    });
+  }
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
     });
   }
 }

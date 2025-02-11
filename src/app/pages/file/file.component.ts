@@ -1,7 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-file',
@@ -10,13 +12,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './file.component.html',
 })
 export class FileComponent {
-  ngOnInit(): void {}
   lp = [
     'How to download & upload files',
     'ChromeOption class',
     'SetFileDetector',
   ];
-  link = '/video/File';
+  link = 'file';
   fileName: string = '';
 
   onFileSelected(event: Event) {
@@ -24,5 +25,12 @@ export class FileComponent {
     if (file) {
       this.fileName = file.name; // Save file name
     }
+  }
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
 }

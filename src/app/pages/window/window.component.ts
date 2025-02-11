@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-window',
@@ -11,6 +13,13 @@ import { Title } from '@angular/platform-browser';
 export class WindowComponent implements OnInit {
   constructor(private titleService: Title) {
     this.titleService.setTitle('Window handling - LetCode');
+  }
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
   }
   openRequestedPopup() {
     var myWindow = window.open(
@@ -41,6 +50,5 @@ export class WindowComponent implements OnInit {
     'Set - LinkedHashSet',
     'Iterator or loop',
   ];
-  link = '/video/window';
-  ngOnInit(): void {}
+  link = 'window';
 }

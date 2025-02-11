@@ -6,9 +6,11 @@ import {
 } from '@angular/cdk/drag-drop';
 
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-dropable',
@@ -25,10 +27,16 @@ import { PageheaderComponent } from '../pageheader/pageheader.component';
 })
 export class DropableComponent {
   lp = ['Actions', 'dragAndDrop()', 'perform()'];
-  link = '/video/droppable';
+  link = 'droppable';
   sourceList = ['Drag me to my target'];
   targetList: string[] = [];
-
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(

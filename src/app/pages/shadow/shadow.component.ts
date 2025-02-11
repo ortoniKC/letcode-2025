@@ -15,7 +15,7 @@ export class ShadowComponent implements OnInit {
     'What is open & close Shadow DOM',
     'How to interact with open & close Shadow DOM',
   ];
-  link = '/video/Shadow';
+  link = 'shadow';
 
   constructor() {}
 

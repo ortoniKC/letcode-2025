@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-ortoni',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
   templateUrl: './ortoni.component.html',
 })
 export class OrtoniComponent {
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
   code = `
   import { defineConfig } from "@playwright/test";
 import { OrtoniReportConfig } from "ortoni-report";

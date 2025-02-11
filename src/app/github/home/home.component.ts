@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
+  inject,
   NgModule,
   OnInit,
 } from '@angular/core';
@@ -12,6 +13,8 @@ import { ReposComponent } from '../repos/repos.component';
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { GithubService } from '../../service/github.service';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-home',
@@ -37,13 +40,19 @@ export class HomeComponent implements OnInit {
     'To validate image is exists',
     'Assert (Validation)',
   ];
-  link = '/video/elements';
+  link = 'elements';
 
   constructor(
     private ref: ChangeDetectorRef,
     private githibService: GithubService // private spinner: NgxSpinnerService
   ) {}
-  ngOnInit(): void {}
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
 
   findUser() {
     // this.spinner.show();

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { title } from 'process';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,13 @@ import { title } from 'process';
   templateUrl: './coursemain.component.html',
 })
 export class CourseMain {
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
   courses = [
     {
       title: 'Java Basic',
