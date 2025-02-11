@@ -1,4 +1,6 @@
-import { Routes } from '@angular/router';
+
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './main/test/test.component';
 import { MainComponent } from './main/main.component';
 import { EditComponent } from './pages/edit/edit.component';
@@ -336,4 +338,15 @@ export const routes: Routes = [
     },
   },
 ];
+
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top', // Scrolls to the top on navigation
+      anchorScrolling: 'enabled' // Enables scrolling to anchor links
+    })
+  ],
+  exports: [RouterModule]
+})
 export class AppRoutingModule {}
