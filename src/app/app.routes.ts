@@ -66,36 +66,37 @@ export const routes: Routes = [
     path: 'product/playwright-runner',
     component: PwrunnerComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Playwright Runner - VS Code extension',
+      description: 'Execute Playwright tests with one click',
+      keywords: 'pw plugin, playwright koushik',
     },
   },
   {
     path: 'courses',
     component: CourseMain,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Courses | LetCode',
+      description: 'Free courses offered by LetCode with Koushik',
+      keywords:
+        'free test automation course, best automation course, free playwright, selenium',
     },
   },
   {
     path: 'contact',
     component: ContactComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Contact | LetCode',
+      description: "Check out Koushik's public information ",
+      keywords: 'letcode with koushik, letcode koushik, koushik',
     },
   },
   {
     path: 'test',
     component: TestComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Workspace | LetCode',
+      description: 'Practice and learn test automation',
+      keywords: 'selenium practice site',
     },
   },
   {
