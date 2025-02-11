@@ -1,18 +1,13 @@
-// Set your brand colors
-$purple: #8a4d76;
-$pink: #fa7c91;
-$brown: #757763;
-$beige-light: #d0d1cd;
-$beige-lighter: #eff0eb;
-
 // Path to Bulma's sass folder
 @use "bulma/sass" with ($family-primary: '"Nunito", sans-serif',
-    $grey-dark: $brown,
-    $grey-light: $beige-light,
-    $primary: $purple,
-    $link: $pink,
-    $control-border-width: 2px,
-    $input-shadow: none);
-
+   $primary: #433878,
+   $info: #7E60BF,
+   $link: #E4B1F0,
+   $success: #16C47F,
+   $warning: #F2C94C,
+   $danger: #EB5757,
+   $grey-dark: #333333,
+   $grey-light: #F5F5F5,
+);
 // Import the Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
