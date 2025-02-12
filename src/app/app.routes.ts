@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './main/test/test.component';
@@ -339,14 +338,14 @@ export const routes: Routes = [
   },
 ];
 
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {
-      scrollPositionRestoration: 'top', // Scrolls to the top on navigation
-      anchorScrolling: 'enabled' // Enables scrolling to anchor links
-    })
+      onSameUrlNavigation: 'reload',
+      scrollPositionRestoration: 'top',
+      anchorScrolling: 'enabled',
+    }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
