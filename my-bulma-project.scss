@@ -1,13 +1,13 @@
 // Path to Bulma's sass folder
 @use "bulma/sass" with ($family-primary: '"Nunito", sans-serif',
-   $primary: #433878,
-   $info: #7E60BF,
-   $link: #E4B1F0,
+   $primary: #2a9d8f,
+   $info: #f4a261,
+   $link: #264653,
    $success: #16C47F,
    $warning: #F2C94C,
    $danger: #EB5757,
-   $grey-dark: #333333,
-   $grey-light: #F5F5F5,
+   // $grey-dark: #333333,
+   // $grey-light: #F5F5F5,
 );
 // Import the Google Font
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");

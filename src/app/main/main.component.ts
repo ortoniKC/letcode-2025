@@ -8,6 +8,7 @@ import { YtComponent } from './yt/yt.component';
   selector: 'app-main',
   templateUrl: './main.component.html',
   imports: [CommonModule, RouterModule],
+  styleUrl: 'style.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MainComponent implements OnInit {

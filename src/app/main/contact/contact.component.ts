@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
 

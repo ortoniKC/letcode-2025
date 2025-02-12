@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-learning-point',
   imports: [CommonModule, RouterModule],
   templateUrl: './learning-point.component.html',
+  styleUrl: 'style.css',
 })
 export class LearningPointComponent {
   @Input() list = [''];

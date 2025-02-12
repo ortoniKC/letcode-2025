@@ -1,4 +1,4 @@
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" [routerLink]="['/']">
@@ -59,11 +59,6 @@
                                 <i [class]="'fa fa-' + (themeStatus === 'dark' ? 'moon' : 'sun')" id="theme-icon"></i>
                             </span>
                         </button>
-
-                        <!-- <a *ngIf="!email" class="button is-primary is-rounded is-small" [routerLink]=" ['/signup'] "
-                            (click)="openBurger()">Sign up</a>
-                        <a *ngIf="!email" class="button is-primary is-rounded is-small" [routerLink]=" ['/signin'] "
-                            (click)="openBurger()">Log in</a> -->
                     </div>
                 </div>
             </div>
