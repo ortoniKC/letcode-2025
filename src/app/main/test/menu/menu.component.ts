@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-menu',
   imports: [RouterModule],
   templateUrl: './menu.component.html',
+  styleUrl: 'style.css',
 })
 export class MenuComponent implements OnInit {
   @Input() title: string = '';

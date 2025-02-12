@@ -110,6 +110,14 @@ export class TestComponent {
       link: '/selectable',
     },
     {
+      header: 'Slider',
+      title: 'AUI - 5',
+      desc: 'Hmm.. Can you slide me?',
+      icon: this.imagepath + 'slider.svg',
+      alt: 'slider',
+      link: '/slider',
+    },
+    {
       header: 'Waits',
       title: 'Timeout',
       desc: "It's ok to wait but you know..",
@@ -141,14 +149,7 @@ export class TestComponent {
       alt: 'calendar',
       link: '/calendar',
     },
-    {
-      header: 'Slider',
-      title: 'AUI - 5',
-      desc: 'Hmm.. Can you slide me?',
-      icon: this.imagepath + 'slider.svg',
-      alt: 'slider',
-      link: '/slider',
-    },
+
     {
       header: 'Forms',
       title: 'All in One',

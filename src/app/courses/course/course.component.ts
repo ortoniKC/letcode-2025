@@ -1,14 +1,21 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CourseService } from '../../service/courseservice.service';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { YtComponent } from '../../main/yt/yt.component';
 
 @Component({
   selector: 'app-course',
-  imports: [CommonModule, SafeUrlPipe],
+  imports: [CommonModule, SafeUrlPipe, YtComponent],
   templateUrl: './course.component.html',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CourseComponent implements OnInit {
   course: any;

@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
+import { YtComponent } from '../../main/yt/yt.component';
 
 @Component({
   selector: 'app-video-detail',
-  imports: [CommonModule, SafeUrlPipe],
+  imports: [CommonModule, SafeUrlPipe, YtComponent],
   templateUrl: './video-detail.component.html',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class VideoDetailComponent {
   link: string | null = '';

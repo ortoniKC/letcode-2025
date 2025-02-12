@@ -8,6 +8,7 @@ import { UpdateMetaTag } from '../../service/updateMeta';
   selector: 'app-main',
   imports: [CommonModule, RouterModule],
   templateUrl: './coursemain.component.html',
+  styleUrl: 'style.css',
 })
 export class CourseMain {
   private route = inject(ActivatedRoute);
