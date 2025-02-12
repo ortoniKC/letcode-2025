@@ -41,7 +41,7 @@ export const routes: Routes = [
     data: {
       title: 'LetCode with Koushik',
       description: 'Testing Hub, a platform to learn',
-      keywords: 'letcode, letcode koushik, selenium, playwright',
+      keywords: 'LetCode, LetCode koushik, selenium, playwright',
     },
   },
   {
@@ -76,7 +76,7 @@ export const routes: Routes = [
     path: 'courses',
     component: CourseMain,
     data: {
-      title: 'Courses | LetCode',
+      title: 'Courses | LetCode with Koushik',
       description: 'Free courses offered by LetCode with Koushik',
       keywords:
         'free test automation course, best automation course, free playwright, selenium',
@@ -86,254 +86,278 @@ export const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
     data: {
-      title: 'Contact | LetCode',
+      title: 'Contact | LetCode with Koushik',
       description: "Check out Koushik's public information ",
-      keywords: 'letcode with koushik, letcode koushik, koushik',
+      keywords: 'LetCode with koushik, LetCode koushik, koushik',
     },
   },
   {
     path: 'test',
     component: TestComponent,
     data: {
-      title: 'Workspace | LetCode',
+      title: 'Workspace | LetCode with Koushik',
       description: 'Practice and learn test automation',
-      keywords: 'selenium practice site',
+      keywords: 'test automation, selenium practice site',
     },
   },
   {
     path: 'table',
     component: TableComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'WebTable | LetCode with Koushik',
+      description: 'Practice the web table concept',
+      keywords:
+        'selenium web table, playwright web table, protractor web table',
     },
   },
   {
     path: 'sortable',
     component: SortableComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Sortable | LetCode with Koushik',
+      description: 'Practice the sortable table concept',
+      keywords:
+        'selenium sortable table, playwright sortable table, protractor sortable table',
     },
   },
+
   {
     path: 'droppable',
     component: DropableComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Droppable | LetCode with Koushik',
+      description: 'Practice the droppable interaction concept',
+      keywords:
+        'selenium droppable, playwright droppable, protractor droppable',
     },
   },
   {
     path: 'draggable',
     component: DraggableComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Draggable | LetCode with Koushik',
+      description: 'Practice the draggable interaction concept',
+      keywords:
+        'selenium draggable, playwright draggable, protractor draggable',
     },
   },
   {
     path: 'buttons',
     component: ButtonsComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Buttons | LetCode with Koushik',
+      description: 'Practice button interactions and events',
+      keywords:
+        'selenium button click, playwright button click, protractor button click',
     },
   },
   {
     path: 'alert',
     component: AlertComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Alert | LetCode with Koushik',
+      description: 'Practice handling alert pop-ups',
+      keywords:
+        'selenium alert handling, playwright alert handling, protractor alert handling',
     },
   },
   {
     path: 'windows',
     component: WindowComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Windows | LetCode with Koushik',
+      description: 'Practice handling multiple windows and tabs',
+      keywords:
+        'selenium window handling, playwright window handling, protractor window handling',
     },
   },
   {
     path: 'dropdowns',
     component: DropdownComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Dropdowns | LetCode with Koushik',
+      description: 'Practice working with dropdown selections',
+      keywords:
+        'selenium dropdown select, playwright dropdown select, protractor dropdown select',
     },
   },
   {
     path: 'edit',
     component: EditComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Edit Fields | LetCode with Koushik',
+      description: 'Practice interacting with input fields',
+      keywords:
+        'selenium input field, playwright input field, protractor input field',
     },
   },
-
   {
     path: 'radio',
     component: RadioComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Radio Buttons | LetCode with Koushik',
+      description: 'Practice selecting radio buttons',
+      keywords:
+        'selenium radio button, playwright radio button, protractor radio button',
     },
   },
+
   {
     path: 'elements',
     component: HomeComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Elements | LetCode with Koushik',
+      description: 'Practice working with different web elements',
+      keywords:
+        'selenium web elements, playwright web elements, protractor web elements',
     },
   },
   {
     path: 'frameUI',
     component: FrameContentComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Frame UI | LetCode with Koushik',
+      description: 'Practice handling frames and embedded content',
+      keywords: 'selenium frames, playwright frames, protractor frames',
     },
   },
   {
     path: 'frame',
     component: FrameComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Frame | LetCode with Koushik',
+      description: 'Practice switching between frames',
+      keywords:
+        'selenium frame switching, playwright frame switching, protractor frame switching',
     },
   },
   {
     path: 'selectable',
     component: SelectableComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Selectable | LetCode with Koushik',
+      description:
+        'Practice selecting and interacting with selectable elements',
+      keywords:
+        'selenium selectable elements, playwright selectable elements, protractor selectable elements',
     },
   },
   {
     path: 'waits',
     component: WaitsComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Waits | LetCode with Koushik',
+      description: 'Practice handling waits and synchronization',
+      keywords: 'selenium waits, playwright waits, protractor waits',
     },
   },
+
   {
     path: 'advancedtable',
     component: AdvtableComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Advanced Table | LetCode with Koushik',
+      description: 'Practice working with advanced web tables',
+      keywords:
+        'selenium advanced table, playwright advanced table, protractor advanced table',
     },
   },
   {
     path: 'slider',
     component: SliderComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Slider | LetCode with Koushik',
+      description: 'Practice interacting with sliders',
+      keywords: 'selenium slider, playwright slider, protractor slider',
     },
   },
   {
     path: 'forms',
     component: FormsComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Forms | LetCode with Koushik',
+      description: 'Practice filling out and validating forms',
+      keywords:
+        'selenium form automation, playwright form automation, protractor form automation',
     },
   },
   {
     path: 'calendar',
     component: CalendarComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Calendar | LetCode with Koushik',
+      description: 'Practice working with date pickers and calendars',
+      keywords:
+        'selenium calendar handling, playwright calendar handling, protractor calendar handling',
     },
   },
-
   {
     path: 'file',
     component: FileComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'File Upload | LetCode with Koushik',
+      description: 'Practice handling file uploads and downloads',
+      keywords:
+        'selenium file upload, playwright file upload, protractor file upload',
     },
   },
   {
     path: 'course/:id',
     component: CourseComponent,
     data: {
-      title: 'LetCode - Course',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Course | LetCode with Koushik',
+      description: 'Explore detailed course content',
+      keywords: 'LetCode course, automation learning, testing tutorials',
     },
   },
   {
     path: 'video/:link',
     component: VideoDetailComponent,
     data: {
-      title: 'Test automation learning',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'seleniu, playwright, protractor, api testing',
+      title: 'Test Automation Learning | LetCode with Koushik',
+      description: 'Watch videos on test automation concepts',
+      keywords:
+        'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
     },
   },
   {
     path: 'interview',
     component: InterviewComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Interview Questions | LetCode with Koushik',
+      description: 'Practice common automation testing interview questions',
+      keywords:
+        'selenium interview questions, playwright interview questions, protractor interview questions',
     },
   },
   {
     path: 'innerFrame',
     component: InnerframeComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Inner Frame | LetCode with Koushik',
+      description: 'Practice handling nested frames',
+      keywords:
+        'selenium nested frames, playwright nested frames, protractor nested frames',
     },
   },
   {
     path: 'test-practice',
     component: TestPracticeComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Test Practice | LetCode with Koushik',
+      description: 'Practice real-world test automation scenarios',
+      keywords:
+        'selenium practice tests, playwright practice tests, protractor practice tests',
     },
   },
   {
     path: 'shadow',
     component: ShadowComponent,
     data: {
-      title: 'LetXPath - Chrome extension',
-      description: 'Testing Hub, a platform to learn',
-      keywords: 'letxpath, chrome xpath plugin, chrome xpath',
+      title: 'Shadow DOM | LetCode with Koushik',
+      description: 'Practice handling shadow DOM elements',
+      keywords:
+        'selenium shadow DOM, playwright shadow DOM, protractor shadow DOM',
     },
   },
 ];
