@@ -1,12 +1,9 @@
 import {
   ApplicationConfig,
-  CUSTOM_ELEMENTS_SCHEMA,
-  EnvironmentInjector,
   importProvidersFrom,
-  provideEnvironmentInitializer,
   provideZoneChangeDetection,
 } from '@angular/core';
-import { provideRouter, RouterModule } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { EnvironmentProviders, makeEnvironmentProviders } from '@angular/core';
 
 import { routes } from './app.routes';
@@ -17,14 +14,20 @@ import {
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { JokeService } from './service/jokes.service';
-import { AdsenseModule, AdsenseComponent } from 'ng2-adsense';
+import { AdsenseModule } from 'ng2-adsense';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideEnvironment(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideClientHydration(withEventReplay()),
     JokeService,
     provideHttpClient(withFetch()),

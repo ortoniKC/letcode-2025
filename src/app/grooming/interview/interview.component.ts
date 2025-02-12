@@ -1,6 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-interview',
@@ -74,4 +76,11 @@ export class InterviewComponent {
         'As soon as you load the QA it’s asking for username and password in the Alert. How to handle this?',
     },
   ];
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
 }

@@ -1,6 +1,13 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  inject,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
+import { ActivatedRoute } from '@angular/router';
+import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({
   selector: 'app-test-practice',
@@ -206,4 +213,11 @@ export class TestPracticeComponent {
       ],
     },
   ];
+  private route = inject(ActivatedRoute);
+  private seoService = inject(UpdateMetaTag);
+  ngOnInit() {
+    this.route.data.subscribe((data) => {
+      this.seoService.updateMetaTags(data);
+    });
+  }
 }

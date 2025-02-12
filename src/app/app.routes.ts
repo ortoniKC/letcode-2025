@@ -362,14 +362,15 @@ export const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, {
-      onSameUrlNavigation: 'reload',
-      scrollPositionRestoration: 'top',
-      anchorScrolling: 'enabled',
-    }),
-  ],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
+// @NgModule({
+//   imports: [
+//     RouterModule.forRoot(routes, {
+//       onSameUrlNavigation: 'reload',
+//       scrollPositionRestoration: 'enabled',
+//       // scrollPositionRestoration: 'top',
+//       anchorScrolling: 'enabled',
+//     }),
+//   ],
+//   exports: [RouterModule],
+// })
+// export class AppRoutingModule {}
