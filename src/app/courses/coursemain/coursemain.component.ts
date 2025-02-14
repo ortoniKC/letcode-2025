@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { title } from 'process';
 import { UpdateMetaTag } from '../../service/updateMeta';
 
 @Component({

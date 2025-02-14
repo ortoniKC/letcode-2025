@@ -31,8 +31,8 @@ import { OrtoniComponent } from './products/ortoni/ortoni.component';
 import { LetxpathComponent } from './products/letxpath/letxpath.component';
 import { PwrunnerComponent } from './products/pwrunner/pwrunner.component';
 import { CourseComponent } from './courses/course/course.component';
-import { CourseMain } from './courses/main/coursemain.component';
 import { VideoDetailComponent } from './pages/video-detail/video-detail.component';
+import { CourseMain } from './courses/coursemain/coursemain.component';
 
 export const routes: Routes = [
   {
