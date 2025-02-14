@@ -3,6 +3,12 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
 
+interface Courses {
+  title: string;
+  description: string;
+  id: string;
+}
+
 @Component({
   selector: 'app-main',
   imports: [CommonModule, RouterModule],
@@ -17,7 +23,7 @@ export class CourseMain {
       this.seoService.updateMetaTags(data);
     });
   }
-  courses = [
+  courses: Courses[] = [
     {
       title: 'Java Basic',
       description: 'Learn the basics of Core Java, curated for test automation',
@@ -38,7 +44,7 @@ export class CourseMain {
     {
       title: 'Selenium',
       description:
-        'Learn the in-depth concetps of Selenium Webdrivwer with Java - Basic to advance concepts',
+        'Learn the in-depth concetps of Selenium Webdriver with Java - Basic to advance concepts',
       id: 'selenium',
     },
     {
@@ -105,6 +111,12 @@ export class CourseMain {
       title: 'Selenium Cucumber',
       description: 'Behavior-driven testing using Selenium and Cucumber',
       id: 'cucumber-selenium',
+    },
+    {
+      title: 'Selenium VS Playwright',
+      description:
+        'Learn the best of Playwright compared to Selenium Webdriver',
+      id: 'selenium-vs-playwright',
     },
   ];
 }

@@ -10,11 +10,14 @@ import { CourseService } from '../../service/courseservice.service';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { UpdateMetaTag } from '../../service/updateMeta';
 import { YtComponent } from '../../main/yt/yt.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 @Component({
+  standalone: true,
   selector: 'app-course',
-  imports: [CommonModule, SafeUrlPipe, YtComponent],
+  imports: [CommonModule, SafeUrlPipe, YtComponent, MarkdownModule],
   templateUrl: './course.component.html',
+  styleUrl: 'style.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CourseComponent implements OnInit {

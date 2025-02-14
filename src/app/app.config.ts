@@ -16,6 +16,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { JokeService } from './service/jokes.service';
 import { AdsenseModule } from 'ng2-adsense';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MarkdownModule } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -29,9 +30,9 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideClientHydration(withEventReplay()),
-    JokeService,
     provideHttpClient(withFetch()),
     importProvidersFrom(
+      MarkdownModule.forRoot(),
       AdsenseModule.forRoot({
         adClient: 'ca-pub-6251538267574677',
       })

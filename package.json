@@ -48,6 +48,7 @@
     "@types/node": "^18.18.0",
     "jasmine-core": "~5.5.0",
     "ng2-adsense": "^14.0.0",
+    "ngx-markdown": "^19.1.0",
     "typescript": "~5.7.2"
   }
 }

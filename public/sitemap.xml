@@ -133,6 +133,57 @@
         <priority>0.6</priority>
     </url>
     <url>
+        <loc>https://letcode.in/course/java</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/javascript-test-automation</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/typescript-test-automation</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/selenium</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/protractor</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/playwright-tyepescript</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/playwright-java</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/chrome-extension</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/npm-package</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/appetize</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/api-testing</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/playwright-cucumber</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/automation-interview</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/xpath-tutorial</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/rpa</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/cucumber-selenium</loc>
+    </url>
+    <url>
+        <loc>https://letcode.in/course/selenium-vs-playwright</loc>
+    </url>
+    <url>
         <loc>https://letcode.in/product/ortoni-report</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
