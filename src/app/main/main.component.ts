@@ -14,16 +14,16 @@ import { YtComponent } from './yt/yt.component';
 export class MainComponent implements OnInit {
   constructor(private jokes: JokeService) {}
 
-  joke: any;
+  joke: any = 'You are my heart’s greatest joy. Wishing you a Valentine’s Day as wonderful as you!'
   ngOnInit(): void {
-    this.jokes.getJoke().subscribe(
+    /*this.jokes.getJoke().subscribe(
       (joke) => {
         this.joke = joke;
       },
       (err) => {
         this.joke = undefined;
       }
-    );
+    );*/
   }
 
   header =
