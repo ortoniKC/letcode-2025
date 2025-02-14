@@ -25,7 +25,7 @@ export class FrameComponent {
     'parentFrame()',
     'Overloading concept - JAVA',
   ];
-  link = 'frames';
+  link = 'frame';
   myLoadEvent(e: { contentDocument: any }) {
     var a = e.contentDocument;
     a.querySelectorAll('body > app-root > app-header')[0].style.display =

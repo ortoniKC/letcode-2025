@@ -27,7 +27,7 @@ export class TestComponent {
       desc: 'Interact with different types of buttons',
       icon: this.imagepath + 'buttons.svg',
       alt: 'button',
-      link: '/buttons',
+      link: '/button',
     },
     {
       header: 'Select',
@@ -67,7 +67,7 @@ export class TestComponent {
       desc: 'Switch different types of tabs or windows',
       icon: this.imagepath + 'window.svg',
       alt: 'alert',
-      link: '/windows',
+      link: '/window',
     },
     {
       header: 'Elements',

@@ -33,7 +33,7 @@ export class TableComponent {
     'Chaining of locators',
     'Comparable (Java)',
   ];
-  link = 'webTable';
+  link = 'table';
 
   desserts: Dessert[] = [
     {

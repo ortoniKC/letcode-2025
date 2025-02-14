@@ -142,7 +142,7 @@ export const routes: Routes = [
     },
   },
   {
-    path: 'buttons',
+    path: 'button',
     component: ButtonsComponent,
     data: {
       title: 'Buttons | LetCode with Koushik',
@@ -162,7 +162,7 @@ export const routes: Routes = [
     },
   },
   {
-    path: 'windows',
+    path: 'window',
     component: WindowComponent,
     data: {
       title: 'Windows | LetCode with Koushik',

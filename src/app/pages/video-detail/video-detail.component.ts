@@ -50,7 +50,7 @@ export class VideoDetailComponent {
       playwright: this.data + 'RzBlwacFIl0',
       title: 'Interact with Alerts',
     },
-    frames: {
+    frame: {
       selenium: this.data + 'TPolii6kKWo',
       protractors: this.data + 'rr7VMTizgGs',
       playwright: this.data + 'Vqm-8G81W8w',
