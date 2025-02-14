@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section" *ngIf="selectedVideo; else notFound">
     <div class="container">
         <h1 class="title has-text-centered"></h1>
 
@@ -36,3 +36,6 @@
         </div>
     </div>
 </section>
+<ng-template #notFound>
+    <app-not-found></app-not-found>
+</ng-template>

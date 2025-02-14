@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section" *ngIf="course; else notFound">
     <div class="container">
         <h1 class="title has-text-centered">{{ course.title }}</h1>
         <p class="subtitle has-text-centered">{{ course.shortDescription }}</p>
@@ -32,3 +32,6 @@
         </article>
     </div>
 </section>
+<ng-template #notFound>
+    <app-not-found></app-not-found>
+</ng-template>

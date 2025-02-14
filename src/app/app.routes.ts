@@ -33,6 +33,7 @@ import { PwrunnerComponent } from './products/pwrunner/pwrunner.component';
 import { CourseComponent } from './courses/course/course.component';
 import { VideoDetailComponent } from './pages/video-detail/video-detail.component';
 import { CourseMain } from './courses/coursemain/coursemain.component';
+import { NotFoundComponent } from './main/not-found/not-found.component';
 
 export const routes: Routes = [
   {
@@ -360,6 +361,8 @@ export const routes: Routes = [
         'selenium shadow DOM, playwright shadow DOM, protractor shadow DOM',
     },
   },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found' },
 ];
 
 // @NgModule({

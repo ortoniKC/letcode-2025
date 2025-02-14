@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
@@ -14,13 +14,15 @@ import { YtComponent } from '../../main/yt/yt.component';
 export class VideoDetailComponent {
   link: string | null = '';
   selectedVideo: any = null;
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.link = params.get('link');
       if (this.link && this.videos[this.link]) {
         this.selectedVideo = this.videos[this.link];
+      } else {
+        this.router.navigate(['/not-found']);
       }
     });
   }
