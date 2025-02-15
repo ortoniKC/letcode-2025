@@ -1,0 +1,9 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/404"
+  to = "src/app/main/not-found/not-found.component.html"
+  status = 404
