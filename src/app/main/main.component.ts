@@ -2,7 +2,6 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { JokeService } from '../service/jokes.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { YtComponent } from './yt/yt.component';
 
 @Component({
   selector: 'app-main',

@@ -18,6 +18,7 @@ export class ContactComponent {
     youtube: 'https://www.youtube.com/@letcode',
     kurimurai: 'https://www.youtube.com/@kurimurai',
     coffee: 'https://buymeacoffee.com/letcode',
+    telegram: 'https://t.me/letcode_with_koushik',
     workExperience: [
       {
         title: 'Senior Software Test Automation Engineer - Epam Systems',
