@@ -2,7 +2,7 @@
     <div class="content p-4">
         <ol type="1">
             <li *ngFor="let repo of repos">
-                <a [href]="repo.html_url" target="_blank">{{repo.html_url}}</a>
+                <a class="is-clipped" [href]="repo.html_url" target="_blank">{{repo.html_url}}</a>
             </li>
         </ol>
     </div>
