@@ -4,8 +4,17 @@
   </span>
   <span class="tag is-success" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
 </button>
-<button class="button is-pulled-right" [routerLink]="['/login']">
+<!-- Login Button (When not logged in) -->
+<button *ngIf="!isLoggedIn" class="button is-pulled-right" [routerLink]="['/login']">
   <span class="icon is-large">
     <i class="fas fa-user"></i>
   </span>
 </button>
+
+<!-- Logout Button (When logged in) -->
+<button *ngIf="isLoggedIn" class="button is-pulled-right" (click)="logout()">
+  <span class="icon is-large">
+    <i class="fas fa-sign-out-alt"></i>
+  </span>
+</button>
+

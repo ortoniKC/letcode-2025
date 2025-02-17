@@ -7,7 +7,7 @@
           <span class="icon"><i class="fas fa-arrow-left"></i></span>
           <span>Products</span>
         </button>
-        <h2 class="title mt-2">{{ productCategory }}</h2>
+        <h2 class="title mt-2">{{ productCategory | capitalizeFirst}}</h2>
       </div>
 
       <!-- Right: Cart & Login Buttons -->
@@ -16,19 +16,27 @@
       </div>
     </div>
   </div>
-
+  <div *ngIf="isLoading" class="loading-spinner is-flex is-justify-content-center is-align-items-center"
+    style="height: 100vh;">
+    <mat-spinner></mat-spinner>
+  </div>
   <div class="container mt-3" *ngIf="product">
     <div class="card">
       <div class="card-content">
         <div class="columns is-vcentered is-multiline">
           <!-- Title, Price, Description & Button -->
           <div class="column is-12-mobile is-6-tablet">
-            <p class="title">{{ product.title }}</p>
+            <p class="title">{{ product.title}}</p>
             <p class="subtitle mt-3">₹ {{ product.price }}</p>
             <p>{{ product.description }}</p>
-            <button class="button is-primary mt-4" (click)="addToCart(product)">Add to Cart</button>
+            <button class="button is-primary mt-4" (click)="addToCart(product)">
+              <span class="icon">
+                <i class="fas fa-cart-plus"></i>
+              </span>
+              <span>Add to Cart</span>
+            </button>
           </div>
-          
+
           <!-- Image -->
           <div class="column is-12-mobile is-6-tablet">
             <figure class="image is-4by3">

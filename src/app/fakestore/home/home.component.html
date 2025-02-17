@@ -11,6 +11,10 @@
         <app-cartvalue class="is-inline-flex"></app-cartvalue>
       </div>
     </div>
+    <div *ngIf="isLoading" class="loading-spinner is-flex is-justify-content-center is-align-items-center"
+      style="height: 100vh;">
+      <mat-spinner></mat-spinner>
+    </div>
 
     <!-- Product List -->
     <div class="columns mt-3 is-multiline">

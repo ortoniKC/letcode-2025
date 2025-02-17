@@ -1,24 +1,37 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, shareReplay } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { shareReplay, map } from 'rxjs/operators';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root',
+})
 export class ProductService {
-  private readonly API_URL = 'https://fakestoreapi.com/products';
-  private productsCache$: Observable<any[]> | null = null;
+  private API_URL = 'https://fakestoreapi.com/products';
+  private productsCache$!: Observable<any[]>;
+  private productCache: { [id: number]: Observable<any> } = {};
+
   constructor(private http: HttpClient) {}
+
   getProducts(): Observable<any[]> {
     if (!this.productsCache$) {
-      this.productsCache$ = this.http.get<any[]>(this.API_URL).pipe(
-        shareReplay(1) // Cache the response and reuse it
-      );
+      this.productsCache$ = this.http
+        .get<any[]>(this.API_URL)
+        .pipe(shareReplay(1));
     }
     return this.productsCache$;
   }
-  getProductById(id: number) {
-    return fetch(`${this.API_URL}/${id}`).then(res => res.json());
+
+  getProductById(id: number): Observable<any> {
+    if (!this.productCache[id]) {
+      this.productCache[id] = this.http
+        .get<any>(`${this.API_URL}/${id}`)
+        .pipe(shareReplay(1));
+    }
+    return this.productCache[id];
   }
-  getProductCategoryById(id: number) {
-    return this.getProductById(id).then(product => product.category);
+
+  getProductCategoryById(id: number): Observable<string> {
+    return this.getProductById(id).pipe(map((product) => product.category));
   }
 }
