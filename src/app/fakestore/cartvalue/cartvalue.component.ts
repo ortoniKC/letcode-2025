@@ -11,12 +11,15 @@ import { ProductService } from '../../service/fakestore/product.service';
   templateUrl: './cartvalue.component.html'
 })
 export class CartvalueComponent implements OnInit {
-  products = [];
+  products: any[];
   cartItemCount: number = 0;
   constructor(private productService: ProductService, private cartService: CartService) {}
 
   ngOnInit() {
-    this.productService.getProducts().then(data => this.products = data);
+    // this.productService.getProducts().then(data => this.products = data);
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+    });
     this.cartService.getCartItemCount().subscribe(count => {
       this.cartItemCount = count;
     });

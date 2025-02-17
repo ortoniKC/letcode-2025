@@ -36,6 +36,7 @@ import { NotFoundComponent } from './main/not-found/not-found.component';
 import { HomeComponent } from './fakestore/home/home.component';
 import { ProductListComponent } from './fakestore/productlist/product-list.component';
 import { CartComponent } from './fakestore/cart/cart.component';
+import { LoginComponent } from './fakestore/login/login.component';
 
 export const routes: Routes = [
   {
@@ -363,13 +364,20 @@ export const routes: Routes = [
         'selenium shadow DOM, playwright shadow DOM, protractor shadow DOM',
     },
   },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent,
+    data: {
+      title: 'Fake Store | LetCode with Koushik',
+      description: 'Practice Page Object Model with Fake Store',
+      keywords:
+        'selenium page object model, playwright page object model, protractor page object model',
+    },
+   },
   {
     path: 'product/:id',
     component: ProductListComponent,
     data: {
-      title: 'Test Automation Learning | LetCode with Koushik',
-      description: 'Watch videos on test automation concepts',
+      title: 'Product - Fake Store | LetCode with Koushik',
+      description: 'Check out the product details',
       keywords:
         'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
     },
@@ -378,8 +386,18 @@ export const routes: Routes = [
     path: 'cart',
     component: CartComponent,
     data: {
-      title: 'Test Automation Learning | LetCode with Koushik',
-      description: 'Watch videos on test automation concepts',
+      title: 'Cart - Fake Store | LetCode with Koushik',
+      description: 'Check out the cart items',
+      keywords:
+        'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
+    },
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login - Fake Store | LetCode with Koushik',
+      description: 'Login to Fake Store',
       keywords:
         'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
     },
@@ -387,16 +405,3 @@ export const routes: Routes = [
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];
-
-// @NgModule({
-//   imports: [
-//     RouterModule.forRoot(routes, {
-//       onSameUrlNavigation: 'reload',
-//       scrollPositionRestoration: 'enabled',
-//       // scrollPositionRestoration: 'top',
-//       anchorScrolling: 'enabled',
-//     }),
-//   ],
-//   exports: [RouterModule],
-// })
-// export class AppRoutingModule {}

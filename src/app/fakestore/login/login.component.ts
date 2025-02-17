@@ -14,10 +14,18 @@ export class LoginComponent {
   
     constructor(private authService: AuthService) {}
   
-    login() {
-      this.authService.login(this.username, this.password).then(response => {
-        if (response.token) alert('Login Successful');
-        else alert('Login Failed');
-      });
+    async login() {
+      try {
+      const response = await this.authService.login(this.username, this.password);
+      if (response.token) alert('Login Successful');
+      else alert('Login Failed');
+      } catch (error) {
+      alert('Login Failed');
+      }
     }
+      // this.authService.login(this.username, this.password).then(response => {
+      //   if (response.token) alert('Login Successful');
+      //   else alert('Login Failed');
+      // });
+    // }
   }
