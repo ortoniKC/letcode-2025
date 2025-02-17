@@ -18,9 +18,6 @@ export class HomeComponent implements OnInit {
     this.productService.getProducts().then(data => this.products = data);
   }
 
-  addToCart(product: any) {
-    this.cartService.addToCart(product);
-  }
   viewProduct(productId: number) {
     this.router.navigate(['/product', productId]);
   }
