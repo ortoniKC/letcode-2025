@@ -3,18 +3,18 @@ import { AuthService } from '../../service/fakestore/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [CommonModule, FormsModule, MatSnackBarModule],
+  imports: [CommonModule, FormsModule, MatSnackBarModule, RouterModule],
   templateUrl: './login.component.html',
 })
 export class LoginComponent implements OnInit {
   username = '';
   password = '';
   isLoggedIn = false;
-
+  isLoading = false;
   constructor(
     private authService: AuthService,
     private snackBar: MatSnackBar,
@@ -37,7 +37,11 @@ export class LoginComponent implements OnInit {
 
   async login() {
     try {
-      const response = await this.authService.login(this.username, this.password);
+      this.isLoading = true;
+      const response = await this.authService.login(
+        this.username,
+        this.password
+      );
       if (response.token) {
         showSnackBar('Login Successful', this.snackBar);
         if (typeof window !== 'undefined' && window.localStorage) {
@@ -50,6 +54,8 @@ export class LoginComponent implements OnInit {
       }
     } catch (error) {
       showSnackBar('Login Failed', this.snackBar);
+    } finally {
+      this.isLoading = false;
     }
   }
 }

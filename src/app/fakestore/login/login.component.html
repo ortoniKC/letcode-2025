@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <h1 class="title has-text-primary">Fake Store</h1>
+    <h1 class="title has-text-primary is-clickable" [routerLink]="['/home']">Fake Store</h1>
     <div class="columns is-centered" *ngIf="!isLoggedIn">
       <div class="column is-two-fifths">
         <div class="box">
@@ -23,7 +23,8 @@
               </span>
             </div>
           </div>
-          <button class="button is-primary" (click)="login()">Login</button>
+          <button class="button is-primary" (click)="login()" [class.is-loading]="isLoading"
+            [disabled]="isLoading">Login</button>
           <hr>
           <div class="field">
             <p>Username: mor_2314</p>
