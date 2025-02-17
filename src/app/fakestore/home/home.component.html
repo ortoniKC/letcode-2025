@@ -1,19 +1,23 @@
 <section class="section">
   <div class="container">
     <h1 class="title has-text-primary">Fake Store</h1>
-    <div class="columns">
-      <div class="column">
+
+    <!-- Top Section: Title & Cart -->
+    <div class="columns is-vcentered is-mobile is-multiline">
+      <div class="column is-12-mobile is-6-tablet">
         <h2 class="title">Products</h2>
       </div>
-      <div class="column">
-        <app-cartvalue></app-cartvalue>
+      <div class="column is-12-mobile is-6-tablet has-text-right">
+        <app-cartvalue class="is-inline-flex"></app-cartvalue>
       </div>
     </div>
-    <div class="columns is-multiline">
-      <div class="column is-one-quarter" *ngFor="let product of products">
+
+    <!-- Product List -->
+    <div class="columns mt-3 is-multiline">
+      <div class="column is-12-mobile is-6-tablet is-one-quarter-desktop" *ngFor="let product of products">
         <div class="card" (click)="viewProduct(product.id)">
           <header class="card-header">
-            <p class="card-header-title">{{ product.title | slice:0:30}}...</p>
+            <p class="card-header-title">{{ product.title | slice:0:30 }}...</p>
           </header>
           <div class="card-image">
             <figure class="image is-4by3">
@@ -24,7 +28,9 @@
             <p class="subtitle is-6">{{ product.description | slice:0:80 }}...</p>
           </div>
           <footer class="card-footer">
-            <button (click)="viewProduct(product.id)" class="card-footer-item button is-link">₹ {{ product.price }}</button>
+            <button (click)="viewProduct(product.id)" class="card-footer-item button is-link is-fullwidth">
+              ₹ {{ product.price }}
+            </button>
           </footer>
         </div>
       </div>

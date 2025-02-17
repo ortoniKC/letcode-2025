@@ -1,29 +1,36 @@
 <section class="section">
   <div class="container">
-    <div class="columns">
-      <div class="column">
-        <button class="button is-link" [routerLink]="['/home']">
+    <div class="columns is-vcentered is-mobile is-multiline">
+      <!-- Left: Back Button & Category -->
+      <div class="column is-12-mobile is-6-tablet">
+        <button class="button is-link mb-3" [routerLink]="['/home']">
           <span class="icon"><i class="fas fa-arrow-left"></i></span>
-          <span>Back</span>
+          <span>Products</span>
         </button>
-        <h2 class="title mt-4">{{productCategory}}</h2>
+        <h2 class="title mt-2">{{ productCategory }}</h2>
       </div>
-      <div class="column">
-        <app-cartvalue></app-cartvalue>
+
+      <!-- Right: Cart & Login Buttons -->
+      <div class="column is-12-mobile is-6-tablet has-text-right">
+        <app-cartvalue class="is-inline-flex"></app-cartvalue>
       </div>
     </div>
   </div>
+
   <div class="container mt-3" *ngIf="product">
     <div class="card">
       <div class="card-content">
-        <div class="columns is-vcentered">
-          <div class="column is-half">
+        <div class="columns is-vcentered is-multiline">
+          <!-- Title, Price, Description & Button -->
+          <div class="column is-12-mobile is-6-tablet">
             <p class="title">{{ product.title }}</p>
             <p class="subtitle mt-3">₹ {{ product.price }}</p>
             <p>{{ product.description }}</p>
             <button class="button is-primary mt-4" (click)="addToCart(product)">Add to Cart</button>
           </div>
-          <div class="column is-half">
+          
+          <!-- Image -->
+          <div class="column is-12-mobile is-6-tablet">
             <figure class="image is-4by3">
               <img [src]="product.image" alt="{{ product.title }}">
             </figure>
