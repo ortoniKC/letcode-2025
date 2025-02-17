@@ -1,0 +1,6 @@
+<button class="button is-pulled-right" [routerLink]="['/cart']">
+  <span class="icon is-large">
+    <i class="fas fa-cart-shopping"></i>
+  </span>
+  <span class="tag is-danger" *ngIf="cartItemCount > 0">{{ cartItemCount }}</span>
+</button>

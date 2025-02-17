@@ -1,0 +1,31 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h2 class="title">{{productCategory}}</h2>
+      </div>
+      <div class="column">
+        <app-cartvalue></app-cartvalue>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-6" *ngIf="product">
+    <div class="card">
+      <div class="card-content">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <p class="title">{{ product.title }}</p>
+            <p class="subtitle">${{ product.price }}</p>
+            <p>{{ product.description }}</p>
+            <button class="button is-primary" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+          <div class="column is-half">
+            <figure class="image is-4by3">
+              <img [src]="product.image" alt="{{ product.title }}">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

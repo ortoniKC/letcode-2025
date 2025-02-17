@@ -1,0 +1,29 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-primary">Fake Store</h1>
+    <div class="columns">
+      <div class="column">
+        <h2 class="title">Products</h2>
+      </div>
+      <div class="column">
+        <app-cartvalue></app-cartvalue>
+      </div>
+    </div>
+    <div class="columns is-multiline">
+      <div class="column is-one-quarter" *ngFor="let product of products">
+        <div class="card" (click)="viewProduct(product.id)">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img [src]="product.image" alt="{{ product.title }}">
+            </figure>
+          </div>
+          <div class="card-content">
+            <p class="title is-6">{{ product.title }}</p>
+            <p class="subtitle is-6">{{ product.description | slice:0:100 }}...</p>
+            <p class="has-text-weight-bold">${{ product.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
