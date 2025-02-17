@@ -23,7 +23,6 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { FileComponent } from './pages/file/file.component';
 import { TestPracticeComponent } from './grooming/test-practice/test-practice.component';
 import { InterviewComponent } from './grooming/interview/interview.component';
-import { HomeComponent } from './github/home/home.component';
 import { FrameContentComponent } from './pages/frame/frame-content/frame-content.component';
 import { InnerframeComponent } from './pages/frame/innerframe/innerframe.component';
 import { ContactComponent } from './main/contact/contact.component';
@@ -34,6 +33,10 @@ import { CourseComponent } from './courses/course/course.component';
 import { VideoDetailComponent } from './pages/video-detail/video-detail.component';
 import { CourseMain } from './courses/coursemain/coursemain.component';
 import { NotFoundComponent } from './main/not-found/not-found.component';
+import { HomeComponent } from './fakestore/home/home.component';
+import { ProductListComponent } from './fakestore/productlist/product-list.component';
+import { CartComponent } from './fakestore/cart/cart.component';
+import { LoginComponent } from './fakestore/login/login.component';
 
 export const routes: Routes = [
   {
@@ -361,19 +364,44 @@ export const routes: Routes = [
         'selenium shadow DOM, playwright shadow DOM, protractor shadow DOM',
     },
   },
+  { path: 'home', component: HomeComponent,
+    data: {
+      title: 'Fake Store | LetCode with Koushik',
+      description: 'Practice Page Object Model with Fake Store',
+      keywords:
+        'selenium page object model, playwright page object model, protractor page object model',
+    },
+   },
+  {
+    path: 'product/:id',
+    component: ProductListComponent,
+    data: {
+      title: 'Product - Fake Store | LetCode with Koushik',
+      description: 'Check out the product details',
+      keywords:
+        'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
+    },
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
+    data: {
+      title: 'Cart - Fake Store | LetCode with Koushik',
+      description: 'Check out the cart items',
+      keywords:
+        'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
+    },
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login - Fake Store | LetCode with Koushik',
+      description: 'Login to Fake Store',
+      keywords:
+        'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
+    },
+  },
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: 'not-found' },
 ];
-
-// @NgModule({
-//   imports: [
-//     RouterModule.forRoot(routes, {
-//       onSameUrlNavigation: 'reload',
-//       scrollPositionRestoration: 'enabled',
-//       // scrollPositionRestoration: 'top',
-//       anchorScrolling: 'enabled',
-//     }),
-//   ],
-//   exports: [RouterModule],
-// })
-// export class AppRoutingModule {}

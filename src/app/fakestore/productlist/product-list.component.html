@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <button class="button is-link" [routerLink]="['/home']">
+          <span class="icon"><i class="fas fa-arrow-left"></i></span>
+          <span>Back</span>
+        </button>
+        <h2 class="title mt-4">{{productCategory}}</h2>
+      </div>
+      <div class="column">
+        <app-cartvalue></app-cartvalue>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3" *ngIf="product">
+    <div class="card">
+      <div class="card-content">
+        <div class="columns is-vcentered">
+          <div class="column is-half">
+            <p class="title">{{ product.title }}</p>
+            <p class="subtitle mt-3">₹ {{ product.price }}</p>
+            <p>{{ product.description }}</p>
+            <button class="button is-primary mt-4" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+          <div class="column is-half">
+            <figure class="image is-4by3">
+              <img [src]="product.image" alt="{{ product.title }}">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -14,6 +14,14 @@ export class TestComponent {
 
   menuItems = [
     {
+      header: 'POM',
+      title: 'Page Object Model',
+      desc: 'Practice Page Object Model with fakestore',
+      icon: this.imagepath + 'edit.svg',
+      alt: 'product',
+      link: '/home',
+    },
+    {
       header: 'Input',
       title: 'Edit',
       desc: 'Interact with different types of input fields',
