@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { CartService } from '../../service/fakestore/cart.service';
 import { ProductService } from '../../service/fakestore/product.service';
+import { AuthService } from '../../service/fakestore/auth.service';
 
 @Component({
   selector: 'app-cartvalue',
@@ -13,10 +14,15 @@ import { ProductService } from '../../service/fakestore/product.service';
 export class CartvalueComponent implements OnInit {
   products: any[];
   cartItemCount: number = 0;
-  constructor(private productService: ProductService, private cartService: CartService) {}
-
+  constructor(private productService: ProductService, private cartService: CartService, private authService: AuthService, private router:Router) {}
+  isLoggedIn: boolean = false;
+  logout() {
+    this.authService.logout();
+    this.isLoggedIn = false;
+    this.router.navigate(['/login']);
+  }
   ngOnInit() {
-    // this.productService.getProducts().then(data => this.products = data);
+    this.isLoggedIn = this.authService.isAuthenticated();
     this.productService.getProducts().subscribe(data => {
       this.products = data;
     });
