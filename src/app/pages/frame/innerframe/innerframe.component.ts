@@ -9,6 +9,12 @@ import {
   selector: 'app-innerframe',
   imports: [],
   templateUrl: './innerframe.component.html',
+  styles: `iframe {
+    display: block;
+    border: none;
+    height: 100vh;
+    width: -webkit-fill-available;
+}`,
 })
 export class InnerframeComponent {
   @Input() name: string;

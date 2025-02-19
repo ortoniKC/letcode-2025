@@ -8,6 +8,12 @@ import { UpdateMetaTag } from '../../../service/updateMeta';
   selector: 'app-frame-content',
   imports: [FormsModule, CommonModule],
   templateUrl: './frame-content.component.html',
+  styles: `iframe {
+    display: block;
+    border: none;
+    height: 100vh;
+    width: -webkit-fill-available;
+}`,
 })
 export class FrameContentComponent {
   constructor(private ref: ChangeDetectorRef) {}
