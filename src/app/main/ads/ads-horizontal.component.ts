@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { AdsSquareComponent } from '../ads-square/ads-square.component';
 
 @Component({
@@ -8,12 +8,18 @@ import { AdsSquareComponent } from '../ads-square/ads-square.component';
 })
 export class AdsHorizontalComponent implements AfterViewInit {
   ngAfterViewInit(): void {
+    this.loadAds();
+  }
+  @HostListener('window:resize')
+  loadAds() {
     if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
-      try {
-        (window as any).adsbygoogle.push({});
-      } catch (e) {
-        // console.error('AdSense error:', e);
-      }
+      setTimeout(() => {
+        try {
+          (window as any).adsbygoogle.push({});
+        } catch (e) {
+          console.error('AdSense error:', e);
+        }
+      }, 500);
     }
   }
 }
