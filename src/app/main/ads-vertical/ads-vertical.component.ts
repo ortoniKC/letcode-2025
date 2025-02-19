@@ -1,9 +1,11 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import {
   AfterViewInit,
   Component,
   HostListener,
+  Inject,
   OnDestroy,
+  PLATFORM_ID,
 } from '@angular/core';
 
 @Component({
@@ -13,18 +15,25 @@ import {
 })
 export class AdsVerticalComponent implements AfterViewInit, OnDestroy {
   adLoaded = false;
-
-  ngAfterViewInit(): void {
-    this.loadAd();
-  }
   adId: string = 'ad-' + Math.random().toString(36).substring(2, 10);
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Only execute in browser
+      this.loadAd();
+    }
+  }
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   loadAd() {
-    if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+    if (
+      !this.adLoaded &&
+      typeof window !== 'undefined' &&
+      (window as any).adsbygoogle
+    ) {
       setTimeout(() => {
         try {
           (window as any).adsbygoogle.push({});
-          this.adLoaded = true;
+          this.adLoaded = true; // Prevent multiple loads
         } catch (e) {
           console.error('AdSense error:', e);
         }

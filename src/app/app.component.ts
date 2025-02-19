@@ -10,7 +10,7 @@ import { HeaderComponent } from './main/header/header.component';
 import { FooterComponent } from './main/footer/footer.component';
 import { Meta } from '@angular/platform-browser';
 import { UpdateMetaTag } from './service/updateMeta';
-import { filter } from 'rxjs/internal/operators/filter';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,9 @@ export class AppComponent implements OnInit {
   private seoService = inject(UpdateMetaTag);
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
+
   ngOnInit() {
+    // ✅ Update Meta Tags
     this.metaService.updateTag({
       property: 'og:image',
       content:
@@ -35,7 +37,8 @@ export class AppComponent implements OnInit {
       content:
         'https://raw.githubusercontent.com/ortoniKC/ortoniKC/refs/heads/main/letcode.png',
     });
-    // Listen for route changes and update meta tags
+
+    // ✅ Listen for route changes (Meta Updates + Ad Refresh)
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -43,10 +46,26 @@ export class AppComponent implements OnInit {
         currentRoute.data.subscribe((data) => {
           this.seoService.updateMetaTags(data);
         });
+
+        // ✅ Refresh Google Ads when navigating to a new page
+        this.refreshAds();
       });
   }
 
-  // Recursive function to get the last activated child route
+  // ✅ Refresh Google AdSense Ads
+  private refreshAds() {
+    if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+      setTimeout(() => {
+        try {
+          (window as any).adsbygoogle.push({});
+        } catch (e) {
+          console.error('AdSense error:', e);
+        }
+      }, 500);
+    }
+  }
+
+  // ✅ Recursive function to get the last activated child route
   private getChildRoute(activatedRoute: ActivatedRoute): ActivatedRoute {
     if (activatedRoute.firstChild) {
       return this.getChildRoute(activatedRoute.firstChild);
@@ -54,11 +73,4 @@ export class AppComponent implements OnInit {
       return activatedRoute;
     }
   }
-  // ngOnInit() {
-  //   this.route.data.subscribe((data) => {
-  //     console.log(data);
-  //     this.seoService.updateMetaTags(data);
-  //
-  //   });
-  // }
 }
