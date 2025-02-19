@@ -9,7 +9,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AdsSquareComponent } from '../ads-square/ads-square.component';
 
 @Component({
-  selector: 'app-ads-horizontal',
+  selector: 'app-ads',
   imports: [CommonModule, AdsSquareComponent],
   templateUrl: './ads-horizontal.component.html',
 })
