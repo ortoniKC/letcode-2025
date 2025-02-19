@@ -19,14 +19,12 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'LetCode with Koushik';
-  private route = inject(ActivatedRoute);
   private metaService = inject(Meta);
   private seoService = inject(UpdateMetaTag);
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
 
   ngOnInit() {
-    // ✅ Update Meta Tags
     this.metaService.updateTag({
       property: 'og:image',
       content:
@@ -38,7 +36,6 @@ export class AppComponent implements OnInit {
         'https://raw.githubusercontent.com/ortoniKC/ortoniKC/refs/heads/main/letcode.png',
     });
 
-    // ✅ Listen for route changes (Meta Updates + Ad Refresh)
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
@@ -47,15 +44,17 @@ export class AppComponent implements OnInit {
           this.seoService.updateMetaTags(data);
         });
 
-        // ✅ Refresh Google Ads when navigating to a new page
         this.refreshAds();
       });
   }
 
-  // ✅ Refresh Google AdSense Ads
   private refreshAds() {
     if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
       setTimeout(() => {
+        document.querySelectorAll('.adsbygoogle').forEach((ad) => {
+          (ad as HTMLElement).innerHTML = '';
+        });
+
         try {
           (window as any).adsbygoogle.push({});
         } catch (e) {
@@ -65,7 +64,6 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // ✅ Recursive function to get the last activated child route
   private getChildRoute(activatedRoute: ActivatedRoute): ActivatedRoute {
     if (activatedRoute.firstChild) {
       return this.getChildRoute(activatedRoute.firstChild);

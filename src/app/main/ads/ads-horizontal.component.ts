@@ -1,48 +1,31 @@
-import {
-  AfterViewInit,
-  Component,
-  HostListener,
-  Inject,
-  OnDestroy,
-  PLATFORM_ID,
-} from '@angular/core';
-import { AdsSquareComponent } from '../ads-square/ads-square.component';
+import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { AdsSquareComponent } from '../ads-square/ads-square.component';
 
 @Component({
   selector: 'app-ads',
-  imports: [AdsSquareComponent, CommonModule],
+  standalone: true,
+  imports: [CommonModule, AdsSquareComponent],
   templateUrl: './ads-horizontal.component.html',
 })
-export class AdsHorizontalComponent implements AfterViewInit, OnDestroy {
-  adLoaded = false;
-  adId: string = 'ad-' + Math.random().toString(36).substring(2, 10);
+export class AdsHorizontalComponent implements AfterViewInit {
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
+
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      // Only execute in browser
       this.loadAd();
     }
   }
-  constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   loadAd() {
-    if (
-      !this.adLoaded &&
-      typeof window !== 'undefined' &&
-      (window as any).adsbygoogle
-    ) {
+    if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
       setTimeout(() => {
         try {
           (window as any).adsbygoogle.push({});
-          this.adLoaded = true; // Prevent multiple loads
         } catch (e) {
           console.error('AdSense error:', e);
         }
       }, 500);
     }
-  }
-
-  ngOnDestroy(): void {
-    this.adLoaded = false; // Reset the state
   }
 }
