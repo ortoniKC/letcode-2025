@@ -4,10 +4,17 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-window',
-  imports: [PageheaderComponent, LearningPointComponent],
+  imports: [
+    PageheaderComponent,
+    LearningPointComponent,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
+  ],
   templateUrl: './window.component.html',
 })
 export class WindowComponent implements OnInit {

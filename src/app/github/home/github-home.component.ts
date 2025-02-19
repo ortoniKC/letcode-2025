@@ -15,6 +15,8 @@ import { GithubService } from '../../service/github.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-home',
@@ -25,11 +27,13 @@ import { UpdateMetaTag } from '../../service/updateMeta';
     CommonModule,
     ReposComponent,
     FormsModule,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './home.component.html',
+  templateUrl: './github-home.component.html',
 })
-export class HomeComponent implements OnInit {
+export class GithubHomeComponent implements OnInit {
   user: any;
   username!: string;
   error: string | null | undefined;

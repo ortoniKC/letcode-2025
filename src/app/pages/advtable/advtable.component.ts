@@ -7,6 +7,8 @@ import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { DataTablesModule } from 'angular-datatables';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
 
 @Component({
   selector: 'app-advtable',
@@ -17,6 +19,8 @@ import { UpdateMetaTag } from '../../service/updateMeta';
     MatSortModule,
     MatTableModule,
     DataTablesModule,
+    AdsHorizontalComponent,
+    AdsVerticalComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './advtable.component.html',

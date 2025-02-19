@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-interview',
-  imports: [CommonModule, SafeUrlPipe],
+  imports: [CommonModule, SafeUrlPipe, AdsHorizontalComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './interview.component.html',
 })

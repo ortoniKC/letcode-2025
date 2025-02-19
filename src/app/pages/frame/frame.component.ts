@@ -4,10 +4,18 @@ import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
 
 @Component({
   selector: 'app-frame',
-  imports: [LearningPointComponent, PageheaderComponent, CommonModule],
+  imports: [
+    LearningPointComponent,
+    PageheaderComponent,
+    CommonModule,
+    AdsHorizontalComponent,
+    AdsVerticalComponent,
+  ],
   templateUrl: './frame.component.html',
   styles: `iframe {
     display: block;

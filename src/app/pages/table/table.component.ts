@@ -6,6 +6,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { SelectableComponent } from '../selectable/selectable.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
 export interface Dessert {
   calories: number;
   carbs: number;
@@ -22,6 +25,8 @@ export interface Dessert {
     LearningPointComponent,
     MatSortModule,
     MatTableModule,
+    AdsHorizontalComponent,
+    AdsVerticalComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './table.component.html',

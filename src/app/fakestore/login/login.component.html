@@ -2,6 +2,9 @@
   <div class="container">
     <h1 class="title has-text-primary is-clickable" [routerLink]="['/home']">Fake Store</h1>
     <div class="columns is-centered" *ngIf="!isLoggedIn">
+      <div class="column">
+        <app-ads-square></app-ads-square>
+      </div>
       <div class="column is-two-fifths">
         <div class="box">
           <h2 class="title">Login</h2>
@@ -32,6 +35,9 @@
           </div>
         </div>
       </div>
+      <div class="column">
+        <app-ads-vertical></app-ads-vertical>
+      </div>
     </div>
     <div class="content">
       <p class="subtitle">Credit: Built using <a class="is-link has-text-primary"
@@ -40,3 +46,4 @@
     </div>
   </div>
 </section>
+<app-ads></app-ads>

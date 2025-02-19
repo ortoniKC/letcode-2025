@@ -3,10 +3,17 @@ import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-waits',
-  imports: [PageheaderComponent, LearningPointComponent],
+  imports: [
+    PageheaderComponent,
+    LearningPointComponent,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
+  ],
   templateUrl: './waits.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

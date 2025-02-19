@@ -7,6 +7,7 @@ import { CartvalueComponent } from '../cartvalue/cartvalue.component';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { CapitalizeFirstPipe } from '../../pipes/first-cap.pipe';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-productlist',
@@ -17,6 +18,7 @@ import { CapitalizeFirstPipe } from '../../pipes/first-cap.pipe';
     MatSnackBarModule,
     CapitalizeFirstPipe,
     MatProgressSpinnerModule,
+    AdsHorizontalComponent,
   ],
   templateUrl: './product-list.component.html',
   styleUrl: 'style.css',

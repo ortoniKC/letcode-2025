@@ -2,10 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-shadow',
-  imports: [CommonModule, PageheaderComponent, LearningPointComponent],
+  imports: [
+    CommonModule,
+    PageheaderComponent,
+    LearningPointComponent,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
+  ],
   templateUrl: './shadow.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

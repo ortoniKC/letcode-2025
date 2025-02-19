@@ -12,6 +12,7 @@ import { UpdateMetaTag } from '../../service/updateMeta';
 import { YtComponent } from '../../main/yt/yt.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { NotFoundComponent } from '../../main/not-found/not-found.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   standalone: true,
@@ -22,6 +23,7 @@ import { NotFoundComponent } from '../../main/not-found/not-found.component';
     YtComponent,
     MarkdownModule,
     NotFoundComponent,
+    AdsHorizontalComponent,
   ],
   templateUrl: './course.component.html',
   styleUrl: 'style.css',

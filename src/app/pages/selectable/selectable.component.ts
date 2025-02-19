@@ -11,10 +11,18 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 import { SelectionModel } from '@angular/cdk/collections';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-selectable',
-  imports: [CommonModule, PageheaderComponent, LearningPointComponent],
+  imports: [
+    CommonModule,
+    PageheaderComponent,
+    LearningPointComponent,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
+  ],
   templateUrl: './selectable.component.html',
   styleUrl: './style.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

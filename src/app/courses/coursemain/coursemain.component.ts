@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 interface Courses {
   title: string;
@@ -11,7 +12,7 @@ interface Courses {
 
 @Component({
   selector: 'app-main',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AdsHorizontalComponent],
   templateUrl: './coursemain.component.html',
   styleUrl: 'style.css',
 })

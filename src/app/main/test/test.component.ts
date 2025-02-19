@@ -81,7 +81,7 @@ export class TestComponent {
     {
       header: 'Elements',
       title: 'Find Elements',
-      desc: "Play with lot's of element and smash them",
+      desc: 'Play with element and smash them',
       icon: this.imagepath + 'elements.svg',
       alt: 'elements',
       link: '/elements',

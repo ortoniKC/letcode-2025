@@ -3,10 +3,17 @@ import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
 
 @Component({
   selector: 'app-radio',
-  imports: [PageheaderComponent, LearningPointComponent],
+  imports: [
+    PageheaderComponent,
+    LearningPointComponent,
+    AdsHorizontalComponent,
+    AdsVerticalComponent,
+  ],
   templateUrl: './radio.component.html',
 })
 export class RadioComponent implements OnInit {

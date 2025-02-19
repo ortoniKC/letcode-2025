@@ -94,21 +94,10 @@
             <div class="column is-3-desktop is-4-tablet">
                 <app-learning-point [link]="link" [list]="lp"></app-learning-point>
             </div>
-            <!-- <div class="column">
-                <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
-                    [adSlot]="8487607644" [display]="'block'" [fullWidthResponsive]="true">
-                </ng-adsense>
-            </div> -->
+            <div class="column">
+                <app-ads-vertical></app-ads-vertical>
+            </div>
         </div>
     </div>
 </section>
-<!-- ad -->
-<!-- <section class="hero is-small ">
-    <div class="hero-body">
-        <div class="column has-text-centered">
-            <ng-adsense [className]="'adsbygoogle'" [adClient]="'ca-pub-6251538267574677'" [adFormat]="'auto'"
-                [adSlot]="6753414644" [display]="'block'" [fullWidthResponsive]="true">
-            </ng-adsense>
-        </div>
-    </div>
-</section> -->
+<app-ads></app-ads>

@@ -4,10 +4,18 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-file',
-  imports: [PageheaderComponent, LearningPointComponent, CommonModule],
+  imports: [
+    PageheaderComponent,
+    LearningPointComponent,
+    CommonModule,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './file.component.html',
 })

@@ -3,11 +3,12 @@ import { CartService } from '../../service/fakestore/cart.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './cart.component.html'
+  imports: [CommonModule, FormsModule, RouterModule, AdsHorizontalComponent],
+  templateUrl: './cart.component.html',
 })
 export class CartComponent {
   cart: any[] = [];
@@ -30,7 +31,7 @@ export class CartComponent {
     this.cartService.decreaseQuantity(productId);
     this.loadCart(); // Refresh cart data after update
   }
-  
+
   increaseQuantity(productId: number) {
     this.cartService.increaseQuantity(productId);
     this.loadCart(); // Refresh cart data after update

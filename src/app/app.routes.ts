@@ -37,6 +37,7 @@ import { HomeComponent } from './fakestore/home/home.component';
 import { ProductListComponent } from './fakestore/productlist/product-list.component';
 import { CartComponent } from './fakestore/cart/cart.component';
 import { LoginComponent } from './fakestore/login/login.component';
+import { GithubHomeComponent } from './github/home/github-home.component';
 
 export const routes: Routes = [
   {
@@ -208,7 +209,7 @@ export const routes: Routes = [
 
   {
     path: 'elements',
-    component: HomeComponent,
+    component: GithubHomeComponent,
     data: {
       title: 'Elements | LetCode with Koushik',
       description: 'Practice working with different web elements',

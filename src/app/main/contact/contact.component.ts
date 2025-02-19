@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [CommonModule],
+  imports: [CommonModule, AdsHorizontalComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './contact.component.html',
 })

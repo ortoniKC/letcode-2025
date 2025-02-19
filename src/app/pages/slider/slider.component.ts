@@ -11,6 +11,8 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-slider',
@@ -19,6 +21,8 @@ import { UpdateMetaTag } from '../../service/updateMeta';
     PageheaderComponent,
     LearningPointComponent,
     FormsModule,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './slider.component.html',

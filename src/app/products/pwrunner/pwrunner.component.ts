@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-pwrunner',
-  imports: [CommonModule],
+  imports: [CommonModule, AdsHorizontalComponent],
   templateUrl: './pwrunner.component.html',
 })
 export class PwrunnerComponent {
