@@ -13,7 +13,7 @@ import {
 })
 export class AdsSquareComponent implements AfterViewInit, OnDestroy {
   adLoaded = false;
-
+  adId: string = 'ad-' + Math.random().toString(36).substring(2, 10);
   ngAfterViewInit(): void {
     this.loadAd();
   }

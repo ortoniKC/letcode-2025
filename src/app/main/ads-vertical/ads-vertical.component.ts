@@ -17,6 +17,7 @@ export class AdsVerticalComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this.loadAd();
   }
+  adId: string = 'ad-' + Math.random().toString(36).substring(2, 10);
 
   loadAd() {
     if (typeof window !== 'undefined' && (window as any).adsbygoogle) {

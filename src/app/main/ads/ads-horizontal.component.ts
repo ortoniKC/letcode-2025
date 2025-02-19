@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AdsHorizontalComponent implements AfterViewInit, OnDestroy {
   adLoaded = false;
-
+  adId: string = 'ad-' + Math.random().toString(36).substring(2, 10);
   ngAfterViewInit(): void {
     this.loadAd();
   }
