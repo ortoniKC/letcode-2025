@@ -1,25 +1,38 @@
-import { AfterViewInit, Component, HostListener } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  OnDestroy,
+} from '@angular/core';
 import { AdsSquareComponent } from '../ads-square/ads-square.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-ads',
-  imports: [AdsSquareComponent],
+  imports: [AdsSquareComponent, CommonModule],
   templateUrl: './ads-horizontal.component.html',
 })
-export class AdsHorizontalComponent implements AfterViewInit {
+export class AdsHorizontalComponent implements AfterViewInit, OnDestroy {
+  adLoaded = false;
+
   ngAfterViewInit(): void {
-    this.loadAds();
+    this.loadAd();
   }
-  @HostListener('window:resize')
-  loadAds() {
+
+  loadAd() {
     if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
       setTimeout(() => {
         try {
           (window as any).adsbygoogle.push({});
+          this.adLoaded = true;
         } catch (e) {
           console.error('AdSense error:', e);
         }
       }, 500);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.adLoaded = false; // Reset the state
   }
 }
