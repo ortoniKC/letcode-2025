@@ -12,7 +12,7 @@ export class AdsHorizontalComponent implements AfterViewInit {
       try {
         (window as any).adsbygoogle.push({});
       } catch (e) {
-        console.error('AdSense error:', e);
+        // console.error('AdSense error:', e);
       }
     }
   }
