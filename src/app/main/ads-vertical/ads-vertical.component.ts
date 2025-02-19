@@ -8,6 +8,9 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
   templateUrl: './ads-vertical.component.html',
 })
 export class AdsVerticalComponent implements AfterViewInit {
+  adLoaded = false;
+  adId: string = 'ad-' + Math.random().toString(36).substring(2, 10);
+
   constructor(@Inject(PLATFORM_ID) private platformId: any) {}
 
   ngAfterViewInit(): void {
@@ -17,14 +20,24 @@ export class AdsVerticalComponent implements AfterViewInit {
   }
 
   loadAd() {
-    if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+    if (
+      !this.adLoaded &&
+      typeof window !== 'undefined' &&
+      (window as any).adsbygoogle
+    ) {
       setTimeout(() => {
         try {
+          console.log(`Loading Ad ID: ${this.adId}`);
           (window as any).adsbygoogle.push({});
+          this.adLoaded = true;
         } catch (e) {
           console.error('AdSense error:', e);
         }
       }, 500);
     }
+  }
+
+  ngOnDestroy(): void {
+    this.adLoaded = false;
   }
 }
