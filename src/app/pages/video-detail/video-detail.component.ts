@@ -4,10 +4,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { YtComponent } from '../../main/yt/yt.component';
+import { AdsHorizontalComponent } from "../../main/ads/ads-horizontal.component";
 
 @Component({
   selector: 'app-video-detail',
-  imports: [CommonModule, SafeUrlPipe, YtComponent],
+  imports: [CommonModule, SafeUrlPipe, YtComponent, AdsHorizontalComponent],
   templateUrl: './video-detail.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
