@@ -217,7 +217,7 @@ export const routes: Routes = [
     },
   },
   {
-    path: 'frameUI',
+    path: 'frameui',
     component: FrameContentComponent,
     data: {
       title: 'Frame UI | LetCode with Koushik',
@@ -335,7 +335,7 @@ export const routes: Routes = [
     },
   },
   {
-    path: 'innerFrame',
+    path: 'innerframe',
     component: InnerframeComponent,
     data: {
       title: 'Inner Frame | LetCode with Koushik',
@@ -364,14 +364,16 @@ export const routes: Routes = [
         'selenium shadow DOM, playwright shadow DOM, protractor shadow DOM',
     },
   },
-  { path: 'home', component: HomeComponent,
+  {
+    path: 'home',
+    component: HomeComponent,
     data: {
       title: 'Fake Store | LetCode with Koushik',
       description: 'Practice Page Object Model with Fake Store',
       keywords:
         'selenium page object model, playwright page object model, protractor page object model',
     },
-   },
+  },
   {
     path: 'product/:id',
     component: ProductListComponent,

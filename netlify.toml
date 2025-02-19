@@ -9,12 +9,12 @@
   status = 404
 
   [[redirects]]
-  from = "/frameUI"
+  from = "/frameui"
   to = "src/app/pages/frame/frame-content/frame-content.component.html"
   status = 200
 
   [[redirects]]
-  from = "/innerFrame"
+  from = "/innerframe"
   to = "src/app/pages/frame/innerframe/innerframe.component.html"
   status = 200
 
