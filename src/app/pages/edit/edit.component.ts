@@ -4,6 +4,8 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-edit',
@@ -12,6 +14,8 @@ import { UpdateMetaTag } from '../../service/updateMeta';
     LearningPointComponent,
     CommonModule,
     RouterModule,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './edit.component.html',

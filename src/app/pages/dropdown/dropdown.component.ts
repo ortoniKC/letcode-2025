@@ -4,10 +4,18 @@ import { LearningPointComponent } from '../learning-point/learning-point.compone
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-dropdown',
-  imports: [PageheaderComponent, LearningPointComponent, CommonModule],
+  imports: [
+    PageheaderComponent,
+    LearningPointComponent,
+    CommonModule,
+    AdsVerticalComponent,
+    AdsHorizontalComponent,
+  ],
   templateUrl: './dropdown.component.html',
 })
 export class DropdownComponent implements OnInit {

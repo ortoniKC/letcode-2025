@@ -4,10 +4,18 @@ import { PageheaderComponent } from '../pageheader/pageheader.component';
 import { LearningPointComponent } from '../learning-point/learning-point.component';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component';
+import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.component';
 
 @Component({
   selector: 'app-buttons',
-  imports: [PageheaderComponent, LearningPointComponent, RouterLink],
+  imports: [
+    PageheaderComponent,
+    LearningPointComponent,
+    RouterLink,
+    AdsHorizontalComponent,
+    AdsVerticalComponent,
+  ],
   templateUrl: './buttons.component.html',
 })
 export class ButtonsComponent implements OnInit {

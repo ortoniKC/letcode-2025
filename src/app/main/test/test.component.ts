@@ -3,11 +3,12 @@ import { MenuComponent } from './menu/menu.component';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { UpdateMetaTag } from '../../service/updateMeta';
+import { AdsHorizontalComponent } from '../ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-test-site',
   templateUrl: './test.component.html',
-  imports: [MenuComponent, CommonModule],
+  imports: [MenuComponent, CommonModule, AdsHorizontalComponent],
 })
 export class TestComponent {
   imagepath = `/assets/mainicons/`;

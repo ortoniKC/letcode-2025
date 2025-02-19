@@ -2,11 +2,12 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { JokeService } from '../service/jokes.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AdsHorizontalComponent } from './ads/ads-horizontal.component';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, AdsHorizontalComponent],
   styleUrl: 'style.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
