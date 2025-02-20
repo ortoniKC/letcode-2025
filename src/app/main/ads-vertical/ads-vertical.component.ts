@@ -1,11 +1,10 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
-import { AdsenseModule } from 'ng2-adsense';
+import { Component } from '@angular/core';
+import { GoogleAdComponent } from '../../shared/google-ad/google-ad.component';
 
 @Component({
   selector: 'app-ads-vertical',
   standalone: true,
-  imports: [CommonModule, AdsenseModule],
+  imports: [GoogleAdComponent],
   templateUrl: './ads-vertical.component.html',
 })
 export class AdsVerticalComponent {}

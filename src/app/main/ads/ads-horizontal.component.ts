@@ -8,10 +8,11 @@ import {
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AdsSquareComponent } from '../ads-square/ads-square.component';
 import { AdsenseModule } from 'ng2-adsense';
+import { GoogleAdComponent } from '../../shared/google-ad/google-ad.component';
 
 @Component({
   selector: 'app-ads',
-  imports: [CommonModule, AdsSquareComponent, AdsenseModule],
+  imports: [CommonModule, AdsSquareComponent, AdsenseModule, GoogleAdComponent],
   templateUrl: './ads-horizontal.component.html',
 })
 export class AdsHorizontalComponent {

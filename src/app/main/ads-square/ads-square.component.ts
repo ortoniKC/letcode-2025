@@ -7,10 +7,11 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { AdsenseModule } from 'ng2-adsense';
+import { GoogleAdComponent } from '../../shared/google-ad/google-ad.component';
 
 @Component({
   selector: 'app-ads-square',
-  imports: [CommonModule, AdsenseModule],
+  imports: [CommonModule, AdsenseModule, GoogleAdComponent],
   templateUrl: './ads-square.component.html',
 })
 export class AdsSquareComponent {}
