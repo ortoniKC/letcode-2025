@@ -1,8 +1,7 @@
 <section class="section has-text-centered is-hidden-mobile">
     <div class="container">
-        <ins *ngIf="adLoaded" [id]="adId" class="adsbygoogle" style="display:block;"
-            data-ad-client="ca-pub-6251538267574677" data-ad-slot="5771994013" data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
+        <ng-adsense [adClient]="'ca-pub-6251538267574677'" [adSlot]="5771994013" [display]="'inline-block'"
+            [pageLevelAds]="true"></ng-adsense>
     </div>
 </section>
 

@@ -1,10 +1,11 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
+import { AdsenseModule } from 'ng2-adsense';
 
 @Component({
   selector: 'app-ads-vertical',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AdsenseModule],
   templateUrl: './ads-vertical.component.html',
 })
 export class AdsVerticalComponent implements AfterViewInit {

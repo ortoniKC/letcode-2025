@@ -7,10 +7,11 @@ import {
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AdsSquareComponent } from '../ads-square/ads-square.component';
+import { AdsenseModule } from 'ng2-adsense';
 
 @Component({
   selector: 'app-ads-horizontal',
-  imports: [CommonModule, AdsSquareComponent],
+  imports: [CommonModule, AdsSquareComponent, AdsenseModule],
   templateUrl: './ads-horizontal.component.html',
 })
 export class AdsHorizontalComponent implements AfterViewInit, OnDestroy {

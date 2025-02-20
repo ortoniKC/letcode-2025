@@ -6,10 +6,11 @@ import {
   OnDestroy,
   PLATFORM_ID,
 } from '@angular/core';
+import { AdsenseModule } from 'ng2-adsense';
 
 @Component({
   selector: 'app-ads-square',
-  imports: [CommonModule],
+  imports: [CommonModule, AdsenseModule],
   templateUrl: './ads-square.component.html',
 })
 export class AdsSquareComponent implements AfterViewInit, OnDestroy {

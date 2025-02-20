@@ -31,6 +31,7 @@ export const appConfig: ApplicationConfig = {
       MarkdownModule.forRoot(),
       AdsenseModule.forRoot({
         adClient: 'ca-pub-6251538267574677',
+        pageLevelAds: true,
       })
     ),
     provideAnimationsAsync(),
