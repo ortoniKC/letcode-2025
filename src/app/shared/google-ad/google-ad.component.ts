@@ -32,34 +32,34 @@ import { isPlatformBrowser } from '@angular/common';
     `,
   ],
 })
-export class GoogleAdComponent implements AfterViewInit {
+export class GoogleAdComponent {
   @Input() adSlot!: string;
   @Input() adFormat: string = 'auto';
   @Input() fullWidth: boolean = true;
 
-  constructor(
-    @Inject(PLATFORM_ID) private platformId: any,
-    private el: ElementRef
-  ) {}
+  // constructor(
+  //   @Inject(PLATFORM_ID) private platformId: any,
+  //   private el: ElementRef
+  // ) {}
 
-  ngAfterViewInit() {
-    // Ensure this only runs in the browser, not during SSR
-    if (isPlatformBrowser(this.platformId)) {
-      try {
-        // Check if AdSense script is available
-        if (typeof (window as any).adsbygoogle !== 'undefined') {
-          // Prevent duplicate loading
-          const ads = this.el.nativeElement.querySelectorAll('.adsbygoogle');
-          ads.forEach((ad: any) => {
-            if (!ad.hasAttribute('data-ads-loaded')) {
-              ad.setAttribute('data-ads-loaded', 'true'); // Mark as loaded
-              (window as any).adsbygoogle.push({});
-            }
-          });
-        }
-      } catch (e) {
-        console.error('AdSense failed to load:', e);
-      }
-    }
-  }
+  // ngAfterViewInit() {
+  //   // Ensure this only runs in the browser, not during SSR
+  //   if (isPlatformBrowser(this.platformId)) {
+  //     try {
+  //       // Check if AdSense script is available
+  //       if (typeof (window as any).adsbygoogle !== 'undefined') {
+  //         // Prevent duplicate loading
+  //         const ads = this.el.nativeElement.querySelectorAll('.adsbygoogle');
+  //         ads.forEach((ad: any) => {
+  //           if (!ad.hasAttribute('data-ads-loaded')) {
+  //             ad.setAttribute('data-ads-loaded', 'true'); // Mark as loaded
+  //             (window as any).adsbygoogle.push({});
+  //           }
+  //         });
+  //       }
+  //     } catch (e) {
+  //       console.error('AdSense failed to load:', e);
+  //     }
+  //   }
+  // }
 }
