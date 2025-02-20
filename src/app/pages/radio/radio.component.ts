@@ -8,12 +8,7 @@ import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.compo
 
 @Component({
   selector: 'app-radio',
-  imports: [
-    PageheaderComponent,
-    LearningPointComponent,
-    AdsHorizontalComponent,
-    AdsVerticalComponent,
-  ],
+  imports: [PageheaderComponent, LearningPointComponent, AdsVerticalComponent],
   templateUrl: './radio.component.html',
 })
 export class RadioComponent implements OnInit {

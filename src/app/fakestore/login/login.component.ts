@@ -17,7 +17,6 @@ import { AdsVerticalComponent } from '../../main/ads-vertical/ads-vertical.compo
     RouterModule,
     AdsHorizontalComponent,
     AdsSquareComponent,
-    AdsVerticalComponent,
   ],
   templateUrl: './login.component.html',
 })

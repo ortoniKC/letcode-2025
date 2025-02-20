@@ -8,12 +8,7 @@ import { AdsHorizontalComponent } from '../../main/ads/ads-horizontal.component'
 
 @Component({
   selector: 'app-waits',
-  imports: [
-    PageheaderComponent,
-    LearningPointComponent,
-    AdsVerticalComponent,
-    AdsHorizontalComponent,
-  ],
+  imports: [PageheaderComponent, LearningPointComponent, AdsVerticalComponent],
   templateUrl: './waits.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
