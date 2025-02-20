@@ -10,7 +10,7 @@ import { AdsSquareComponent } from '../ads-square/ads-square.component';
 import { AdsenseModule } from 'ng2-adsense';
 
 @Component({
-  selector: 'app-ads-horizontal',
+  selector: 'app-ads',
   imports: [CommonModule, AdsSquareComponent, AdsenseModule],
   templateUrl: './ads-horizontal.component.html',
 })
