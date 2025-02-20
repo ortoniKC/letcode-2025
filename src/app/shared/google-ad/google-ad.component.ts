@@ -12,7 +12,7 @@ import {
     <ins
       class="adsbygoogle"
       style="display:block"
-      [attr.data-ad-client]="'ca-pub-XXXXXXXXXX'"
+      [attr.data-ad-client]="'ca-pub-6251538267574677'"
       [attr.data-ad-slot]="adSlot"
       [attr.data-ad-format]="adFormat"
       [attr.data-full-width-responsive]="fullWidth ? 'true' : 'false'"
