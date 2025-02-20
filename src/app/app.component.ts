@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
         });
 
         // ✅ Refresh Google Ads when navigating to a new page
-        this.refreshAds();
+        // this.refreshAds();
       });
   }
 
