@@ -1,59 +1,85 @@
-# Letcode
+# LetCode
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
+LetCode is a platform to learn and practice test automation.
 
-## Development server
+## Tech stack:
 
-To start a local development server, run:
+1. Angular 19
+2. Typescript
+3. Bulma CSS for styling
+4. Netlify for deployment
+5. GoDaddy for hosting
 
-```bash
-ng serve
+### 1. Build Bulma CSS
+
+```sh
+npm run build-bulma
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Uses `sass` to compile Bulma styles from `my-bulma-project.scss` into `src/style.css`.
+- Loads dependencies from `node_modules`.
+- Outputs a compressed CSS file without source maps.
 
-## Code scaffolding
+### 2. Watch Bulma CSS Changes
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```sh
+npm run css
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Runs `npm run build-bulma` with `--watch`, allowing automatic recompilation when changes are detected.
 
-```bash
-ng generate --help
+### 3. Angular CLI
+
+```sh
+npm run ng
 ```
 
-## Building
+- Alias for running the Angular CLI (`ng`).
 
-To build the project run:
+### 4. Start Development Server
 
-```bash
-ng build
+```sh
+npm run start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Runs `ng serve`, which starts a local development server for the Angular project.
 
-## Running unit tests
+### 5. Build for Production
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
+```sh
+npm run build
 ```
 
-## Running end-to-end tests
+- Builds the Angular project using the `production` configuration.
 
-For end-to-end (e2e) testing, run:
+### 6. Watch for Changes (Development Build)
 
-```bash
-ng e2e
+```sh
+npm run watch
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+- Builds the Angular project using the `development` configuration and watches for file changes.
 
-## Additional Resources
+### 7. Run Tests
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```sh
+npm run test
+```
+
+- Runs unit tests using `ng test`.
+
+### 8. Start SSR Server
+
+```sh
+npm run ssr
+```
+
+- Runs the server-side rendered (SSR) version of the application using `node dist/letcode/server/server.mjs`.
+
+## Notes
+
+- Ensure all dependencies are installed using `npm install` before running any script.
+- The Bulma CSS build process uses `sass` and requires `node-sass` or `dart-sass` to be installed.
+- The SSR script assumes that the project has been built using SSR configurations.
+
+For more details, refer to the official [Angular CLI Documentation](https://angular.io/cli).
