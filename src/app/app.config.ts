@@ -13,6 +13,10 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MarkdownModule } from 'ngx-markdown';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+
+import { provideAnalytics, getAnalytics } from '@angular/fire/analytics';
+import { firebaseConfig } from '../environments/environment.prod';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,5 +32,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     importProvidersFrom(MarkdownModule.forRoot()),
     provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAnalytics(() => getAnalytics()),
   ],
 };
