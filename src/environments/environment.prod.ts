@@ -1,7 +1,7 @@
 
 export const firebaseConfig = {
-    apiKey: "asdas",
-    measurementId: "undefined",
+    apiKey: "AIzaSyD7GLGZiIuwxrrWdPkgfnryQUFDtnObR-g",
+    measurementId: "G-EXG8LWLTG6",
     authDomain: "letcode-586d3.firebaseapp.com",
     projectId: "letcode-586d3",
     storageBucket: "letcode-586d3.firebasestorage.app",
