@@ -2,6 +2,7 @@
   "name": "letcode",
   "version": "3.0.0",
   "scripts": {
+    "prebuild": "node src/environments/set-env.js",
     "build-bulma": "sass --load-path=node_modules my-bulma-project.scss src/style.css --no-source-map --style=compressed",
     "css": "npm run build-bulma -- --watch",
     "ng": "ng",
