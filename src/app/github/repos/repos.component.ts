@@ -9,14 +9,14 @@ import {
 import { GithubService } from '../../service/github.service';
 import { CommonModule } from '@angular/common';
 
-
-export interface Repo {
+interface Repo {
   name: string;
   html_url: string;
   description?: string;
   language?: string;
   [key: string]: any;
 }
+
 
 @Component({
   selector: 'app-repos',
@@ -38,7 +38,7 @@ export class ReposComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.repoUrl) {
-      this.gitService.getRepos(this.repoUrl).subscribe((repo: Repo[]) => {
+      this.gitService.getRepos(this.repoUrl).subscribe((repo: any[]) => {
         this.repos = repo;
         this.setPage(1);
         this.changeRef.detectChanges();
