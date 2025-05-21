@@ -9,6 +9,15 @@ import {
 import { GithubService } from '../../service/github.service';
 import { CommonModule } from '@angular/common';
 
+
+export interface Repo {
+  name: string;
+  html_url: string;
+  description?: string;
+  language?: string;
+  [key: string]: any;
+}
+
 @Component({
   selector: 'app-repos',
   standalone: true,
@@ -17,8 +26,8 @@ import { CommonModule } from '@angular/common';
 })
 export class ReposComponent implements OnInit, OnChanges {
   @Input() repoUrl!: string;
-  repos: any[] = [];
-  paginatedRepos: any[] = [];
+  repos: Repo[] = [];
+  paginatedRepos: Repo[] = [];
   currentPage = 1;
   itemsPerPage = 5;
 
@@ -29,7 +38,7 @@ export class ReposComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.repoUrl) {
-      this.gitService.getRepos(this.repoUrl).subscribe((repo) => {
+      this.gitService.getRepos(this.repoUrl).subscribe((repo: Repo[]) => {
         this.repos = repo;
         this.setPage(1);
         this.changeRef.detectChanges();
