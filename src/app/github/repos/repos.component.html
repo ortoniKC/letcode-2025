@@ -1,9 +1,24 @@
 <div class="block">
-    <div class="content p-4">
-        <ol type="1">
-            <li *ngFor="let repo of repos">
-                <a class="is-clipped" [href]="repo.html_url" target="_blank">{{repo.html_url}}</a>
-            </li>
-        </ol>
-    </div>
+  <div class="content p-4">
+    <ol type="1">
+      <li *ngFor="let repo of paginatedRepos" class="mb-4">
+        <a class="has-text-weight-semibold is-size-5" [href]="repo.html_url" target="_blank">
+          <i class="fas fa-code-branch mr-1"></i> {{ repo.name }}
+        </a>
+        <p class="is-size-7 has-text-grey-light">{{ repo.description || 'No description available.' }}</p>
+      </li>
+    </ol>
+
+    <nav class="pagination is-centered mt-4" *ngIf="repos.length > itemsPerPage">
+      <ul class="pagination-list">
+        <li *ngFor="let page of totalPages">
+          <a class="pagination-link"
+             [ngClass]="{ 'is-current': page === currentPage }"
+             (click)="setPage(page)">
+            {{ page }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
