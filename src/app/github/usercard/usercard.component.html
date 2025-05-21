@@ -1,40 +1,32 @@
-<div class="block mt-4">
-    <div class="content">
-        <div class="media">
-            <div class="media-left">
-                <figure class="image is-128x128">
-                    <img [src]="user.avatar_url" class="is-rounded" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="media-content">
-                <p class="title is-4">{{ user.name | titlecase }}</p>
-                <p class="subtitle is-6">{{ user.location | titlecase }}</p>
-                <span>{{user?.bio}}</span>
-            </div>
-        </div>
-        <div class="content">
-            <div class="field is-grouped is-grouped-multiline">
-                <div class="control">
-                    <div class="tags has-addons">
-                        <span class="tag is-primary is-light">Public Repos</span>
-                        <span class=" tag is-info">{{user.public_repos}}</span>
-                    </div>
-                </div>
-                <div class="control">
-                    <div class="tags has-addons">
-                        <span class="tag is-primary is-light">Public Gist</span>
-                        <span class=" tag is-info">
-                            {{user.public_gists}}
-                        </span>
-                    </div>
-                </div>
-                <div class="control">
-                    <div class="tags has-addons">
-                        <span class="tag is-primary is-light">Followers</span>
-                        <span class="tag is-info">{{user.followers}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="box has-shadow">
+  <article class="media">
+    <div class="media-left">
+      <figure class="image is-128x128">
+        <img [src]="user.avatar_url" class="is-rounded" alt="User avatar" />
+      </figure>
     </div>
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong class="is-size-4">{{ user.name || user.login }}</strong><br />
+          <span class="icon-text has-text-grey">
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span>{{ user.location }}</span>
+          </span><br />
+          <span class="is-size-6">{{ user.bio }}</span>
+        </p>
+      </div>
+      <div class="tags">
+        <span class="tag is-link is-light">
+          <i class="fas fa-book pr-1"></i> Public Repos: {{ user.public_repos }}
+        </span>
+        <span class="tag is-info is-light">
+          <i class="fas fa-code pr-1"></i> Gists: {{ user.public_gists }}
+        </span>
+        <span class="tag is-success is-light">
+          <i class="fas fa-users pr-1"></i> Followers: {{ user.followers }}
+        </span>
+      </div>
+    </div>
+  </article>
 </div>
