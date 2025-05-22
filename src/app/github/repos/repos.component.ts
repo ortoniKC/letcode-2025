@@ -37,14 +37,19 @@ export class ReposComponent implements OnInit, OnChanges {
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.repoUrl) {
-      this.gitService.getRepos(this.repoUrl).subscribe((repo: any[]) => {
+  if (this.repoUrl) {
+    this.gitService.getRepos(this.repoUrl).subscribe({
+      next: (repo: any[]) => {
         this.repos = repo;
-        this.setPage(1);
+        this.setPage(1); // optional for pagination
         this.changeRef.detectChanges();
-      });
-    }
+      },
+      error: (err) => {
+        console.error('Error fetching repos:', err);
+      },
+    });
   }
+}
 
   ngOnInit(): void {}
 
