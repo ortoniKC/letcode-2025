@@ -1,24 +1,31 @@
 <div class="block">
-  <div class="content p-4">
-    <ol type="1">
-      <li *ngFor="let repo of paginatedRepos" class="mb-4">
-        <a class="has-text-weight-semibold is-size-5" [href]="repo.html_url" target="_blank">
-          <i class="fas fa-code-branch mr-1"></i> {{ repo.name }}
-        </a>
-        <p class="is-size-7 has-text-grey-light">{{ repo.description || 'No description available.' }}</p>
-      </li>
-    </ol>
-
-    <nav class="pagination is-centered mt-4" *ngIf="repos.length > itemsPerPage">
-      <ul class="pagination-list">
-        <li *ngFor="let page of totalPages">
-          <a class="pagination-link"
-             [ngClass]="{ 'is-current': page === currentPage }"
-             (click)="setPage(page)">
-            {{ page }}
-          </a>
-        </li>
-      </ul>
-    </nav>
+  <div class="columns is-multiline">
+    <div class="column is-12" *ngFor="let repo of repos">
+      <div class="card">
+        <div class="card-content">
+          <p class="title is-5">
+            <a [href]="repo.html_url" target="_blank" class="has-text-info">
+              <span class="icon"><i class="fas fa-book"></i></span> {{ repo.name }}
+            </a>
+          </p>
+          <p class="subtitle is-6">{{ repo.description || 'No description provided.' }}</p>
+          <div *ngIf="repo.language">
+            <span class="tag is-info is-light">
+              <span class="icon is-small"><i class="fas fa-code"></i></span>
+              <span>{{ repo.language }}</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <!-- Pagination -->
+  <nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination">
+    <a class="pagination-previous" (click)="loadRepos(currentPage - 1)" [disabled]="currentPage === 1">Previous</a>
+    <a class="pagination-next" (click)="loadRepos(currentPage + 1)" [disabled]="repos.length < perPage">Next</a>
+    <ul class="pagination-list">
+      <li><a class="pagination-link is-current">{{ currentPage }}</a></li>
+    </ul>
+  </nav>
 </div>
