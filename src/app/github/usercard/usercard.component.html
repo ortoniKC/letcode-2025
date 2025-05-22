@@ -1,32 +1,45 @@
-<div class="box has-shadow">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-128x128">
-        <img [src]="user.avatar_url" class="is-rounded" alt="User avatar" />
-      </figure>
+<div class="card mb-5">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-128x128">
+          <img [src]="user.avatar_url" alt="User avatar" class="is-rounded" />
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">{{ user.name || user.login }}</p>
+        <p class="subtitle is-6 has-text-grey">
+          <span class="icon is-small"><i class="fas fa-location-dot"></i></span>
+          {{ user.location || 'Location not available' }}
+        </p>
+        <p *ngIf="user.bio">{{ user.bio }}</p>
+      </div>
     </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong class="is-size-4">{{ user.name || user.login }}</strong><br />
-          <span class="icon-text has-text-grey">
-            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-            <span>{{ user.location }}</span>
-          </span><br />
-          <span class="is-size-6">{{ user.bio }}</span>
+
+    <hr />
+
+    <div class="columns is-mobile is-multiline has-text-centered">
+      <div class="column is-one-third">
+        <p class="heading">Public Repos</p>
+        <p class="title is-5">
+          <span class="icon is-small"><i class="fas fa-book"></i></span>
+          {{ user.public_repos }}
         </p>
       </div>
-      <div class="tags">
-        <span class="tag is-link is-light">
-          <i class="fas fa-book pr-1"></i> Public Repos: {{ user.public_repos }}
-        </span>
-        <span class="tag is-info is-light">
-          <i class="fas fa-code pr-1"></i> Gists: {{ user.public_gists }}
-        </span>
-        <span class="tag is-success is-light">
-          <i class="fas fa-users pr-1"></i> Followers: {{ user.followers }}
-        </span>
+      <div class="column is-one-third">
+        <p class="heading">Public Gists</p>
+        <p class="title is-5">
+          <span class="icon is-small"><i class="fas fa-code"></i></span>
+          {{ user.public_gists }}
+        </p>
+      </div>
+      <div class="column is-one-third">
+        <p class="heading">Followers</p>
+        <p class="title is-5">
+          <span class="icon is-small"><i class="fas fa-users"></i></span>
+          {{ user.followers }}
+        </p>
       </div>
     </div>
-  </article>
+  </div>
 </div>
