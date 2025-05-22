@@ -22,8 +22,17 @@
 
   <!-- Pagination -->
   <nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination">
-    <a class="pagination-previous" (click)="loadRepos(currentPage - 1)" [disabled]="currentPage === 1">Previous</a>
-    <a class="pagination-next" (click)="loadRepos(currentPage + 1)" [disabled]="repos.length < perPage">Next</a>
+    <button class="button is-link"
+        [disabled]="currentPage === 1"
+        (click)="loadRepos(currentPage - 1)">
+  Previous
+</button>
+
+<button class="button is-link"
+        [disabled]="repos.length < perPage"
+        (click)="loadRepos(currentPage + 1)">
+  Next
+</button>
     <ul class="pagination-list">
       <li><a class="pagination-link is-current">{{ currentPage }}</a></li>
     </ul>
