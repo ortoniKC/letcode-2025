@@ -1,22 +1,6 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ChangeDetectorRef } from '@angular/core';
 import { GithubService } from '../../service/github.service';
 import { CommonModule } from '@angular/common';
-
-interface Repo {
-  name: string;
-  html_url: string;
-  description?: string;
-  language?: string;
-  [key: string]: any;
-}
-
 
 @Component({
   selector: 'app-repos',
@@ -24,45 +8,31 @@ interface Repo {
   imports: [CommonModule],
   templateUrl: './repos.component.html',
 })
-export class ReposComponent implements OnInit, OnChanges {
+export class ReposComponent implements OnChanges {
   @Input() repoUrl!: string;
   repos: any[] = [];
-  paginatedRepos: any[] = [];
   currentPage = 1;
-  itemsPerPage = 5;
+  perPage = 10;
 
-  constructor(
-    private gitService: GithubService,
-    private changeRef: ChangeDetectorRef
-  ) {}
+  constructor(private gitService: GithubService, private changeRef: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-  if (this.repoUrl) {
-    this.gitService.getRepos(this.repoUrl).subscribe({
-      next: (repo: any[]) => {
+    if (this.repoUrl) {
+      this.loadRepos(1);
+    }
+  }
+
+  loadRepos(page: number) {
+    if (page < 1) return;
+    this.currentPage = page;
+    this.gitService.getReposPaginated(this.repoUrl, page, this.perPage).subscribe({
+      next: (repo) => {
         this.repos = repo;
-        this.setPage(1); // optional for pagination
         this.changeRef.detectChanges();
       },
       error: (err) => {
-        console.error('Error fetching repos:', err);
+        console.error(err);
       },
     });
-  }
-}
-
-  ngOnInit(): void {}
-
-  setPage(page: number): void {
-    this.currentPage = page;
-    const start = (page - 1) * this.itemsPerPage;
-    const end = start + this.itemsPerPage;
-    this.paginatedRepos = this.repos.slice(start, end);
-  }
-
-  get totalPages(): number[] {
-    return Array(Math.ceil(this.repos.length / this.itemsPerPage))
-      .fill(0)
-      .map((_, i) => i + 1);
   }
 }
