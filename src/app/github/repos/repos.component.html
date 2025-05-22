@@ -22,6 +22,8 @@
 
   <!-- Pagination -->
   <nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination">
+<div class="buttons is-centered mt-4">
+  <!-- Buttons go here -->
     <button class="button is-link"
         [disabled]="currentPage === 1"
         (click)="loadRepos(currentPage - 1)">
@@ -33,6 +35,7 @@
         (click)="loadRepos(currentPage + 1)">
   Next
 </button>
+</div>
     <ul class="pagination-list">
       <li><a class="pagination-link is-current">{{ currentPage }}</a></li>
     </ul>
