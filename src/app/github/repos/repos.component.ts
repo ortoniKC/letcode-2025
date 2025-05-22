@@ -26,8 +26,8 @@ interface Repo {
 })
 export class ReposComponent implements OnInit, OnChanges {
   @Input() repoUrl!: string;
-  repos: Repo[] = [];
-  paginatedRepos: Repo[] = [];
+  repos: any[] = [];
+  paginatedRepos: any[] = [];
   currentPage = 1;
   itemsPerPage = 5;
 
