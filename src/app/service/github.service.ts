@@ -13,4 +13,7 @@ export class GithubService {
   getUserDetail(username: string): Observable<any> {
     return this.http.get<any>(`https://api.github.com/users/${username}`);
   }
+getReposPaginated(url: string, page: number = 1, perPage: number = 10): Observable<any[]> {
+  return this.http.get<any[]>(`${url}?per_page=${perPage}&page=${page}`);
+}
 }
