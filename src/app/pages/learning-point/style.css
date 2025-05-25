@@ -13,6 +13,3 @@
   padding: 1rem;
   transition: background 0.3s;
 }
-.card-footer-item:hover {
-  background: rgba(22, 196, 127, 0.1); /* Uses your primary color */
-}

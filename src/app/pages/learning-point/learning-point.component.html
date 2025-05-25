@@ -17,7 +17,10 @@
             </ol>
         </div>
     </div>
+    <div class="has-text-centered mt-4 mb-4">
+        <app-yt></app-yt>
+    </div>
     <footer class="card-footer">
-        <a [routerLink]="['/video', link]" class="card-footer-item">Watch tutorial</a>
+        <button [routerLink]="['/video', link]" class="card-footer-item button is-primary">Watch tutorial</button>
     </footer>
 </div>

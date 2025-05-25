@@ -1,50 +1,77 @@
+<!-- Hero Header -->
+<section class="hero is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title is-2">{{ person.name }}</h1>
+            <div class="icons mt-4 is-flex is-justify-content-center is-flex-wrap-wrap">
+                <a *ngIf="person.email" [href]="'mailto:' + person.email" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                <a *ngIf="person.linkedin" [href]="person.linkedin" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a *ngIf="person.github" [href]="person.github" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a *ngIf="person.youtube" [href]="person.youtube" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a *ngIf="person.kurimurai" [href]="person.kurimurai" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a *ngIf="person.coffee" [href]="person.coffee" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa fa-coffee"></i>
+                </a>
+                <a *ngIf="person.telegram" [href]="person.telegram" target="_blank" class="icon is-medium mx-2">
+                    <i class="fa-brands fa-telegram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content -->
 <section class="section">
     <div class="container">
-        <div class="card">
+
+        <!-- Work Experience Card -->
+        <div class="card mb-6">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Work Experience
+                </p>
+            </header>
             <div class="card-content">
-                <p class="title">{{ person.name }}</p>
                 <div class="content">
-                    <div class="icons">
-                        <a [href]="'mailto:' + person.email" target="_blank" class="icon is-large">
-                            <i class="fa fa-envelope"></i>
-                        </a>
-                        <a [href]="person.linkedin" target="_blank" class="icon is-large">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a [href]="person.github" target="_blank" class="icon is-large">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a [href]="person.youtube" target="_blank" class="icon is-large">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a [href]="person.kurimurai" target="_blank" class="icon is-large">
-                            <i class="fa-brands fa-youtube"></i>
-                        </a>
-                        <a [href]="person.coffee" target="_blank" class="icon is-large">
-                            <i class="fa fa-coffee"></i>
-                        </a>
-                        <a [href]="person.telegram" target="_blank" class="icon is-large">
-                            <i class="fa-brands fa-telegram"></i>
-                        </a>
+                    <div *ngFor="let experience of person.workExperience" class="mb-4">
+                        <p class="title is-6">{{ experience.title }}</p>
+                        <p class="has-text-grey">{{ experience.period }}</p>
                     </div>
-                    <h3 class="title is-5">Work Experience</h3>
-                    <ul>
-                        <li *ngFor="let experience of person.workExperience">
-                            <p class="title is-6">{{ experience.title }}</p>
-                            <p class="has-text-grey">{{ experience.period }}</p>
-                        </li>
-                    </ul>
-                    <h3 class="title is-5">Our Products</h3>
-                    <div class="buttons">
-                        <div *ngFor="let product of person.products" class="box">
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Card -->
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                    Our Products
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="columns is-multiline">
+                    <div *ngFor="let product of person.products" class="column is-6-tablet is-4-desktop">
+                        <div class="box">
                             <p class="title is-6">{{ product.name }}</p>
-                            <p>{{ product.description }}</p>
-                            <a [href]="product.link" target="_blank" class="button is-info">View Product</a>
+                            <p class="mb-3">{{ product.description }}</p>
+                            <a [href]="product.link" class="button is-link is-small" target="_blank">View Product</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
+
 <app-ads></app-ads>

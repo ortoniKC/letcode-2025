@@ -18,7 +18,7 @@
                                 </p>
                             </div>
                         </form>
-                        <div class="content" *ngIf=" user">
+                        <div class="content" *ngIf="user">
                             <app-usercard [user]="user"></app-usercard>
                             <app-repos [repoUrl]="user.repos_url"></app-repos>
                         </div>
