@@ -7,3 +7,4 @@ dist
 .netlify
 .env
 src/environments/environment.prod.ts
+android
