@@ -11,11 +11,21 @@ import { FooterComponent } from './main/footer/footer.component';
 import { Meta } from '@angular/platform-browser';
 import { UpdateMetaTag } from './service/updateMeta';
 import { filter } from 'rxjs/operators';
+import { trigger, transition, style, animate } from '@angular/animations'
 
 @Component({
   selector: 'app-root',
   imports: [HeaderComponent, RouterOutlet, FooterComponent, RouterModule],
   templateUrl: './app.component.html',
+template: `<main [@routeFade]="o.isActivated ? o.activatedRoute : ''"><router-outlet #o="outlet"></router-outlet></main>`,
+  animations: [
+    trigger('routeFade', [
+      transition('* => *', [
+        style({ opacity: 0 }),
+        animate('300ms', style({ opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class AppComponent implements OnInit {
   title = 'LetCode with Koushik';
