@@ -1,0 +1,110 @@
+<section class="section">
+    <div class="container">
+        <!-- quiz-runner.component.html -->
+        <!-- Welcome page -->
+        <div *ngIf="!quizStarted && !quizFinished" class="box has-text-centered">
+            <h1 class="title is-1">🧠 Welcome to the Quiz</h1>
+            <div class="subtitle is-6">
+                <p>Get ready to test your knowledge!</p>
+                <p>Here's how it works:</p>
+            </div>
+            <div class="content has-text-left"> 
+            <ul>
+                <li>You will answer {{ questionsPerPage }} questions per page.</li>
+                <li>You have 5 minutes per page.</li>
+                <li>Only the Next button is allowed after submission.</li>
+                <li>Answers will be shown after each submission.</li>
+            </ul>
+            </div>
+            <button class="button is-success is-medium" (click)="startQuiz()">Start Quiz</button>
+        </div>
+        
+        <!-- Quiz questions -->
+        <div *ngIf="quizStarted && !quizFinished">
+            <p class="has-text-centered has-text-grey mb-2">
+                Page {{ currentPage + 1 }} of {{ totalPages }}
+            </p>
+            <p class="has-text-centered has-text-info is-size-6 mb-2">
+                🎯 Total correct so far: {{ totalCorrect }} / {{ quiz.length }}
+            </p>
+
+            <div class="has-text-centered mb-2">
+                <p class="is-size-5 has-text-danger">⏱ {{ timerSeconds }}s left</p>
+            </div>
+        
+            <div class="box" *ngFor="let item of currentQuestions">
+                <p class="title is-5">{{ item.q.question }}</p>
+        
+                <!-- Boolean -->
+                <div *ngIf="item.q.format === 'Boolean'">
+                    <label class="radio mr-2">
+                        <input type="radio" [name]="item.qid" [value]="true" (change)="selectAnswer(item.qid, true)"
+                            [checked]="selectedAnswers[item.qid] === true" [disabled]="showAnswers">
+                        True
+                        <span *ngIf="showAnswers">
+                            <span *ngIf="item.q.answer === true">✅</span>
+                            <span *ngIf="selectedAnswers[item.qid] === true && item.q.answer !== true">❌</span>
+                        </span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" [name]="item.qid" [value]="false" (change)="selectAnswer(item.qid, false)"
+                            [checked]="selectedAnswers[item.qid] === false" [disabled]="showAnswers">
+                        False
+                        <span *ngIf="showAnswers">
+                            <span *ngIf="item.q.answer === false">✅</span>
+                            <span *ngIf="selectedAnswers[item.qid] === false && item.q.answer !== false">❌</span>
+                        </span>
+                    </label>
+                </div>
+        
+                <!-- Multiple Choice -->
+                <div *ngIf="item.q.format === 'Multiple Choice'">
+                    <label *ngFor="let opt of item.q.options" class="radio mr-2">
+                        <input type="radio" [name]="item.qid" [value]="opt" (change)="selectAnswer(item.qid, opt)"
+                            [checked]="selectedAnswers[item.qid] === opt" [disabled]="showAnswers">
+                        {{ opt }}
+                        <span *ngIf="showAnswers">
+                            <span *ngIf="opt === item.q.answer">✅</span>
+                            <span *ngIf="selectedAnswers[item.qid] === opt && opt !== item.q.answer">❌</span>
+                        </span>
+                    </label>
+                </div>
+        
+                <!-- Show Answer -->
+                <article *ngIf="showAnswers && item.q.answer !== undefined" class="message mt-2" [ngClass]="{
+                       'is-success': isCorrect(item.qid, item.q.answer),
+                       'is-danger': !isCorrect(item.qid, item.q.answer)
+                     }">
+                    <div class="message-body">
+                        <strong>Correct Answer:</strong> {{ item.q.answer }}<br>
+                        <em>{{ item.q.answer_definition }}</em>
+                    </div>
+                </article>
+            </div>
+        
+            <!-- Per-page score -->
+            <div *ngIf="showAnswers" class="notification is-info has-text-centered mt-4">
+                ✅ You got {{ currentPageScore }} out of {{ currentQuestions.length }} correct on this page.
+            </div>
+        
+            <!-- Submit / Next -->
+            <div class="has-text-centered mt-4">
+                <p class="is-size-5 has-text-danger">⏱ {{ timerSeconds }}s left</p>
+        
+                <ng-container *ngIf="!showAnswers">
+                    <button class="button is-primary" (click)="submitPage()">Submit</button>
+                </ng-container>
+        
+                <ng-container *ngIf="showAnswers">
+                    <button class="button is-link mt-2" (click)="moveToNextPage()">Next</button>
+                </ng-container>
+            </div>
+        </div>
+        
+        <!-- Completion screen -->
+        <div *ngIf="quizFinished" class="notification is-success has-text-centered">
+            <h2 class="title is-3">🎉 Quiz Completed!</h2>
+            <p class="subtitle is-5">You scored {{ totalCorrect }} out of {{ quiz.length }} correct!</p>
+        </div>
+    </div>
+</section>
