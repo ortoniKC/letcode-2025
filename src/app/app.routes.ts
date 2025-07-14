@@ -38,6 +38,7 @@ import { ProductListComponent } from './fakestore/productlist/product-list.compo
 import { CartComponent } from './fakestore/cart/cart.component';
 import { LoginComponent } from './fakestore/login/login.component';
 import { GithubHomeComponent } from './github/home/github-home.component';
+import { QuizRunnerComponent } from './quiz-runner/quiz-runner.component';
 
 export const routes: Routes = [
   {
@@ -403,6 +404,15 @@ export const routes: Routes = [
       description: 'Login to Fake Store',
       keywords:
         'selenium tutorial, playwright tutorial, protractor tutorial, API testing',
+    },
+  },
+  {
+    path: 'pw-quiz',
+    component: QuizRunnerComponent,
+    data: {
+      title: 'Playwright Quiz | LetCode with Koushik',
+      description: 'Test your Playwright knowledge with this quiz',
+      keywords: 'playwright quiz, test automation quiz, playwright testing',
     },
   },
   { path: 'not-found', component: NotFoundComponent },

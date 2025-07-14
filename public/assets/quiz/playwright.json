@@ -1,0 +1,977 @@
+{
+  "q1": {
+    "format": "Boolean",
+    "question": "Playwright supports XPath selectors.",
+    "answer": true,
+    "answer_definition": "Playwright supports CSS, text, and XPath selectors."
+  },
+  "q2": {
+    "format": "Multiple Choice",
+    "question": "Which selector matches elements by visible text?",
+    "options": ["text=Submit", "css=button", "xpath=//button", "id=submit"],
+    "answer": "text=Submit",
+    "answer_definition": "The `text=` selector matches elements by their rendered text."
+  },
+  "q3": {
+    "format": "Boolean",
+    "question": "CSS selector `#username` targets an element with ID 'username'.",
+    "answer": true,
+    "answer_definition": "CSS `#id` syntax selects elements by ID."
+  },
+  "q4": {
+    "format": "Multiple Choice",
+    "question": "Valid CSS selector for a class 'btn'?",
+    "options": [".btn", "#btn", "btn", "element.btn"],
+    "answer": ".btn",
+    "answer_definition": "CSS `.class` syntax targets elements by class name."
+  },
+  "q5": {
+    "format": "Boolean",
+    "question": "`page.goto('https://example.com')` navigates to a URL.",
+    "answer": true,
+    "answer_definition": "`goto()` is the method to load a page."
+  },
+  "q6": {
+    "format": "Multiple Choice",
+    "question": "Which method reloads the current page?",
+    "options": ["page.reload()", "page.refresh()", "page.load()", "page.update()"],
+    "answer": "page.reload()",
+    "answer_definition": "`reload()` re-fetches the current page."
+  },
+  "q7": {
+    "format": "Boolean",
+    "question": "`page.back()` navigates to the previous page in history.",
+    "answer": true,
+    "answer_definition": "Browser navigation methods like `back()` are supported."
+  },
+  "q8": {
+    "format": "Multiple Choice",
+    "question": "How to click a button with ID 'submit'?",
+    "options": ["page.click('button#submit')", "page.tap('submit')", "page.press('submit')", "page.select('submit')"],
+    "answer": "page.click('button#submit')",
+    "answer_definition": "`click()` triggers a mouse click on the element."
+  },
+  "q9": {
+    "format": "Boolean",
+    "question": "`page.type('input#name', 'John')` enters text into an input field.",
+    "answer": true,
+    "answer_definition": "`type()` simulates typing into an element."
+  },
+  "q10": {
+    "format": "Multiple Choice",
+    "question": "Which method checks a checkbox?",
+    "options": ["page.check('input#agree')", "page.toggle('agree')", "page.select('agree')", "page.mark('agree')"],
+    "answer": "page.check('input#agree')",
+    "answer_definition": "`check()` sets a checkbox to checked."
+  },
+  "q11": {
+    "format": "Boolean",
+    "question": "Playwright requires manual waits for elements to load.",
+    "answer": false,
+    "answer_definition": "Auto-waiting handles waits automatically."
+  },
+  "q12": {
+    "format": "Multiple Choice",
+    "question": "How to wait for an element to be visible?",
+    "options": ["page.waitForSelector('div.content')", "page.sleep(5)", "page.wait(5)", "page.delay(5)"],
+    "answer": "page.waitForSelector('div.content')",
+    "answer_definition": "`waitForSelector()` waits for an element to appear."
+  },
+  "q13": {
+    "format": "Boolean",
+    "question": "`page.route()` can intercept network requests.",
+    "answer": true,
+    "answer_definition": "Network interception is done via `route()`."
+  },
+  "q14": {
+    "format": "Multiple Choice",
+    "question": "Which method mocks a response for a URL?",
+    "options": ["page.route('**/*.json', route => route.fulfill({ body: '{}' }))", "page.mock('*.json')", "page.fake('*.json')", "page.intercept('*.json')"],
+    "answer": "page.route('**/*.json', route => route.fulfill({ body: '{}' }))",
+    "answer_definition": "`route.fulfill()` mocks responses for intercepted requests."
+  },
+  "q15": {
+    "format": "Boolean",
+    "question": "Playwright can emulate mobile devices via `device` descriptors.",
+    "answer": true,
+    "answer_definition": "Use `playwright.devices` to get mobile device settings."
+  },
+  "q16": {
+    "format": "Multiple Choice",
+    "question": "How to create a new browser context (incognito)?",
+    "options": ["browser.newContext()", "browser.createContext()", "browser.incognito()", "browser.private()"],
+    "answer": "browser.newContext()",
+    "answer_definition": "`newContext()` creates an isolated browser context."
+  },
+  "q17": {
+    "format": "Boolean",
+    "question": "Frames require explicit handling in Playwright.",
+    "answer": true,
+    "answer_definition": "Use `frame()` or `frames()` to interact with iframes."
+  },
+  "q18": {
+    "format": "Multiple Choice",
+    "question": "How to take a screenshot of the page?",
+    "options": ["page.screenshot()", "page.capture()", "page.image()", "page.picture()"],
+    "answer": "page.screenshot()",
+    "answer_definition": "`screenshot()` captures the current page state."
+  },
+  "q19": {
+    "format": "Boolean",
+    "question": "`page.setInputFiles()` uploads files to an input element.",
+    "answer": true,
+    "answer_definition": "Use this method to upload files in tests."
+  },
+  "q20": {
+    "format": "Multiple Choice",
+    "question": "Which method retrieves cookies from the browser?",
+    "options": ["context.cookies()", "page.getCookies()", "browser.cookies()", "page.cookie()"],
+    "answer": "context.cookies()",
+    "answer_definition": "Cookies are managed via the browser context."
+  },
+  "q21": {
+    "format": "Boolean",
+    "question": "Playwright supports parallel test execution.",
+    "answer": true,
+    "answer_definition": "Tests can run in parallel using test runners like Jest or Mocha."
+  },
+  "q22": {
+    "format": "Multiple Choice",
+    "question": "How to trace a test for debugging?",
+    "options": ["Use `tracing.start()` and `tracing.stop()`", "page.trace()", "browser.trace()", "context.trace()"],
+    "answer": "Use `tracing.start()` and `tracing.stop()`",
+    "answer_definition": "The `tracing` API records test execution for debugging."
+  },
+  "q23": {
+    "format": "Boolean",
+    "question": "Playwright can mock geolocation via `context.setGeolocation()`.",
+    "answer": true,
+    "answer_definition": "Set coordinates using `setGeolocation()` on the context."
+  },
+  "q24": {
+    "format": "Multiple Choice",
+    "question": "Which method grants permissions (e.g., notifications)?",
+    "options": ["context.grantPermissions(['notifications'])", "page.allowPermissions()", "browser.enablePermissions()", "page.setPermissions()"],
+    "answer": "context.grantPermissions(['notifications'])",
+    "answer_definition": "Permissions are granted via the browser context."
+  },
+  "q25": {
+    "format": "Boolean",
+    "question": "`page.evaluate()` runs JavaScript in the page context.",
+    "answer": true,
+    "answer_definition": "Execute JS with `evaluate()` to interact with the DOM."
+  },
+  "q26": {
+    "format": "Multiple Choice",
+    "question": "How to handle a dialog (e.g., alert)?",
+    "options": ["page.on('dialog', dialog => dialog.accept())", "page.acceptDialog()", "browser.handleDialog()", "page.dismiss()"],
+    "answer": "page.on('dialog', dialog => dialog.accept())",
+    "answer_definition": "Listen to the `dialog` event to handle popups."
+  },
+  "q27": {
+    "format": "Boolean",
+    "question": "Playwright can test Chrome extensions.",
+    "answer": true,
+    "answer_definition": "Use `browserType.launchPersistentContext()` to load extensions."
+  },
+  "q28": {
+    "format": "Multiple Choice",
+    "question": "Which method drags an element to a target?",
+    "options": ["page.dragAndDrop(source, target)", "page.move(source, target)", "page.slide(source, target)", "page.transfer(source, target)"],
+    "answer": "page.dragAndDrop(source, target)",
+    "answer_definition": "`dragAndDrop()` simulates drag-and-drop actions."
+  },
+  "q29": {
+    "format": "Boolean",
+    "question": "`page.content()` returns the HTML of the page.",
+    "answer": true,
+    "answer_definition": "Use `content()` to get the rendered HTML."
+  },
+  "q30": {
+    "format": "Multiple Choice",
+    "question": "How to wait for a network response?",
+    "options": ["page.waitForEvent('response')", "page.waitForNetwork()", "page.awaitResponse()", "page.checkResponse()"],
+    "answer": "page.waitForEvent('response')",
+    "answer_definition": "Listen for the `response` event to wait for network activity."
+  },
+  "q31": {
+    "format": "Boolean",
+    "question": "Playwright supports multi-tab testing.",
+    "answer": true,
+    "answer_definition": "Open new pages via `context.newPage()`."
+  },
+  "q32": {
+    "format": "Multiple Choice",
+    "question": "Which method closes a browser context?",
+    "options": ["context.close()", "browser.closeContext()", "page.close()", "context.end()"],
+    "answer": "context.close()",
+    "answer_definition": "Contexts are closed with `close()`."
+  },
+  "q33": {
+    "format": "Boolean",
+    "question": "`page.setViewportSize()` changes the browser viewport.",
+    "answer": true,
+    "answer_definition": "Adjust viewport dimensions programmatically."
+  },
+  "q34": {
+    "format": "Multiple Choice",
+    "question": "How to test a specific browser version?",
+    "options": ["Specify `channel` in `browserType.launch()`", "Use `browser.version()`", "Set `browser.build()`", "No option needed"],
+    "answer": "Specify `channel` in `browserType.launch()`",
+    "answer_definition": "Channels like 'chrome' or 'msedge' launch specific browsers."
+  },
+  "q35": {
+    "format": "Boolean",
+    "question": "Playwright can record test scripts via Codegen.",
+    "answer": true,
+    "answer_definition": "The Codegen tool generates code from user interactions."
+  },
+  "q36": {
+    "format": "Multiple Choice",
+    "question": "Which method fills a form field?",
+    "options": ["page.fill('input#email', 'a@b.com')", "page.type('email', 'a@b.com')", "page.input('email', 'a@b.com')", "page.set('email', 'a@b.com')"],
+    "answer": "page.fill('input#email', 'a@b.com')",
+    "answer_definition": "`fill()` sets the value of an input field."
+  },
+  "q37": {
+    "format": "Boolean",
+    "question": "`page.isVisible('div.error')` checks if an element is visible.",
+    "answer": true,
+    "answer_definition": "Use `isVisible()` to assert element visibility."
+  },
+  "q38": {
+    "format": "Multiple Choice",
+    "question": "How to download a file during a test?",
+    "options": ["Intercept the download event via `page.on('download')`", "page.download('link')", "browser.download('link')", "page.getFile('link')"],
+    "answer": "Intercept the download event via `page.on('download')`",
+    "answer_definition": "Handle the `download` event to manage file downloads."
+  },
+  "q39": {
+    "format": "Boolean",
+    "question": "Playwright supports browser storage (localStorage, sessionStorage).",
+    "answer": true,
+    "answer_definition": "Use `page.evaluateOnNewDocument()` to set storage."
+  },
+  "q40": {
+    "format": "Multiple Choice",
+    "question": "Which method clears browser cookies?",
+    "options": ["context.clearCookies()", "page.clearCookies()", "browser.clearCookies()", "page.deleteCookies()"],
+    "answer": "context.clearCookies()",
+    "answer_definition": "Cookies are managed at the context level."
+  },
+  "q41": {
+    "format": "Boolean",
+    "question": "`page.hover()` moves the mouse to an element.",
+    "answer": true,
+    "answer_definition": "Simulate hover interactions with `hover()`."
+  },
+  "q42": {
+    "format": "Multiple Choice",
+    "question": "How to test a WebSocket?",
+    "options": ["Intercept via `page.on('websocket')`", "page.testWebSocket()", "browser.websocket()", "page.websocket()"],
+    "answer": "Intercept via `page.on('websocket')`",
+    "answer_definition": "WebSocket events are captured via event listeners."
+  },
+  "q43": {
+    "format": "Boolean",
+    "question": "Playwright can emulate dark/light mode via `prefers-color-scheme`.",
+    "answer": true,
+    "answer_definition": "Set `colorScheme` in the context options."
+  },
+  "q44": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for an element to be detached?",
+    "options": ["page.waitForElementState('div', 'detached')", "page.waitForDetached('div')", "page.awaitDetach('div')", "page.checkState('div', 'detached')"],
+    "answer": "page.waitForElementState('div', 'detached')",
+    "answer_definition": "`waitForElementState()` checks element state changes."
+  },
+  "q45": {
+    "format": "Boolean",
+    "question": "`page.addInitScript()` runs JS before page loads.",
+    "answer": true,
+    "answer_definition": "Inject scripts during context/page initialization."
+  },
+  "q46": {
+    "format": "Multiple Choice",
+    "question": "How to test a PDF viewer?",
+    "options": ["Use `page.pdf()` to generate PDF data", "page.viewPDF('link')", "browser.renderPDF()", "page.checkPDF()"],
+    "answer": "Use `page.pdf()` to generate PDF data",
+    "answer_definition": "`page.pdf()` captures the page as a PDF."
+  },
+  "q47": {
+    "format": "Boolean",
+    "question": "Playwright supports test retries on failure.",
+    "answer": true,
+    "answer_definition": "Configure retries in the test runner config."
+  },
+  "q48": {
+    "format": "Multiple Choice",
+    "question": "Which method starts a browser instance?",
+    "options": ["playwright.chromium.launch()", "playwright.startBrowser()", "browser.init()", "playwright.launchBrowser()"],
+    "answer": "playwright.chromium.launch()",
+    "answer_definition": "Launch via `playwright.<browser>.launch()`."
+  },
+  "q49": {
+    "format": "Boolean",
+    "question": "`page.setJavaScriptEnabled(false)` disables JS execution.",
+    "answer": true,
+    "answer_definition": "Control JS execution via context options."
+  },
+  "q50": {
+    "format": "Multiple Choice",
+    "question": "How to test a file download prompt?",
+    "options": ["Override the download behavior via `context.setDownloadBehavior()`", "page.downloadFile('link')", "browser.downloadFile('link')", "page.triggerDownload('link')"],
+    "answer": "Override the download behavior via `context.setDownloadBehavior()`",
+    "answer_definition": "Customize download handling in browser contexts."
+  },
+  "q51": {
+    "format": "Boolean",
+    "question": "Playwright can handle multi-factor authentication (MFA) flows.",
+    "answer": true,
+    "answer_definition": "Use page.waitForEvent('dialog') to handle MFA prompts."
+  },
+  "q52": {
+    "format": "Multiple Choice",
+    "question": "How to interact with an iframe?",
+    "options": ["page.frame({ url: 'iframe.html' })", "page.switchToIframe('iframe')", "page.enterFrame('iframe')", "page.iframe('iframe')"],
+    "answer": "page.frame({ url: 'iframe.html' })",
+    "answer_definition": "Use the `frame()` method with a selector or URL."
+  },
+  "q53": {
+    "format": "Boolean",
+    "question": "`page.metrics()` returns performance metrics like load time.",
+    "answer": true,
+    "answer_definition": "Provides metrics like `Load`, `DOMContentLoaded`, etc."
+  },
+  "q54": {
+    "format": "Multiple Choice",
+    "question": "Which method captures a video of the test?",
+    "options": ["context.startVideo()", "page.recordVideo()", "browser.recordVideo()", "page.video()"],
+    "answer": "context.startVideo()",
+    "answer_definition": "Start video recording via the browser context."
+  },
+  "q55": {
+    "format": "Boolean",
+    "question": "Playwright can emulate offline mode.",
+    "answer": true,
+    "answer_definition": "Use `context.setOffline(true)` to simulate no network."
+  },
+  "q56": {
+    "format": "Multiple Choice",
+    "question": "How to test responsive design across devices?",
+    "options": ["Use viewport sizes", "Use device descriptors", "Use emulators", "All of the above"],
+    "answer": "All of the above",
+    "answer_definition": "Adjust viewport or use `playwright.devices` for device emulation."
+  },
+  "q57": {
+    "format": "Boolean",
+    "question": "`page.setUserAgent('MyAgent')` overrides the browser's user agent.",
+    "answer": true,
+    "answer_definition": "Customize the user agent string for testing."
+  },
+  "q58": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for network activity to idle?",
+    "options": ["page.waitForLoadState('networkidle')", "page.waitForNetworkIdle()", "page.awaitNetworkIdle()", "page.checkNetwork()"],
+    "answer": "page.waitForLoadState('networkidle')",
+    "answer_definition": "`networkidle` waits for network requests to settle."
+  },
+  "q59": {
+    "format": "Boolean",
+    "question": "Playwright can mock browser permissions.",
+    "answer": true,
+    "answer_definition": "Use context.grantPermissions() or similar methods."
+  },
+  "q60": {
+    "format": "Multiple Choice",
+    "question": "How to get the current page URL?",
+    "options": ["page.url()", "page.location()", "page.getUrl()", "page.href()"],
+    "answer": "page.url()",
+    "answer_definition": "`url()` returns the current page URL."
+  },
+  "q61": {
+    "format": "Boolean",
+    "question": "Tests run in headless mode by default.",
+    "answer": true,
+    "answer_definition": "Playwright runs headless unless `headless: false` is set."
+  },
+  "q62": {
+    "format": "Multiple Choice",
+    "question": "Which method checks if an element is enabled?",
+    "options": ["page.isEnabled('button')", "page.enabled('button')", "page.active('button')", "page.checkState('button', 'enabled')"],
+    "answer": "page.isEnabled('button')",
+    "answer_definition": "`isEnabled()` returns a boolean."
+  },
+  "q63": {
+    "format": "Boolean",
+    "question": "Playwright can test WebAssembly (WASM) apps.",
+    "answer": true,
+    "answer_definition": "Interact with WASM via `page.evaluate()`."
+  },
+  "q64": {
+    "format": "Multiple Choice",
+    "question": "How to take a screenshot of a specific element?",
+    "options": ["page.screenshot({ clip: element })", "element.screenshot()", "page.captureElement(element)", "page.pic(element)"],
+    "answer": "page.screenshot({ clip: element })",
+    "answer_definition": "Use `clip` to crop the screenshot to an element."
+  },
+  "q65": {
+    "format": "Boolean",
+    "question": "`page.setJavaScriptEnabled(false)` disables JavaScript execution.",
+    "answer": true,
+    "answer_definition": "Control JS execution via context options."
+  },
+  "q66": {
+    "format": "Multiple Choice",
+    "question": "Which method triggers a keyboard shortcut (e.g., Ctrl+S)?",
+    "options": ["page.press('Control+S')", "page.keyboard('Control+S')", "page.type('{Control}{S}')", "page.sendKey('Control+S')"],
+    "answer": "page.press('Control+S')",
+    "answer_definition": "`press()` sends key combinations."
+  },
+  "q67": {
+    "format": "Boolean",
+    "question": "Playwright can test browser extensions.",
+    "answer": true,
+    "answer_definition": "Use `browserType.launchPersistentContext()` to load extensions."
+  },
+  "q68": {
+    "format": "Multiple Choice",
+    "question": "How to handle a file download prompt?",
+    "options": ["page.on('download', ...)", "page.download('link')", "browser.download('link')", "page.getFile('link')"],
+    "answer": "page.on('download', ...)",
+    "answer_definition": "Listen to the `download` event to intercept files."
+  },
+  "q69": {
+    "format": "Boolean",
+    "question": "`page.title()` returns the page's title.",
+    "answer": true,
+    "answer_definition": "Use to validate the page's `<title>` tag."
+  },
+  "q70": {
+    "format": "Multiple Choice",
+    "question": "Which method navigates forward in history?",
+    "options": ["page.forward()", "page.next()", "page.historyNext()", "page.goForward()"],
+    "answer": "page.forward()",
+    "answer_definition": "`forward()` moves to the next page in history."
+  },
+  "q71": {
+    "format": "Boolean",
+    "question": "Playwright can mock the system clock.",
+    "answer": false,
+    "answer_definition": "Playwright doesn't natively mock time; use libraries like `sinon` for JS."
+  },
+  "q72": {
+    "format": "Multiple Choice",
+    "question": "How to check if an element exists?",
+    "options": ["page.querySelector() !== null", "page.exists('element')", "page.has('element')", "page.check('element')"],
+    "answer": "page.querySelector() !== null",
+    "answer_definition": "`querySelector()` returns `null` if not found."
+  },
+  "q73": {
+    "format": "Boolean",
+    "question": "`page.setJavaScriptEnabled(false)` affects page functionality.",
+    "answer": true,
+    "answer_definition": "JS is required for most modern web apps."
+  },
+  "q74": {
+    "format": "Multiple Choice",
+    "question": "Which method starts a new browser context?",
+    "options": ["browser.newContext()", "browser.createContext()", "browser.startContext()", "browser.context()"],
+    "answer": "browser.newContext()",
+    "answer_definition": "`newContext()` creates an isolated context."
+  },
+  "q75": {
+    "format": "Boolean",
+    "question": "Playwright can test WebGL content.",
+    "answer": true,
+    "answer_definition": "Supports rendering and interaction with WebGL."
+  },
+  "q76": {
+    "format": "Multiple Choice",
+    "question": "How to click an element with Ctrl held down?",
+    "options": ["page.click('button', { modifiers: ['Control'] })", "page.press('Ctrl+Click')", "page.holdKey('Ctrl').click()", "page.keyClick('Ctrl', 'button')"],
+    "answer": "page.click('button', { modifiers: ['Control'] })",
+    "answer_definition": "`modifiers` option simulates key holds."
+  },
+  "q77": {
+    "format": "Boolean",
+    "question": "Test can generate traces for debugging.",
+    "answer": true,
+    "answer_definition": "Use tracing.start() to record execution steps."
+  },
+  "q78": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for an element to be hidden?",
+    "options": ["page.waitForElementState('div', 'hidden')", "page.waitForHidden('div')", "page.awaitHide('div')", "page.checkState('div', 'hidden')"],
+    "answer": "page.waitForElementState('div', 'hidden')",
+    "answer_definition": "`waitForElementState()` checks visibility state."
+  },
+  "q79": {
+    "format": "Boolean",
+    "question": "Playwright supports testing of Electron apps.",
+    "answer": true,
+    "answer_definition": "Use `electron` channel in `browserType.launch()`."
+  },
+  "q80": {
+    "format": "Multiple Choice",
+    "question": "How to validate the text of an element?",
+    "options": ["page.textContent('div')", "page.innerText('div')", "page.getText('div')", "page.content('div')"],
+    "answer": "page.textContent('div')",
+    "answer_definition": "`textContent()` returns the text of an element."
+  },
+  "q81": {
+    "format": "Boolean",
+    "question": "`page.setExtraHTTPHeaders()` can set custom headers.",
+    "answer": true,
+    "answer_definition": "Add headers like `Authorization` for API calls."
+  },
+  "q82": {
+    "format": "Multiple Choice",
+    "question": "Which method captures a screenshot of the entire page?",
+    "options": ["page.screenshot()", "page.fullScreenshot()", "page.capture()", "page.pic()"],
+    "answer": "page.screenshot()",
+    "answer_definition": "Defaults to full page unless `clip` is specified."
+  },
+  "q83": {
+    "format": "Boolean",
+    "question": "Playwright can handle OAuth2 authentication flows.",
+    "answer": true,
+    "answer_definition": "Mock OAuth endpoints or automate the login flow."
+  },
+  "q84": {
+    "format": "Multiple Choice",
+    "question": "How to test a Single Page Application (SPA)?",
+    "options": ["Use auto-waiting", "Track network requests", "Use waitForLoadState()", "All of the above"],
+    "answer": "All of the above",
+    "answer_definition": "SPAs require waiting for network/data states."
+  },
+  "q85": {
+    "format": "Boolean",
+    "question": "`page.setViewportSize({ width: 800, height: 600 })` sets the viewport.",
+    "answer": true,
+    "answer_definition": "Adjust the visible area of the page."
+  },
+  "q86": {
+    "format": "Multiple Choice",
+    "question": "Which method checks if an element is checked (checkbox)?",
+    "options": ["page.isChecked('input')", "page.checked('input')", "page.selected('input')", "page.toggle('input')"],
+    "answer": "page.isChecked('input')",
+    "answer_definition": "`isChecked()` returns the state of checkboxes/radio buttons."
+  },
+  "q87": {
+    "format": "Boolean",
+    "question": "Playwright can test browser notifications.",
+    "answer": true,
+    "answer_definition": "Use `page.on('notification')` to handle them."
+  },
+  "q88": {
+    "format": "Multiple Choice",
+    "question": "How to intercept and modify a network response?",
+    "options": ["page.route('**/*.json', route => route.fulfill({ body: 'modified' }))", "page.mock('*.json')", "page.fake('*.json')", "page.intercept('*.json')"],
+    "answer": "page.route('**/*.json', route => route.fulfill({ body: 'modified' }))",
+    "answer_definition": "Use `route.fulfill()` to mock responses."
+  },
+  "q89": {
+    "format": "Boolean",
+    "question": "`page.evaluateOnNewDocument()` runs JS before the page loads.",
+    "answer": true,
+    "answer_definition": "Inject scripts during context initialization."
+  },
+  "q90": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for an element to be visible?",
+    "options": ["page.waitForSelector('div')", "page.waitForVisible('div')", "page.awaitShow('div')", "page.checkVisible('div')"],
+    "answer": "page.waitForSelector('div')",
+    "answer_definition": "`waitForSelector()` waits for element presence."
+  },
+  "q91": {
+    "format": "Boolean",
+    "question": "Playwright supports testing of WebExtensions (Firefox/Chrome extensions).",
+    "answer": true,
+    "answer_definition": "Load extensions via context options."
+  },
+  "q92": {
+    "format": "Multiple Choice",
+    "question": "How to simulate a right-click (context menu)?",
+    "options": ["page.click('button', { button: 'right' })", "page.rightClick('button')", "page.contextClick('button')", "page.press('RightClick')"],
+    "answer": "page.click('button', { button: 'right' })",
+    "answer_definition": "`button: 'right'` specifies the click type."
+  },
+  "q93": {
+    "format": "Boolean",
+    "question": "`page.setCacheEnabled(false)` disables browser caching.",
+    "answer": true,
+    "answer_definition": "Control caching behavior via context options."
+  },
+  "q94": {
+    "format": "Multiple Choice",
+    "question": "Which method retrieves the page's HTML?",
+    "options": ["page.content()", "page.html()", "page.source()", "page.text()"],
+    "answer": "page.content()",
+    "answer_definition": "`content()` returns the serialized HTML."
+  },
+  "q95": {
+    "format": "Boolean",
+    "question": "Playwright can test browser storage (localStorage, sessionStorage).",
+    "answer": true,
+    "answer_definition": "Use `page.evaluateOnNewDocument()` to set storage."
+  },
+  "q96": {
+    "format": "Multiple Choice",
+    "question": "How to handle a browser crash?",
+    "options": ["page.on('crash', ...)", "browser.on('crash', ...)", "context.on('crash', ...)", "No specific handler needed"],
+    "answer": "page.on('crash', ...)",
+    "answer_definition": "Listen for the `crash` event to handle failures."
+  },
+  "q97": {
+    "format": "Boolean",
+    "question": "`page.setJavaScriptEnabled(true)` is the default state.",
+    "answer": true,
+    "answer_definition": "JS is enabled unless explicitly disabled."
+  },
+  "q98": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for a specific network response?",
+    "options": ["page.waitForEvent('response')", "page.awaitResponse('url')", "page.checkResponse('url')", "page.findResponse('url')"],
+    "answer": "page.waitForEvent('response')",
+    "answer_definition": "Listen for the `response` event to wait for a URL."
+  },
+  "q99": {
+    "format": "Boolean",
+    "question": "Playwright can test browser cookies.",
+    "answer": true,
+    "answer_definition": "Use `context.cookies()` to manage cookies."
+  },
+  "q100": {
+    "format": "Multiple Choice",
+    "question": "How to validate the page's HTTP status code?",
+    "options": ["page.status()", "page.getStatus()", "page.evaluate(() => window.status)", "page.url()"],
+    "answer": "page.status()",
+    "answer_definition": "`status()` returns the HTTP status code."
+  },
+  "q101": {
+    "format": "Boolean",
+    "question": "Playwright can test WebSocket connections.",
+    "answer": true,
+    "answer_definition": "Use `page.on('websocket')` to intercept WebSocket events."
+  },
+  "q102": {
+    "format": "Multiple Choice",
+    "question": "How to simulate a touch event on mobile?",
+    "options": ["page.touch()", "page.swipe()", "page.press('touch')", "page.tap()"],
+    "answer": "page.tap()",
+    "answer_definition": "`tap()` simulates a touch on touch-enabled devices."
+  },
+  "q103": {
+    "format": "Boolean",
+    "question": "Playwright can mock browser geolocation.",
+    "answer": true,
+    "answer_definition": "Use `context.setGeolocation({ latitude, longitude })`."
+  },
+  "q104": {
+    "format": "Multiple Choice",
+    "question": "Which method retrieves all cookies?",
+    "options": ["context.cookies()", "page.getCookies()", "browser.cookies()", "page.cookie()"],
+    "answer": "context.cookies()",
+    "answer_definition": "Cookies are managed via the browser context."
+  },
+  "q105": {
+    "format": "Boolean",
+    "question": "`page.setExtraHTTPHeaders()` sets headers for all requests.",
+    "answer": true,
+    "answer_definition": "Headers are applied to the entire context."
+  },
+  "q106": {
+    "format": "Multiple Choice",
+    "question": "How to wait for an element to be attached?",
+    "options": ["page.waitForElementState('div', 'attached')", "page.waitForAttached('div')", "page.awaitAttach('div')", "page.checkAttached('div')"],
+    "answer": "page.waitForElementState('div', 'attached')",
+    "answer_definition": "`waitForElementState()` checks element attachment state."
+  },
+  "q107": {
+    "format": "Boolean",
+    "question": "Playwright supports parallel test execution.",
+    "answer": true,
+    "answer_definition": "Tests can run in parallel using test runners like Jest or Mocha."
+  },
+  "q108": {
+    "format": "Multiple Choice",
+    "question": "Which method checks if an element is visible?",
+    "options": ["page.isVisible('div')", "page.visible('div')", "page.checkVisibility('div')", "page.show('div')"],
+    "answer": "page.isVisible('div')",
+    "answer_definition": "`isVisible()` returns a boolean."
+  },
+  "q109": {
+    "format": "Boolean",
+    "question": "Playwright can test browser notifications.",
+    "answer": true,
+    "answer_definition": "Use `page.on('notification')` to handle them."
+  },
+  "q110": {
+    "format": "Multiple Choice",
+    "question": "How to handle a file download?",
+    "options": ["page.on('download', ...)", "page.download('link')", "browser.download('link')", "page.getFile('link')"],
+    "answer": "page.on('download', ...)",
+    "answer_definition": "Listen to the `download` event to intercept files."
+  },
+  "q111": {
+    "format": "Boolean",
+    "question": "`page.content()` returns the page's HTML.",
+    "answer": true,
+    "answer_definition": "Use `content()` to get the rendered HTML."
+  },
+  "q112": {
+    "format": "Multiple Choice",
+    "question": "Which method navigates to a URL?",
+    "options": ["page.goto()", "page.visit()", "page.open()", "page.load()"],
+    "answer": "page.goto()",
+    "answer_definition": "`goto()` is the method to load a page."
+  },
+  "q113": {
+    "format": "Boolean",
+    "question": "Playwright requires manual waits for elements.",
+    "answer": false,
+    "answer_definition": "Auto-waiting handles waits automatically."
+  },
+  "q114": {
+    "format": "Multiple Choice",
+    "question": "How to take a screenshot of a specific element?",
+    "options": ["page.screenshot({ clip: element })", "element.screenshot()", "page.captureElement(element)", "page.pic(element)"],
+    "answer": "page.screenshot({ clip: element })",
+    "answer_definition": "Use `clip` to crop the screenshot to an element."
+  },
+  "q115": {
+    "format": "Boolean",
+    "question": "Playwright can emulate offline mode.",
+    "answer": true,
+    "answer_definition": "Use `context.setOffline(true)` to simulate no network."
+  },
+  "q116": {
+    "format": "Multiple Choice",
+    "question": "Which method checks if an element is enabled?",
+    "options": ["page.isEnabled('button')", "page.enabled('button')", "page.active('button')", "page.checkState('button', 'enabled')"],
+    "answer": "page.isEnabled('button')",
+    "answer_definition": "`isEnabled()` returns a boolean."
+  },
+  "q117": {
+    "format": "Boolean",
+    "question": "Playwright can test WebGL content.",
+    "answer": true,
+    "answer_definition": "Supports rendering and interaction with WebGL."
+  },
+  "q118": {
+    "format": "Multiple Choice",
+    "question": "How to click an element with Ctrl held down?",
+    "options": ["page.click('button', { modifiers: ['Control'] })", "page.press('Ctrl+Click')", "page.holdKey('Ctrl').click()", "page.keyClick('Ctrl', 'button')"],
+    "answer": "page.click('button', { modifiers: ['Control'] })",
+    "answer_definition": "`modifiers` option simulates key holds."
+  },
+  "q119": {
+    "format": "Boolean",
+    "question": "Test can generate traces for debugging.",
+    "answer": true,
+    "answer_definition": "Use tracing.start() to record execution steps."
+  },
+  "q120": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for an element to be hidden?",
+    "options": ["page.waitForElementState('div', 'hidden')", "page.waitForHidden('div')", "page.awaitHide('div')", "page.checkState('div', 'hidden')"],
+    "answer": "page.waitForElementState('div', 'hidden')",
+    "answer_definition": "`waitForElementState()` checks visibility state."
+  },
+  "q121": {
+    "format": "Boolean",
+    "question": "Playwright supports testing of Electron apps.",
+    "answer": true,
+    "answer_definition": "Use `electron` channel in `browserType.launch()`."
+  },
+  "q122": {
+    "format": "Multiple Choice",
+    "question": "How to validate the text of an element?",
+    "options": ["page.textContent('div')", "page.innerText('div')", "page.getText('div')", "page.content('div')"],
+    "answer": "page.textContent('div')",
+    "answer_definition": "`textContent()` returns the text of an element."
+  },
+  "q123": {
+    "format": "Boolean",
+    "question": "`page.setExtraHTTPHeaders()` can set custom headers.",
+    "answer": true,
+    "answer_definition": "Add headers like `Authorization` for API calls."
+  },
+  "q124": {
+    "format": "Multiple Choice",
+    "question": "Which method captures a screenshot of the entire page?",
+    "options": ["page.screenshot()", "page.fullScreenshot()", "page.capture()", "page.pic()"],
+    "answer": "page.screenshot()",
+    "answer_definition": "Defaults to full page unless `clip` is specified."
+  },
+  "q125": {
+    "format": "Boolean",
+    "question": "Playwright can handle OAuth2 authentication flows.",
+    "answer": true,
+    "answer_definition": "Mock OAuth endpoints or automate the login flow."
+  },
+  "q126": {
+    "format": "Multiple Choice",
+    "question": "How to test a Single Page Application (SPA)?",
+    "options": ["Use auto-waiting", "Track network requests", "Use waitForLoadState()", "All of the above"],
+    "answer": "All of the above",
+    "answer_definition": "SPAs require waiting for network/data states."
+  },
+  "q127": {
+    "format": "Boolean",
+    "question": "`page.setViewportSize()` sets the viewport.",
+    "answer": true,
+    "answer_definition": "Adjust the visible area of the page."
+  },
+  "q128": {
+    "format": "Multiple Choice",
+    "question": "Which method checks if an element is checked (checkbox)?",
+    "options": ["page.isChecked('input')", "page.checked('input')", "page.selected('input')", "page.toggle('input')"],
+    "answer": "page.isChecked('input')",
+    "answer_definition": "`isChecked()` returns the state of checkboxes/radio buttons."
+  },
+  "q129": {
+    "format": "Boolean",
+    "question": "Playwright can test browser notifications.",
+    "answer": true,
+    "answer_definition": "Use `page.on('notification')` to handle them."
+  },
+  "q130": {
+    "format": "Multiple Choice",
+    "question": "How to intercept and modify a network response?",
+    "options": ["page.route('**/*.json', route => route.fulfill({ body: 'modified' }))", "page.mock('*.json')", "page.fake('*.json')", "page.intercept('*.json')"],
+    "answer": "page.route('**/*.json', route => route.fulfill({ body: 'modified' }))",
+    "answer_definition": "Use `route.fulfill()` to mock responses."
+  },
+  "q131": {
+    "format": "Boolean",
+    "question": "`page.evaluateOnNewDocument()` runs JS before the page loads.",
+    "answer": true,
+    "answer_definition": "Inject scripts during context initialization."
+  },
+  "q132": {
+    "format": "Multiple Choice",
+    "question": "Which method waits for an element to be visible?",
+    "options": ["page.waitForSelector('div')", "page.waitForVisible('div')", "page.awaitShow('div')", "page.checkVisible('div')"],
+    "answer": "page.waitForSelector('div')",
+    "answer_definition": "`waitForSelector()` waits for element presence."
+  },
+  "q133": {
+    "format": "Boolean",
+    "question": "Playwright supports testing of WebExtensions.",
+    "answer": true,
+    "answer_definition": "Load extensions via context options."
+  },
+  "q134": {
+    "format": "Multiple Choice",
+    "question": "How to simulate a right-click?",
+    "options": ["page.click('button', { button: 'right' })", "page.rightClick('button')", "page.contextClick('button')", "page.press('RightClick')"],
+    "answer": "page.click('button', { button: 'right' })",
+    "answer_definition": "`button: 'right'` specifies the click type."
+  },
+  "q135": {
+    "format": "Boolean",
+    "question": "`page.setCacheEnabled(false)` disables caching.",
+    "answer": true,
+    "answer_definition": "Control caching behavior via context options."
+  },
+  "q136": {
+    "format": "Multiple Choice",
+    "question": "Which method retrieves the page's HTML?",
+    "options": ["page.content()", "page.html()", "page.source()", "page.text()"],
+    "answer": "page.content()",
+    "answer_definition": "`content()` returns the serialized HTML."
+  },
+  "q137": {
+    "format": "Boolean",
+    "question": "Playwright can test browser cookies.",
+    "answer": true,
+    "answer_definition": "Use `context.cookies()` to manage cookies."
+  },
+  "q138": {
+    "format": "Multiple Choice",
+    "question": "How to validate the page's HTTP status code?",
+    "options": ["page.status()", "page.getStatus()", "page.evaluate(() => window.status)", "page.url()"],
+    "answer": "page.status()",
+    "answer_definition": "`status()` returns the HTTP status code."
+  },
+  "q139": {
+    "format": "Boolean",
+    "question": "Playwright can test WebSocket connections.",
+    "answer": true,
+    "answer_definition": "Use `page.on('websocket')` to intercept WebSocket events."
+  },
+  "q140": {
+    "format": "Multiple Choice",
+    "question": "Which method starts a WebSocket connection?",
+    "options": ["page.websocket('ws://url')", "page.connectWebSocket('url')", "page.startWebSocket('url')", "page.initWebSocket('url')"],
+    "answer": "page.websocket('ws://url')",
+    "answer_definition": "Pass the WebSocket URL to `page.websocket()`."
+  },
+  "q141": {
+    "format": "Boolean",
+    "question": "Playwright can emulate dark mode via `prefers-color-scheme`.",
+    "answer": true,
+    "answer_definition": "Set `colorScheme` in the context options."
+  },
+  "q142": {
+    "format": "Multiple Choice",
+    "question": "How to set the color scheme to dark?",
+    "options": ["context.setColorScheme('dark')", "page.setColorScheme('dark')", "browser.setColorScheme('dark')", "page.colorScheme('dark')"],
+    "answer": "context.setColorScheme('dark')",
+    "answer_definition": "Color scheme is set via the browser context."
+  },
+  "q143": {
+    "format": "Boolean",
+    "question": "Playwright can test browser extensions.",
+    "answer": true,
+    "answer_definition": "Use `browserType.launchPersistentContext()` to load extensions."
+  },
+  "q144": {
+    "format": "Multiple Choice",
+    "question": "How to load a Chrome extension?",
+    "options": ["browserType.launchPersistentContext('path/to/extension')", "browser.loadExtension('path')", "page.loadExtension('path')", "context.loadExtension('path')"],
+    "answer": "browserType.launchPersistentContext('path/to/extension')",
+    "answer_definition": "Extensions are loaded via persistent contexts."
+  },
+  "q145": {
+    "format": "Boolean",
+    "question": "Playwright can test browser storage (localStorage).",
+    "answer": true,
+    "answer_definition": "Use `page.evaluateOnNewDocument()` to set storage."
+  },
+  "q146": {
+    "format": "Multiple Choice",
+    "question": "How to set localStorage?",
+    "options": ["page.evaluate(() => localStorage.setItem('key', 'value'))", "page.setStorage('local', 'key', 'value')", "browser.setStorage('local', 'key', 'value')", "page.storage('local', 'key', 'value')"],
+    "answer": "page.evaluate(() => localStorage.setItem('key', 'value'))",
+    "answer_definition": "LocalStorage is accessed via page evaluation."
+  },
+  "q147": {
+    "format": "Boolean",
+    "question": "Playwright can test browser cookies.",
+    "answer": true,
+    "answer_definition": "Use `context.cookies()` to manage cookies."
+  },
+  "q148": {
+    "format": "Multiple Choice",
+    "question": "How to delete a cookie?",
+    "options": ["context.clearCookies()", "page.deleteCookie('cookie')", "browser.deleteCookie('cookie')", "page.removeCookie('cookie')"],
+    "answer": "context.clearCookies()",
+    "answer_definition": "Cookies are managed at the context level."
+  },
+  "q149": {
+    "format": "Boolean",
+    "question": "Playwright can test WebGL content.",
+    "answer": true,
+    "answer_definition": "Supports rendering and interaction with WebGL."
+  },
+  "q150": {
+    "format": "Multiple Choice",
+    "question": "How to check if WebGL is supported?",
+    "options": ["page.evaluate(() => !!window.WebGLRenderingContext)", "page.checkWebGL()", "browser.checkWebGL()", "page.webglSupported()"],
+    "answer": "page.evaluate(() => !!window.WebGLRenderingContext)",
+    "answer_definition": "Check for WebGL support via `window.WebGLRenderingContext`."
+  }
+}
