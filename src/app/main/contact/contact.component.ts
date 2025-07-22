@@ -34,7 +34,7 @@ export class ContactComponent {
         period: 'May 2021 - Jul 2022',
       },
       {
-        title: 'Quality Assurance Engineer - Allegion',
+        title: 'Quality Assurance Engineer - Revature',
         period: 'Jan 2020 - Apr 2021',
       },
       {
