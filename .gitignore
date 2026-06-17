@@ -7,3 +7,8 @@ dist
 .netlify
 .env
 src/environments/environment.prod.ts
+
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
