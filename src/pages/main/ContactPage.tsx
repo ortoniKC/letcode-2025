@@ -116,7 +116,7 @@ export const ContactPage: React.FC = () => {
                   <img
                     src="/assets/logo.png"
                     alt="LetCode logo"
-                    className="w-full h-full object-contain p-2"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div
@@ -294,7 +294,7 @@ export const ContactPage: React.FC = () => {
                           <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[9px] font-bold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border border-emerald-100/60 dark:border-emerald-900/40">
                             {prod.type}
                           </span>
-                          <div className="text-slate-500 dark:text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                          <div className="w-8 h-8 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 flex items-center justify-center text-slate-500 dark:text-slate-400 group-hover:bg-emerald-500/20 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-300">
                             <IconComp className="w-4 h-4" />
                           </div>
                         </div>

@@ -10,14 +10,14 @@
 
 ## 🚀 Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Framework | [React 18](https://react.dev/) + [Vite](https://vitejs.dev/) |
-| Language | TypeScript |
-| Styling | [Tailwind CSS v3](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) tokens |
-| Routing | [React Router v6](https://reactrouter.com/) |
-| Icons | [Lucide React](https://lucide.dev/) + Font Awesome |
-| Deployment | [Netlify](https://netlify.com/) via GitHub Actions |
+| Layer      | Technology                                                                               |
+| ---------- | ---------------------------------------------------------------------------------------- |
+| Framework  | [React 18](https://react.dev/) + [Vite](https://vitejs.dev/)                             |
+| Language   | TypeScript                                                                               |
+| Styling    | [Tailwind CSS v3](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) tokens |
+| Routing    | [React Router v6](https://reactrouter.com/)                                              |
+| Icons      | [Lucide React](https://lucide.dev/) + Font Awesome                                       |
+| Deployment | [Netlify](https://netlify.com/) via GitHub Actions                                       |
 
 ---
 
@@ -37,6 +37,7 @@
 ## 🛠️ Getting Started
 
 ### Prerequisites
+
 - Node.js 20+
 - npm
 
@@ -60,12 +61,12 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## 📜 Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Start Vite development server with HMR |
-| `npm run build` | Type-check + production build → `dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint across all `.ts` / `.tsx` files |
+| Command           | Description                                |
+| ----------------- | ------------------------------------------ |
+| `npm run dev`     | Start Vite development server with HMR     |
+| `npm run build`   | Type-check + production build → `dist/`    |
+| `npm run preview` | Preview production build locally           |
+| `npm run lint`    | Run ESLint across all `.ts` / `.tsx` files |
 
 ---
 
@@ -73,19 +74,19 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 The project deploys automatically to **Netlify** via GitHub Actions.
 
-| Trigger | Action |
-|---|---|
-| Push / merge to `main` | Production deploy |
+| Trigger                | Action                               |
+| ---------------------- | ------------------------------------ |
+| Push / merge to `main` | Production deploy                    |
 | Pull request to `main` | Preview deploy (`pr-<number>` alias) |
 
 ### Required GitHub Secrets
 
 Go to **Settings → Secrets and variables → Actions** and add:
 
-| Secret | Where to find it |
-|---|---|
+| Secret               | Where to find it                                 |
+| -------------------- | ------------------------------------------------ |
 | `NETLIFY_AUTH_TOKEN` | Netlify → User Settings → Personal access tokens |
-| `NETLIFY_SITE_ID` | Netlify → Site Settings → General → Site ID |
+| `NETLIFY_SITE_ID`    | Netlify → Site Settings → General → Site ID      |
 
 ---
 
