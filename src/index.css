@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode — warm off-white base */
+    --background: 220 20% 97%;
+    --foreground: 224 71% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 8%;
+
+    /* Vibrant emerald primary */
+    --primary: 158 72% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 93%;
+    --secondary-foreground: 224 30% 20%;
+
+    --muted: 220 14% 93%;
+    --muted-foreground: 220 14% 46%;
+
+    --accent: 220 14% 93%;
+    --accent-foreground: 224 30% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 158 72% 32%;
+
+    --radius: 0.6rem;
+
+    /* Custom brand tokens */
+    --emerald: 158 72% 36%;
+    --emerald-glow: rgba(16, 185, 129, 0.15);
+    --indigo-glow: rgba(99, 102, 241, 0.12);
+    --violet-glow: rgba(139, 92, 246, 0.1);
+  }
+
+  .dark {
+    /* Deep indigo-navy — richer than plain slate-950 */
+    --background: 228 45% 5%;
+    --foreground: 214 32% 94%;
+
+    --card: 228 38% 7%;
+    --card-foreground: 214 32% 94%;
+
+    --popover: 228 45% 5%;
+    --popover-foreground: 214 32% 94%;
+
+    /* Brighter emerald for dark backgrounds */
+    --primary: 158 65% 48%;
+    --primary-foreground: 228 45% 5%;
+
+    --secondary: 228 28% 12%;
+    --secondary-foreground: 214 32% 94%;
+
+    --muted: 228 28% 12%;
+    --muted-foreground: 220 16% 60%;
+
+    --accent: 228 28% 12%;
+    --accent-foreground: 214 32% 94%;
+
+    --destructive: 0 60% 38%;
+    --destructive-foreground: 214 32% 94%;
+
+    --border: 228 24% 14%;
+    --input: 228 24% 14%;
+    --ring: 158 65% 48%;
+
+    /* Custom dark brand glow tokens */
+    --emerald-glow: rgba(16, 185, 129, 0.2);
+    --indigo-glow: rgba(99, 102, 241, 0.18);
+    --violet-glow: rgba(139, 92, 246, 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    tab-size: 4;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Ambient background mesh — light mode */
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% -10%, rgba(16, 185, 129, 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(99, 102, 241, 0.06) 0%, transparent 60%);
+  }
+
+  .dark body,
+  body.dark {
+    /* Ambient background mesh — dark mode */
+    background-image:
+      radial-gradient(ellipse 80% 60% at 10% -5%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 90% 105%, rgba(99, 102, 241, 0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 30% at 50% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  }
+
+  /* Apply dark ambient mesh via class on documentElement */
+  html.dark body {
+    background-image:
+      radial-gradient(ellipse 80% 60% at 10% -5%, rgba(16, 185, 129, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 50% at 90% 105%, rgba(99, 102, 241, 0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 30% at 50% 50%, rgba(139, 92, 246, 0.06) 0%, transparent 70%);
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scrollbar-gutter: stable;
+    }
+  }
+}
+
+/* ==================== Glassmorphism Cards ==================== */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .glass-card {
+  background: rgba(12, 18, 40, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 32px -4px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Legacy glass-panel alias */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+html.dark .glass-panel {
+  background: rgba(12, 18, 40, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ==================== Premium Glow Button ==================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0891b2 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #047857 0%, #0f766e 50%, #0e7490 100%);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.45), 0 2px 6px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+}
+
+/* ==================== Input Focus Glow ==================== */
+
+.glow-input:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15);
+  outline: none;
+}
+
+html.dark .glow-input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  outline: none;
+}
+
+/* ==================== Drag & Drop Practice Styles ==================== */
+
+.example-boundary {
+  width: 100%;
+  height: 300px;
+  border: 4px dotted #3b82f6;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgb(243 244 246);
+}
+
+.example-box {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  position: absolute;
+  cursor: move;
+  user-select: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  font-size: 0.875rem;
+}
+
+.example-container {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 1rem 1rem 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.drag-box {
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  margin-bottom: 0.5rem;
+  cursor: move;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.drop-box {
+  min-height: 150px;
+  border: 2px dashed #60a5fa;
+  border-radius: 10px;
+  padding: 1rem;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f9ff 100%);
+}
+
+/* ==================== Frame Styles ==================== */
+
+iframe {
+  display: block;
+  border: none;
+  height: 400px;
+  width: 100%;
+}
+
+/* ==================== Animated Gradient Text ==================== */
+
+.gradient-text {
+  background: linear-gradient(135deg, #059669 0%, #0d9488 40%, #6366f1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.dark .gradient-text {
+  background: linear-gradient(135deg, #34d399 0%, #2dd4bf 40%, #818cf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==================== Ambient Glow Orbs ==================== */
+
+.glow-orb-emerald {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.glow-orb-indigo {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+.glow-orb-violet {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+/* ==================== Grid Dot Pattern ==================== */
+
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(100, 116, 139, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+html.dark .dot-pattern {
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+}
+
+/* ==================== Responsive Helpers ==================== */
+
+.section-pad {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-pad {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.safe-x {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
