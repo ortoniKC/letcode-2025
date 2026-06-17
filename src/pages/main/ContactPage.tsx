@@ -43,9 +43,9 @@ const person = {
       location: "Bangalore, India",
     },
     {
-      title: "Quality Assurance Engineer - Allegion",
+      title: "Quality Assurance Engineer - Revature",
       period: "Jan 2020 - Apr 2021",
-      location: "Bangalore, India",
+      location: "Chennai, India",
     },
     {
       title: "SDET - TestLeaf Software Solutions Private Limited",
