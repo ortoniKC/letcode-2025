@@ -1,0 +1,65 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main                  # Production deploy on every merge to main
+  pull_request:
+    branches:
+      - main                  # Preview deploy on every PR targeting main
+
+concurrency:
+  group: netlify-${{ github.ref }}
+  cancel-in-progress: true   # Cancel stale runs on new pushes
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Node setup with caching ─────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # ── 3. Install dependencies ────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci
+
+      # ── 4. Type-check ──────────────────────────────────────────────────────
+      - name: TypeScript check
+        run: npx tsc --noEmit
+
+      # ── 5. Build ───────────────────────────────────────────────────────────
+      - name: Build
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      # ── 6a. Deploy preview (PRs) ───────────────────────────────────────────
+      - name: Deploy preview to Netlify
+        if: github.event_name == 'pull_request'
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --alias=pr-${{ github.event.pull_request.number }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # ── 6b. Deploy production (main branch) ───────────────────────────────
+      - name: Deploy production to Netlify
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --dir=dist --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
