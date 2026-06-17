@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import quizData from "../../../public/assets/quiz/playwright.json";
+import quizData from "@/assets/quiz/playwright.json";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import PageHeader from "@/components/PageHeader";
 import PageLayout from "@/components/PageLayout";
