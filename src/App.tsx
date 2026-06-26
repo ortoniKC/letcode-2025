@@ -12,6 +12,7 @@ import MainPage from "@/pages/main/MainPage";
 import ContactPage from "@/pages/main/ContactPage";
 import WorkspacePage from "@/pages/main/WorkspacePage";
 import NotFoundPage from "@/pages/main/NotFoundPage";
+import ResumeBuilderPage from "@/pages/tools/ResumeBuilderPage";
 
 // Practice pages
 import EditPracticePage from "@/pages/practice/EditPracticePage";
@@ -88,6 +89,7 @@ export const App: React.FC = () => {
             <Route index element={<MainPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="test" element={<WorkspacePage />} />
+            <Route path="resume-builder" element={<ResumeBuilderPage />} />
 
             {/* Practice paths */}
             <Route path="edit" element={<EditPracticePage />} />
