@@ -10,6 +10,7 @@ import {
   Boxes,
   ArrowRight,
   Youtube,
+  FileText,
 } from "lucide-react";
 
 interface Joke {
@@ -59,6 +60,20 @@ const featureCards = [
     ctaColor: "text-violet-600 dark:text-violet-400",
     link: "/pw-quiz",
     secondaryCta: { label: "Interview Prep", link: "/interview" },
+  },
+  {
+    icon: FileText,
+    color: "rose",
+    iconBg: "bg-rose-500/10 dark:bg-rose-500/15",
+    iconColor: "text-rose-600 dark:text-rose-400",
+    hoverBorder: "hover:border-rose-500/40",
+    hoverTitle: "group-hover:text-rose-600 dark:group-hover:text-rose-400",
+    accentColor: "bg-rose-500",
+    title: "Resume Builder",
+    desc: "Create a QA/SDET resume with guided prompts, live templates, themes, local drafts, and print-ready PDF download.",
+    cta: "Build Resume",
+    ctaColor: "text-rose-600 dark:text-rose-400",
+    link: "/resume-builder",
   },
   {
     icon: Boxes,
