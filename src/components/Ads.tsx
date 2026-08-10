@@ -22,10 +22,10 @@ export const GoogleAd: React.FC<GoogleAdProps> = ({
   }, [adSlot]);
 
   return (
-    <div className="google-ad-container my-3 mx-auto text-center overflow-hidden max-w-full">
+    <div className="google-ad-container my-3 mx-auto text-center overflow-visible max-w-full relative z-20">
       <ins
         className="adsbygoogle"
-        style={{ display: "block" }}
+        style={{ display: "block", pointerEvents: "auto" }}
         data-ad-client="ca-pub-6251538267574677"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
