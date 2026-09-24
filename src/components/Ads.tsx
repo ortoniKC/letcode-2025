@@ -6,6 +6,18 @@ interface GoogleAdProps {
   fullWidth?: boolean;
 }
 
+const getAdDimensions = (adFormat: string) => {
+  switch (adFormat) {
+    case "horizontal":
+      return { width: "100%", minHeight: "90px", maxWidth: "970px" };
+    case "vertical":
+      return { width: "160px", minHeight: "600px", maxWidth: "160px" };
+    case "rectangle":
+    default:
+      return { width: "100%", minHeight: "280px", maxWidth: "336px" };
+  }
+};
+
 export const GoogleAd: React.FC<GoogleAdProps> = ({
   adSlot,
   adFormat = "auto",
@@ -21,11 +33,23 @@ export const GoogleAd: React.FC<GoogleAdProps> = ({
     }
   }, [adSlot]);
 
+  const adDimensions = getAdDimensions(adFormat);
+
   return (
-    <div className="google-ad-container my-3 mx-auto text-center overflow-visible max-w-full relative z-20">
+    <div
+      className="google-ad-container my-3 mx-auto text-center overflow-visible max-w-full relative z-20"
+      style={{ width: "100%", maxWidth: adDimensions.maxWidth }}
+    >
       <ins
         className="adsbygoogle"
-        style={{ display: "block", pointerEvents: "auto" }}
+        style={{
+          display: "block",
+          width: adDimensions.width,
+          maxWidth: "100%",
+          minHeight: adDimensions.minHeight,
+          pointerEvents: "auto",
+          margin: "0 auto",
+        }}
         data-ad-client="ca-pub-6251538267574677"
         data-ad-slot={adSlot}
         data-ad-format={adFormat}
